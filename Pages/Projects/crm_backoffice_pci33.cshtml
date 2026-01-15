@@ -1,0 +1,543 @@
+﻿@page
+@model PortfolioTamere.Pages.Projects.crm_backoffice_pci33Model
+@{
+    ViewData["Title"] = "CRM Backoffice PCi33";
+}
+
+<h2 class="mb-1">CRM Backoffice PCi33</h2>
+<p class="lead text-muted mb-4">
+    Maintenance et modernisation d’un CRM métier critique :
+    optimisation SQL, refactorisation WebForms, stabilisation Telerik,
+    fiabilisation KYC et facturation.
+</p>
+
+@* HERO / CTA *@
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <a asp-page="/Projects" class="btn btn-secondary">Retour</a>
+</div>
+@* RÉALISATIONS CLÉS *@
+<section class="mt-5">
+    <h3><strong>Réalisations clés</strong></h3>
+    <p class="text-muted">
+        Sélection de composants concrets du projet. Chaque carte détaille le besoin, l’implémentation et le résultat.
+    </p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+
+        <!-- 1) Optimisation SQL -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="sql"
+                    data-ach-title="Optimisation SQL Server"
+                    data-ach-subtitle="Indexation, refactor de requêtes, procédures stockées, diagnostic Profiler">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-database-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Optimisation SQL Server</h5>
+                            <p class="card-text text-muted mb-2">Réduction de latence sur écrans critiques et RadGrid lourds.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">SQL Profiler</span>
+                                <span class="badge wd-badge wd-primary">Index</span>
+                                <span class="badge wd-badge wd-secondary">Stored Procs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 2) Stabilisation WebForms -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="webforms"
+                    data-ach-title="Refactor WebForms & stabilité"
+                    data-ach-subtitle="Réduction du couplage, corrections ViewState, fiabilisation formulaires">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-file-earmark-code fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Refactor WebForms & stabilité</h5>
+                            <p class="card-text text-muted mb-2">Correction de comportements legacy et sécurisation des flux.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">VB .NET</span>
+                                <span class="badge wd-badge wd-secondary">WebForms</span>
+                                <span class="badge wd-badge wd-primary">ViewState</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 3) Telerik -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="telerik"
+                    data-ach-title="Stabilisation Telerik"
+                    data-ach-subtitle="RadGrid, RadFilter, pagination serveur, correction de requêtes générées">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-grid-3x3-gap fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Stabilisation Telerik</h5>
+                            <p class="card-text text-muted mb-2">Amélioration UX + suppression de timeouts SQL.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">RadGrid</span>
+                                <span class="badge wd-badge wd-primary">Pagination</span>
+                                <span class="badge wd-badge wd-accent">RadFilter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 4) KYC -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="kyc"
+                    data-ach-title="Module KYC & conformité"
+                    data-ach-subtitle="Flux documentaires, statuts KYC, règles de cohérence, traçabilité">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Module KYC & conformité</h5>
+                            <p class="card-text text-muted mb-2">Fiabilisation des statuts, pièces et contrôles métier.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">KYC</span>
+                                <span class="badge wd-badge wd-secondary">Documents</span>
+                                <span class="badge wd-badge wd-primary">Audit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 5) Facturation -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="billing"
+                    data-ach-title="Facturation & comptabilité"
+                    data-ach-subtitle="Calculs automatiques, factures groupées, exports, cohérence comptable">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-receipt fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Facturation & comptabilité</h5>
+                            <p class="card-text text-muted mb-2">Correction d’écarts, robustesse du workflow, optimisations.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Billing</span>
+                                <span class="badge wd-badge wd-secondary">Exports</span>
+                                <span class="badge wd-badge wd-accent">SQL Perf</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 6) Support -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="support"
+                    data-ach-title="Support & tickets"
+                    data-ach-subtitle="Filtres avancés, optimisation d’affichage, priorités/SLA, suppression de timeouts">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-life-preserver fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Support & tickets</h5>
+                            <p class="card-text text-muted mb-2">Stabilisation des écrans lourds et meilleure exploitation.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">SLA</span>
+                                <span class="badge wd-badge wd-primary">UX</span>
+                                <span class="badge wd-badge wd-accent">Timeout fix</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+</section>
+@* CONTENU PRINCIPAL *@
+<div class="mt-4">
+
+    <h3><strong>Présentation</strong></h3>
+
+    <p>
+        Le <strong>CRM Backoffice PCi33</strong> constitue le cœur opérationnel du système d’information
+        de l’entreprise. Il centralise la gestion client, la facturation, le support,
+        les processus KYC, la gestion documentaire ainsi que de nombreux workflows internes
+        utilisés quotidiennement par les équipes métier.
+    </p>
+
+    <p>
+        Il s’agit d’un système historique reposant sur
+        <strong>VB .NET</strong>, <strong>ASP.NET WebForms</strong>,
+        <strong>SQL Server</strong> et l’écosystème <strong>Telerik</strong>.
+        Pendant près de deux ans, j’ai travaillé quotidiennement sur ce CRM en production,
+        en assurant sa stabilité tout en amorçant une modernisation progressive
+        de l’ensemble du socle technique.
+    </p>
+
+    <p>
+        Le projet ne consistait pas à réécrire l’existant, mais à
+        <strong>fiabiliser un système critique sans interrompre l’activité</strong>,
+        tout en préparant le terrain pour des évolutions futures vers des architectures plus modernes.
+    </p>
+
+    <h3 class="mt-4"><strong>Lancement du projet</strong></h3>
+
+    <p>
+        À mon arrivée, le CRM présentait plusieurs fragilités : performances hétérogènes,
+        composants Telerik obsolètes, code fortement couplé, et sensibilité élevée
+        aux modifications dans certaines zones critiques.
+    </p>
+
+    <p>
+        La première étape a consisté à cartographier les flux métier,
+        identifier les dépendances entre pages WebForms, logique serveur
+        et requêtes SQL, puis repérer les modules les plus sensibles
+        (KYC, facturation, support).
+    </p>
+
+    <p>
+        L’objectif a rapidement été clarifié :
+        <strong>
+            stabiliser l’existant, améliorer les performances,
+            renforcer la fiabilité métier et préparer une migration progressive
+        </strong>,
+        sans remettre en cause les usages quotidiens.
+    </p>
+
+    <h3 class="mt-4"><strong>Les étapes</strong></h3>
+
+    <ul class="mt-2">
+        <li>
+            Analyse approfondie du code legacy et compréhension des flux WebForms,
+            ViewState et dépendances Telerik.
+        </li>
+        <li>
+            Refactorisation ciblée de pages critiques afin d’améliorer
+            lisibilité, maintenabilité et robustesse.
+        </li>
+        <li>
+            Optimisation SQL avancée : indexation, refonte de requêtes coûteuses,
+            procédures stockées, vues internes et diagnostic via SQL Profiler.
+        </li>
+        <li>
+            Stabilisation et modernisation progressive des composants Telerik
+            (RadGrid, RadFilter, RadWindow).
+        </li>
+        <li>
+            Évolutions fonctionnelles sur les modules KYC, facturation
+            et support, avec ajout de contrôles métier et de logs.
+        </li>
+        <li>
+            Mise en place de bases d’APIs internes afin de réduire
+            la dépendance directe à WebForms.
+        </li>
+    </ul>
+
+    <h3 class="mt-4"><strong>Les résultats</strong></h3>
+
+    <h4 class="mt-3"><strong>Pour moi</strong></h4>
+
+    <p>
+        Ce projet m’a apporté une expérience concrète et complète
+        dans la gestion d’un système d’information en production.
+        J’ai appris à intervenir sur un code legacy volumineux,
+        à anticiper les impacts d’une modification et à arbitrer
+        entre contraintes techniques et besoins métier.
+    </p>
+
+    <p>
+        Il a également renforcé ma compréhension des enjeux
+        de performance SQL, de stabilité applicative et de
+        modernisation progressive d’un SI existant.
+    </p>
+
+    <h4 class="mt-3"><strong>Pour l’entreprise</strong></h4>
+
+    <p>
+        Les modules critiques sont devenus plus stables,
+        plus rapides et plus robustes.
+        Les équipes support et facturation ont gagné en efficacité,
+        les erreurs récurrentes ont été éliminées,
+        et les pages stratégiques affichent désormais
+        des temps de réponse nettement améliorés.
+    </p>
+
+    <p>
+        La modernisation progressive du CRM a permis
+        de préparer sereinement un futur chantier de migration,
+        sans perturber les activités quotidiennes.
+    </p>
+
+</div>
+@* Source HTML des modals (caché) *@
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="sql">
+        <p><strong>Objectif :</strong> améliorer la performance globale du CRM sur les écrans les plus sollicités (RadGrid, recherches, exports).</p>
+        <ul>
+            <li><strong>Diagnostic :</strong> utilisation de SQL Profiler / plans d’exécution pour identifier les requêtes dominantes et les conversions implicites.</li>
+            <li><strong>Optimisations :</strong> ajout d’index ciblés, refactorisation de requêtes coûteuses, réécriture de jointures, optimisation de vues et procédures stockées.</li>
+            <li><strong>Résolution de bugs :</strong> corrections de collations, suppression d’anti-patterns (SELECT *) et stabilisation de requêtes générées par Telerik.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> baisse significative des temps de chargement sur plusieurs pages critiques, réduction des timeouts et meilleure stabilité en charge.</p>
+    </div>
+
+    <div data-ach-id="webforms">
+        <p><strong>Objectif :</strong> stabiliser un socle WebForms legacy tout en améliorant la maintenabilité et en réduisant le risque de régression.</p>
+        <ul>
+            <li><strong>Refactor ciblé :</strong> découpage de pages complexes, simplification d’événements, réduction de logique dupliquée.</li>
+            <li><strong>ViewState :</strong> correction d’états incohérents, réduction de payload quand possible, sécurisation des postbacks et validations serveur.</li>
+            <li><strong>Robustesse :</strong> meilleure gestion des erreurs, contrôles systématiques des données en entrée, corrections de comportements “edge cases”.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> écrans plus fiables, comportements plus prévisibles et base plus saine pour la modernisation progressive.</p>
+    </div>
+
+    <div data-ach-id="telerik">
+        <p><strong>Objectif :</strong> fiabiliser les composants Telerik (RadGrid / RadFilter) responsables de lenteurs et d’erreurs côté SQL.</p>
+        <ul>
+            <li><strong>RadGrid :</strong> mise en place / correction de pagination serveur, tri/filtre mieux maîtrisés, optimisation des bindings.</li>
+            <li><strong>RadFilter :</strong> correction de filtres générant des requêtes invalides ou trop coûteuses, ajustement des opérateurs, prévention des timeouts.</li>
+            <li><strong>UX :</strong> stabilisation de RadWindow, correction d’actions qui “cassent” l’état de page, meilleure fluidité sur gros volumes.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> réduction des erreurs récurrentes, amélioration de la réactivité et expérience utilisateur interne plus stable.</p>
+    </div>
+
+    <div data-ach-id="kyc">
+        <p><strong>Objectif :</strong> fiabiliser le module KYC : documents, statuts, cohérence métier et traçabilité.</p>
+        <ul>
+            <li><strong>Flux documentaires :</strong> stabilisation des uploads (Kbis, CNI, RIB), correction de statuts et de pièces manquantes, contrôles de complétude.</li>
+            <li><strong>Règles métier :</strong> amélioration des contrôles de cohérence, correction de transitions de statuts et gestion de cas limites.</li>
+            <li><strong>Audit :</strong> ajout/renforcement de logs métier pour permettre diagnostic interne et justification en cas de contrôle.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> module plus robuste, moins d’incohérences et meilleure exploitation par les équipes support/conformité.</p>
+    </div>
+
+    <div data-ach-id="billing">
+        <p><strong>Objectif :</strong> sécuriser les workflows de facturation et améliorer la cohérence comptable.</p>
+        <ul>
+            <li><strong>Calculs :</strong> correction d’écarts, fiabilisation des calculs automatiques et des cas particuliers (arrondis, regroupements).</li>
+            <li><strong>Workflows :</strong> stabilisation des factures groupées, correction de comportements intermittents, meilleure cohérence des statuts.</li>
+            <li><strong>Exports :</strong> optimisation des exports Excel/PDF via optimisation SQL et réduction des temps de génération.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins d’erreurs, process plus fiable et gain de temps pour les équipes facturation.</p>
+    </div>
+
+    <div data-ach-id="support">
+        <p><strong>Objectif :</strong> améliorer le module support/tickets sur gros volumes, avec filtrage avancé et affichage performant.</p>
+        <ul>
+            <li><strong>Performance :</strong> optimisation de l’affichage sur tickets volumineux, réduction de latence sur recherches et listes.</li>
+            <li><strong>SLA :</strong> amélioration des priorités, statuts et règles d’escalade, avec une meilleure lisibilité métier.</li>
+            <li><strong>Filtres :</strong> refonte des filtres avancés (RadFilter) et correction des requêtes causant des timeouts SQL.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> module plus fluide, meilleure efficacité support et réduction des incidents liés aux lenteurs.</p>
+    </div>
+
+</div>
+@* Modal Bootstrap *@
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        /* Cards "achievement" alignées au thème */
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            /* Empêche le texte de "bloquer" le click (tu avais déjà l'idée) */
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            /* Texte muted compatible fond sombre */
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        /* Badges adaptés (dark theme) */
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        /* =========================
+                           Modal "dark/glass"
+                           ========================= */
+
+        /* Backdrop un peu plus sombre */
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        /* Subtitle */
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        /* Close button visible sur fond sombre */
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        /* Liens et listes dans le modal */
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        /* Bouton Fermer */
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+    </style>
+}
+
+

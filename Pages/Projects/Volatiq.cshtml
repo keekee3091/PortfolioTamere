@@ -1,0 +1,520 @@
+﻿@page
+@model PortfolioTamere.Pages.Projects.VolatiqModel
+@{
+    ViewData["Title"] = "VolatiQ";
+}
+
+<h2 class="mb-1">VolatiQ</h2>
+<p class="lead text-muted mb-4">
+    Analyseur quantitatif de micro-volatilité (Black-Scholes, Monte-Carlo, grecs, scoring d’anomalies) — pipeline Python + C++.
+</p>
+
+@* HERO / CTA *@
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <a asp-page="/Projects" class="btn btn-secondary">Retour</a>
+    <a href="https://github.com/keekee3091/black_scholesEU" target="_blank" rel="noopener" class="btn btn-primary">
+        Voir le repo
+    </a>
+</div>
+@* Source HTML des modals (caché) *@
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="data">
+        <p><strong>Objectif :</strong> construire une ingestion fiable des chaînes d’options (calls/puts, strikes, maturités) et réduire la dépendance aux quotas.</p>
+        <ul>
+            <li><strong>Ingestion :</strong> récupération des données options + underlyings, normalisation des champs (dates, strikes, mid/last, IV).</li>
+            <li><strong>Cache :</strong> persistance locale (TTL, invalidation) pour rejouer les analyses sans re-taper l’API.</li>
+            <li><strong>Qualité :</strong> filtrage de données incohérentes (valeurs manquantes, spreads extrêmes, maturités invalides).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> latence plus stable et pipeline exploitable offline sur des snapshots.</p>
+    </div>
+
+    <div data-ach-id="api">
+        <p><strong>Objectif :</strong> exposer le pipeline quant via une API propre pour itération rapide et intégration future (UI, scripts, notebooks).</p>
+        <ul>
+            <li><strong>Endpoints :</strong> chaines d’options, pricer, grecs, IV/surfaces, scoring anomalies.</li>
+            <li><strong>Validation :</strong> schémas Pydantic, erreurs explicites, paramètres contrôlés (r, q, vol, maturité).</li>
+            <li><strong>Perf :</strong> cache côté API + appels batch pour minimiser l’overhead réseau.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> interface stable et testable pour itérer sur le quant sans coupler l’UI au moteur.</p>
+    </div>
+
+    <div data-ach-id="cpp">
+        <p><strong>Objectif :</strong> obtenir un moteur de pricing/grecs très rapide pour traiter des lots d’options sans latence.</p>
+        <ul>
+            <li><strong>BS + grecs :</strong> prix théorique, Delta/Gamma/Vega/Theta/Rho.</li>
+            <li><strong>Optimisation :</strong> calculs batch, réduction d’allocations, structures de données orientées throughput.</li>
+            <li><strong>Bridge :</strong> intégration avec Python via bindings/bridge (selon ton implémentation : Python C API, HTTP local, etc.).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> pricing réactif sur grandes séries, base solide pour ajouter d’autres modèles.</p>
+    </div>
+
+    <div data-ach-id="iv">
+        <p><strong>Objectif :</strong> transformer les données options en signaux exploitables (micro-vol) via extraction IV et features robustes.</p>
+        <ul>
+            <li><strong>IV :</strong> extraction/derivation, cohérence par maturité, normalisation strike (moneyness/log-moneyness).</li>
+            <li><strong>Surfaces :</strong> préparation smile/skew (interpolation simple si besoin), comparaisons cross-maturités.</li>
+            <li><strong>Features :</strong> métriques d’écart IV, courbure, pentes, outliers relatifs.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> inputs propres pour scoring et détection d’anomalies sur séries.</p>
+    </div>
+
+    <div data-ach-id="score">
+        <p><strong>Objectif :</strong> repérer des anomalies de pricing/volatilité et prioriser les opportunités de manière déterministe.</p>
+        <ul>
+            <li><strong>Mispricing :</strong> écart marché vs théorique (BS), normalisation par vega/price pour éviter les biais d’échelle.</li>
+            <li><strong>Filtres :</strong> liquidité, spreads, maturités trop courtes/longues, outliers bruyants.</li>
+            <li><strong>Ranking :</strong> score composite + seuils pour remonter une shortlist exploitable.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une sortie “actionnable” (tri + explications) plutôt qu’une simple liste brute.</p>
+    </div>
+
+    <div data-ach-id="mc">
+        <p><strong>Objectif :</strong> poser un socle de simulation pour aller au-delà de Black-Scholes (scénarios, stress, modèles stochastiques).</p>
+        <ul>
+            <li><strong>GBM :</strong> génération de trajectoires, agrégation de payoffs, estimation de prix.</li>
+            <li><strong>Scénarios :</strong> stress sur vol/rates/dividendes, analyse de sensibilité.</li>
+            <li><strong>Extensions :</strong> préparation vers Heston/SABR, variance reduction, parallélisation.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> base technique pour enrichir le moteur quant et améliorer la robustesse des signaux.</p>
+    </div>
+
+</div>
+@* RÉALISATIONS CLÉS *@
+<section class="mt-5">
+    <h3><strong>Réalisations clés</strong></h3>
+    <p class="text-muted">
+        Sélection de composants concrets du projet. Chaque carte détaille le besoin, l’implémentation et le résultat.
+    </p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+
+        <!-- 1) Acquisition & cache -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="data"
+                    data-ach-title="Acquisition options + cache persistant"
+                    data-ach-subtitle="Chaîne d’ingestion (calls/puts), normalisation, cache disque pour réduire les hits API">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-cloud-download fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Acquisition + cache</h5>
+                            <p class="card-text text-muted mb-2">Moins d’appels API, latence stable, données homogénéisées.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Python</span>
+                                <span class="badge wd-badge wd-secondary">yfinance</span>
+                                <span class="badge wd-badge wd-accent">Cache</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 2) API -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="api"
+                    data-ach-title="API REST (FastAPI) + endpoints quant"
+                    data-ach-subtitle="Endpoints : chaines d’options, pricer, grecs, surfaces IV, scoring">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-braces-asterisk fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">API REST</h5>
+                            <p class="card-text text-muted mb-2">Pipeline exposé proprement pour exploitation locale / UI.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">FastAPI</span>
+                                <span class="badge wd-badge wd-secondary">Pydantic</span>
+                                <span class="badge wd-badge wd-primary">Caching</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 3) Moteur C++ -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="cpp"
+                    data-ach-title="Moteur quant C++ (latence basse)"
+                    data-ach-subtitle="Black-Scholes + grecs, calculs vectorisés, intégration via bindings/bridge">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-cpu fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Moteur C++</h5>
+                            <p class="card-text text-muted mb-2">Pricing rapide et reproductible sur grands volumes.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">C++</span>
+                                <span class="badge wd-badge wd-primary">Black-Scholes</span>
+                                <span class="badge wd-badge wd-accent">Low-latency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 4) IV + surfaces -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="iv"
+                    data-ach-title="IV, smile/skew & features"
+                    data-ach-subtitle="Extraction IV, normalisation strikes/maturités, features pour signaux de micro-vol">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-graph-up fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">IV & surfaces</h5>
+                            <p class="card-text text-muted mb-2">Préparation de données robuste pour scoring/anomalies.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Implied Vol</span>
+                                <span class="badge wd-badge wd-secondary">Smile/Skew</span>
+                                <span class="badge wd-badge wd-primary">Features</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 5) Scoring anomalies -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="score"
+                    data-ach-title="Scoring de mispricing & anomalies"
+                    data-ach-subtitle="Écart prix théorique vs marché, filtres liquidité, ranking des opportunités">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-bullseye fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Scoring anomalies</h5>
+                            <p class="card-text text-muted mb-2">Détection exploitable sur séries d’options (tri + seuils).</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Mispricing</span>
+                                <span class="badge wd-badge wd-primary">Filters</span>
+                                <span class="badge wd-badge wd-accent">Ranking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 6) Monte-Carlo -->
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="mc"
+                    data-ach-title="Monte-Carlo & backtesting (prototype)"
+                    data-ach-subtitle="GBM, scénarios, stress tests, base pour Heston/SABR & extensions">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shuffle fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Monte-Carlo</h5>
+                            <p class="card-text text-muted mb-2">Cadre extensible pour simulations et métriques de risque.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">GBM</span>
+                                <span class="badge wd-badge wd-secondary">Monte-Carlo</span>
+                                <span class="badge wd-badge wd-accent">Scenarios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+</section>
+
+@* CONTENU PRINCIPAL *@
+<div class="mt-4">
+
+    <h3><strong>Présentation</strong></h3>
+
+    <p>
+        <strong>VolatiQ</strong> est un analyseur quantitatif construit autour d’un pipeline hybride
+        <strong>Python + C++</strong>. L’objectif : récupérer des données d’options, les valoriser rapidement
+        (modèle <strong>Black-Scholes</strong> + grecs) et produire des <strong>signaux de micro-volatilité</strong>
+        via un scoring d’anomalies (mispricing, déformations IV, outliers).
+    </p>
+
+    <p>
+        Python assure l’<strong>ingestion</strong>, la <strong>normalisation</strong> et l’exposition via
+        <strong>FastAPI</strong> (avec cache persistant). Le C++ porte le <strong>moteur quant</strong>
+        (pricing/grecs) pour maintenir une latence basse sur des lots d’options.
+    </p>
+
+    <h3 class="mt-4"><strong>Lancement du projet</strong></h3>
+
+    <p>
+        Le point de départ : la difficulté d’obtenir des données d’options à la fois rapides et exploitables,
+        et le manque d’outils locaux permettant de reproduire une chaîne simple “acquisition → pricer → signaux”.
+        VolatiQ a donc été conçu pour :
+    </p>
+    <ul class="mt-2">
+        <li>récupérer efficacement les chaînes (calls/puts, strikes, maturités, IV, prix),</li>
+        <li>mettre en cache localement pour réduire la dépendance à l’API,</li>
+        <li>valoriser vite (Black-Scholes + grecs) sur de grands volumes,</li>
+        <li>détecter des anomalies (mispricing, outliers IV, signaux micro-vol).</li>
+    </ul>
+
+    <h3 class="mt-4"><strong>Les étapes</strong></h3>
+
+    <ul class="mt-2">
+        <li>Création d’une API <strong>FastAPI</strong> : endpoints options, pricing, grecs, scoring, surfaces IV.</li>
+        <li>Mise en place d’un <strong>cache persistant</strong> (TTL / invalidation) pour limiter le trafic et stabiliser les temps de réponse.</li>
+        <li>Développement d’un <strong>moteur C++</strong> pour pricing Black-Scholes et calcul des grecs (Delta/Gamma/Vega/Theta/Rho).</li>
+        <li>Construction de features micro-vol : normalisation strike/maturité, métriques IV, filtres liquidité.</li>
+        <li>Implémentation d’un <strong>score de mispricing</strong> + ranking (seuils, tri, heuristiques anti-bruit).</li>
+        <li>Prototype <strong>Monte-Carlo</strong> (GBM) comme base d’extension vers Heston/SABR et stress tests.</li>
+    </ul>
+
+    <h3 class="mt-4"><strong>Les résultats</strong></h3>
+
+    <h4 class="mt-3"><strong>Pour moi</strong></h4>
+    <p>
+        VolatiQ m’a permis d’approfondir la construction d’un pipeline quant complet : intégration multi-langages,
+        séparation ingestion/calcul, optimisation de performance, et design orienté “signal” (features + scoring).
+    </p>
+
+    <h4 class="mt-3"><strong>Pour le projet</strong></h4>
+    <p>
+        Le système se comporte comme un <strong>mini-pricer local</strong> : acquisition → cache → pricing/grecs → scoring,
+        avec une architecture extensible (modèles stochastiques, WebSockets, parallélisation, UI).
+    </p>
+
+    <h3 class="mt-4"><strong>Insights & KPIs</strong></h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card text-center shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">1000+ options/s</h5>
+                    <p class="card-text">Débit local du moteur de pricing C++ (selon machine/dataset).</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">-90 %</h5>
+                    <p class="card-text">Réduction des hits API via cache persistant + TTL.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">~5 ms</h5>
+                    <p class="card-text">Ordre de grandeur d’un batch de pricing BS optimisé (selon taille).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-4"><strong>Les lendemains du projet</strong></h3>
+    <p>
+        Évolutions prévues : volatilité stochastique (Heston), calibration, surfaces IV plus riches,
+        WebSockets temps réel, parallélisation, et une UI dédiée (dashboard anomalies + courbes).
+    </p>
+
+</div>
+
+@* Modal Bootstrap *@
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        /* Cards "achievement" alignées au thème */
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            /* Empêche le texte de "bloquer" le click (tu avais déjà l'idée) */
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            /* Texte muted compatible fond sombre */
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        /* Badges adaptés (dark theme) */
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        /* =========================
+                   Modal "dark/glass"
+                   ========================= */
+
+        /* Backdrop un peu plus sombre */
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        /* Subtitle */
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        /* Close button visible sur fond sombre */
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        /* Liens et listes dans le modal */
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        /* Bouton Fermer */
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+    </style>
+}

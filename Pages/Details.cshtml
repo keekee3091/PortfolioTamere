@@ -1,0 +1,18 @@
+﻿@page
+@model PortfolioTamere.Pages.Projects.DetailsModel
+
+<h2>@Model.Project.Title</h2>
+
+<p class="lead">@Model.Project.Description</p>
+
+<div class="mt-4">
+    @Html.Raw(Model.Project.FullDescription)
+</div>
+<div class="mt-5">
+    @Html.Raw(Model.Project.SubProjects)
+</div>
+<a asp-page="/Projects" class="btn btn-secondary mt-4">Retour</a>
+@if (!string.IsNullOrWhiteSpace(Model.Project.Url))
+{
+    <a href="@Model.Project.Url" class="btn btn-primary mt-4 ms-2" target="_blank">Accéder au Git</a>
+}

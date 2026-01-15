@@ -1,0 +1,591 @@
+﻿@page
+@model PortfolioTamere.Pages.Projects.Watchdog_ProjectModel
+@{
+    ViewData["Title"] = "Watchdog API";
+}
+
+<h2 class="mb-1">Watchdog API</h2>
+<p class="lead text-muted mb-4">API .NET 8 KYC/AML avec scoring, PPE, sanctions, anomalies.</p>
+
+@* HERO / CTA *@
+<div class="d-flex flex-wrap gap-2 mb-4">
+    <a asp-page="/Projects" class="btn btn-secondary">Retour</a>
+    <a href="https://github.com/keekee3091/Watchdog_v2"
+       class="btn btn-primary"
+       target="_blank"
+       rel="noopener noreferrer">
+        Accéder au Git
+    </a>
+</div>
+@* Réalisations clés : cartes cliquables + modal *@
+<section class="mt-5">
+    <h3><strong>Réalisations clés</strong></h3>
+    <p class="text-muted">
+        Sélection de composants concrets du projet. Chaque carte détaille le besoin, l’implémentation et le résultat.
+    </p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="scoring"
+                    data-ach-title="Moteur de scoring AML"
+                    data-ach-subtitle="Critères pondérés, seuils, règles d’alerte et décision explicable">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-speedometer2 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Moteur de scoring AML</h5>
+                            <p class="card-text text-muted mb-2">Pondérations, règles, seuils et explicabilité.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Domain Rules</span>
+                                <span class="badge wd-badge wd-secondary">Explainability</span>
+                                <span class="badge wd-badge wd-accent">.NET 8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="normalisation"
+                    data-ach-title="Pipeline de normalisation"
+                    data-ach-subtitle="Ingestion multi-sources, mapping canonique et validation stricte">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-diagram-3 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Pipeline de normalisation</h5>
+                            <p class="card-text text-muted mb-2">Entrées hétérogènes → modèle canonique.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Validation</span>
+                                <span class="badge wd-badge wd-secondary">Mapping</span>
+                                <span class="badge wd-badge wd-primary">Robustesse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="simulateurs"
+                    data-ach-title="Simulateurs de sources externes"
+                    data-ach-subtitle="PPE, sanctions, anomalies et incohérences déclaratives">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-database fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Simulateurs de sources externes</h5>
+                            <p class="card-text text-muted mb-2">Données réalistes sans dépendances réelles.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">PPE</span>
+                                <span class="badge wd-badge wd-accent">Sanctions</span>
+                                <span class="badge wd-badge wd-secondary">Scénarios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="audit"
+                    data-ach-title="Logs orientés audit & historisation"
+                    data-ach-subtitle="Traçabilité des décisions, rejouabilité des analyses et preuves">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-journal-text fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Audit & historisation</h5>
+                            <p class="card-text text-muted mb-2">Justifier, tracer, rejouer.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Audit logs</span>
+                                <span class="badge wd-badge wd-secondary">History</span>
+                                <span class="badge wd-badge wd-primary">Explain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="archi"
+                    data-ach-title="Architecture hexagonale"
+                    data-ach-subtitle="Domain isolé, ports/adapters, testabilité et évolutivité">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-boxes fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Architecture hexagonale</h5>
+                            <p class="card-text text-muted mb-2">Séparation stricte des responsabilités.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">DDD</span>
+                                <span class="badge wd-badge wd-secondary">Clean</span>
+                                <span class="badge wd-badge wd-primary">Testable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 416px;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="perf"
+                    data-ach-title="Performance & cache"
+                    data-ach-subtitle="Optimisation du temps de réponse et tenue en charge">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-lightning-charge fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Performance & cache</h5>
+                            <p class="card-text text-muted mb-2">Latence maîtrisée et charge simulée.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Cache</span>
+                                <span class="badge wd-badge wd-secondary">Bench</span>
+                                <span class="badge wd-badge wd-accent">Throughput</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+</section>
+@* Contenu principal *@
+<div class="mt-4">
+
+    <h3><strong>Présentation</strong></h3>
+
+    <p>
+        <strong>Watchdog</strong> est un moteur KYC/AML développé comme projet personnel avancé,
+        conçu pour simuler le fonctionnement d’une plateforme de conformité réglementaire
+        similaire à celles utilisées dans les environnements bancaires et fintech.
+    </p>
+
+    <p>
+        Le projet ne se limite pas à l’exposition d’endpoints techniques :
+        il vise à reproduire un <strong>système de décision réglementaire complet</strong>,
+        intégrant la collecte de données, l’application de règles métiers complexes
+        et la production de décisions explicables.
+    </p>
+
+    <p>
+        L’objectif principal était de concevoir un moteur capable de centraliser
+        des données hétérogènes liées à l’identité et au comportement des clients,
+        de les normaliser, puis de produire une analyse structurée du risque AML.
+        Le moteur génère non seulement un score, mais également une
+        <strong>justification détaillée</strong> permettant de comprendre précisément
+        pourquoi une décision donnée a été prise.
+    </p>
+
+    <p>
+        Watchdog a été pensé comme un système autonome, capable de fonctionner
+        sans dépendance à des sources externes réelles, tout en respectant
+        les contraintes structurelles propres aux systèmes réglementés :
+        <strong>auditabilité, traçabilité, robustesse, performance et évolutivité</strong>.
+    </p>
+
+    <h3 class="mt-4"><strong>Lancement du projet</strong></h3>
+
+    <p>
+        À l’origine, Watchdog est né d’un constat personnel :
+        les systèmes AML sont souvent perçus comme des boîtes noires,
+        difficiles à comprendre en dehors des équipes spécialisées,
+        alors qu’ils jouent un rôle central dans la gestion du risque
+        et la conformité réglementaire.
+    </p>
+
+    <p>
+        L’objectif était de reproduire, à échelle réduite mais réaliste,
+        le fonctionnement d’un moteur AML professionnel afin de mieux
+        comprendre les problématiques techniques et métier associées.
+    </p>
+
+    <p>
+        Le projet a été conçu pour permettre de tester différentes
+        approches de scoring, d’affiner des règles métiers et de valider
+        des schémas d’architecture propres aux projets sensibles :
+        <strong>
+            traçabilité, logs, isolation des couches,
+            validation stricte et robustesse technique
+        </strong>.
+    </p>
+
+    <h3 class="mt-4"><strong>Les étapes</strong></h3>
+
+    <ul class="mt-2">
+        <li>
+            Définition d’un <strong>modèle de scoring AML</strong> basé sur des signaux faibles,
+            des critères pondérés et des règles d’alerte explicites.
+        </li>
+        <li>
+            Mise en place d’une <strong>architecture hexagonale</strong>
+            (Domain / Application / Infrastructure) afin d’isoler la logique métier.
+        </li>
+        <li>
+            Développement du moteur de scoring central et de
+            <strong>simulateurs de sources externes</strong>.
+        </li>
+        <li>
+            Implémentation d’un pipeline de <strong>normalisation des données</strong>
+            garantissant la cohérence des entrées quelle que soit la source.
+        </li>
+        <li>
+            Ajout d’un système de <strong>logs explicables orientés audit</strong>
+            et d’une historisation complète des analyses.
+        </li>
+        <li>
+            Conteneurisation du projet, mise en place de tests unitaires
+            et optimisation du cache et des performances globales.
+        </li>
+    </ul>
+
+    <h3 class="mt-4"><strong>Les résultats</strong></h3>
+
+    <h4 class="mt-3"><strong>Pour moi</strong></h4>
+
+    <p>
+        Watchdog m’a permis de pratiquer une architecture de niveau industriel
+        dans un cadre totalement libre. J’ai pu travailler sur la
+        modélisation de règles métiers complexes, la structuration d’un moteur autonome
+        et la construction d’un socle technique comparable à ceux utilisés
+        dans les fintechs et institutions réglementées.
+    </p>
+
+    <h4 class="mt-3"><strong>Pour le projet</strong></h4>
+
+    <p>
+        Le moteur est aujourd’hui <strong>stable, modulaire et extensible</strong>.
+        Il est capable d’ingérer des données hétérogènes et de produire
+        une analyse réglementaire structurée.
+        Watchdog sert désormais de base à d’autres expérimentations :
+        scénarios de fraude, modèles statistiques, outils internes de test
+        ou prototypes réglementaires.
+    </p>
+
+    <h3 class="mt-4"><strong>Insights & KPIs</strong></h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card text-center shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">40 ms</h5>
+                    <p class="card-text">
+                        Temps de réponse moyen de l’API en charge nominale,
+                        incluant normalisation, scoring et journalisation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-center shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">1 800 req/min</h5>
+                    <p class="card-text">
+                        Débit maximal simulé lors de scénarios intensifs
+                        afin de valider la tenue en charge du moteur.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-center shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">&gt; 95 %</h5>
+                    <p class="card-text">
+                        Cohérence métier du scoring sur des scénarios complexes,
+                        validée par comparaison règles / décisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-4"><strong>Les lendemains du projet</strong></h3>
+
+    <p>
+        Les pistes d’évolution incluent l’intégration de sources réelles,
+        l’ajout de modèles statistiques ou probabilistes,
+        une détection comportementale plus fine
+        et la connexion avec des jeux de données réglementaires publics.
+    </p>
+
+    <p>
+        L’architecture actuelle permet d’étendre facilement le moteur
+        sans remise en cause du cœur métier, ce qui positionne Watchdog
+        comme une base solide pour des projets AML plus avancés.
+    </p>
+
+</div>
+
+@* Source HTML des modals (caché) *@
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="scoring">
+        <p><strong>Objectif :</strong> produire un score de risque et une décision (OK / Review / Alert) à partir de critères AML pondérés.</p>
+        <ul>
+            <li><strong>Modèle de règles :</strong> critères composables avec poids, seuils, règles bloquantes et exceptions.</li>
+            <li><strong>Explicabilité :</strong> contribution par critère (ex : incohérence déclarative, pays à risque, sanctions, PPE) + justification.</li>
+            <li><strong>Testabilité :</strong> scénarios unitaires (cas normaux / cas limites) pour garantir la cohérence métier.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> scoring lisible, stable et extensible.</p>
+    </div>
+
+    <div data-ach-id="normalisation">
+        <p><strong>Problème :</strong> plusieurs sources produisent des formats différents. Pour scorer correctement, il faut un modèle canonique unique.</p>
+        <ul>
+            <li><strong>Validation stricte :</strong> contrôles (formats, valeurs attendues, complétude, invariants).</li>
+            <li><strong>Mapping :</strong> conversion vers un <em>profil client</em> canonique (identité, résidence, activité, signaux).</li>
+            <li><strong>Erreurs traçables :</strong> erreurs structurées (champ, cause, gravité).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> pipeline robuste, ajout de nouvelles sources sans casser le moteur.</p>
+    </div>
+
+    <div data-ach-id="simulateurs">
+        <p><strong>Objectif :</strong> reproduire des flux KYC/AML réalistes sans dépendre d’APIs externes ni de datasets sensibles.</p>
+        <ul>
+            <li><strong>PPE :</strong> profils exposés (rôles, proximité, niveaux de risque) et variations de cas.</li>
+            <li><strong>Sanctions :</strong> listes simulées, collisions de noms, cas d’homonymie.</li>
+            <li><strong>Anomalies :</strong> incohérences déclaratives, comportements atypiques, signaux faibles combinés.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> base de scénarios pour valider et faire évoluer les règles.</p>
+    </div>
+
+    <div data-ach-id="audit">
+        <p><strong>Objectif :</strong> rendre le moteur audit-ready : chaque décision doit être expliquée et rejouable.</p>
+        <ul>
+            <li><strong>Logs explicables :</strong> raisons, critères, score partiel, seuils.</li>
+            <li><strong>Historisation :</strong> sauvegarde des inputs normalisés + décision + détails de calcul.</li>
+            <li><strong>Rejouabilité :</strong> comparer des décisions après évolution de règles.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> traçabilité complète et crédibilité “conformité”.</p>
+    </div>
+
+    <div data-ach-id="archi">
+        <p><strong>Choix :</strong> architecture hexagonale pour isoler la logique métier et éviter le couplage aux détails techniques.</p>
+        <ul>
+            <li><strong>Domain :</strong> règles AML, entités, invariants, agrégats (sans dépendances techniques).</li>
+            <li><strong>Application :</strong> orchestration des use-cases (analyse, scoring, historisation).</li>
+            <li><strong>Infrastructure :</strong> persistance, logs, simulateurs, adaptateurs.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> base testable et évolutive.</p>
+    </div>
+
+    <div data-ach-id="perf">
+        <p><strong>Objectif :</strong> tenir une charge simulée tout en conservant une latence faible.</p>
+        <ul>
+            <li><strong>Cache :</strong> éviter des recalculs inutiles sur des données stables (listes, paramètres).</li>
+            <li><strong>Optimisations :</strong> réduction d’allocations, simplification de chemins critiques.</li>
+            <li><strong>Bench :</strong> scénarios req/min et observation de la latence.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> performances cohérentes avec tes KPIs.</p>
+    </div>
+
+</div>
+
+@* Modal Bootstrap *@
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        /* Cards "achievement" alignées au thème */
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            /* Empêche le texte de "bloquer" le click (tu avais déjà l'idée) */
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            /* Texte muted compatible fond sombre */
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        /* Badges adaptés (dark theme) */
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        /* =========================
+                           Modal "dark/glass"
+                           ========================= */
+
+        /* Backdrop un peu plus sombre */
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        /* Subtitle */
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        /* Close button visible sur fond sombre */
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        /* Liens et listes dans le modal */
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        /* Bouton Fermer */
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+    </style>
+}

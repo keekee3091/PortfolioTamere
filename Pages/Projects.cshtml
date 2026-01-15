@@ -1,0 +1,98 @@
+﻿@page
+@model ProjectsModel
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<h2 class="mb-5 text-center">Mes Projets</h2>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+    <!-- Watchdog -->
+    <div class="col">
+        <div class="card project-card h-100 border-0 shadow-sm">
+            @* <img src="~/images/projects/watchdog.jpg" class="card-img-top" alt="Watchdog API" /> *@
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Watchdog API</h5>
+                <p class="card-text text-muted flex-grow-1">
+                    API .NET 8 KYC/AML : scoring explicable, PPE/sanctions, détection d’anomalies, règles & événements métier.
+                </p>
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a asp-page="Projects/Watchdog_Project" class="btn btn-outline-primary">Voir plus</a>
+                    <a href="https://github.com/keekee3091/Watchdog_v2" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VolatiQ -->
+    <div class="col">
+        <div class="card project-card h-100 border-0 shadow-sm">
+            @* <img src="~/images/projects/volatiq.jpg" class="card-img-top" alt="VolatiQ" /> *@
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">VolatiQ</h5>
+                <p class="card-text text-muted flex-grow-1">
+                    Pipeline quant Python + C++ : acquisition options, cache, pricer Black-Scholes/grecs, scoring d’anomalies, bases Monte-Carlo.
+                </p>
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a asp-page="Projects/Volatiq" class="btn btn-outline-primary">Voir plus</a>
+                    <a href="https://github.com/keekee3091/black_scholesEU" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CRM BackOffice PCi33 -->
+    <div class="col">
+        <div class="card project-card h-100 border-0 shadow-sm">
+            @* <img src="~/images/projects/crm_pci33.jpg" class="card-img-top" alt="CRM BackOffice PCi33" /> *@
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">CRM BackOffice PCi33</h5>
+                <p class="card-text text-muted flex-grow-1">
+                    Système legacy (VB.NET / WebForms / SQL Server / Telerik) : optimisation SQL, refactors ciblés, stabilisation RadGrid/RadFilter,
+                    fiabilisation KYC & facturation en production.
+                </p>
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a asp-page="Projects/crm_backoffice_pci33" class="btn btn-outline-primary">Voir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="g-4 justify-content-center mt-3 row row-cols-1 row-cols-md-3 row-cols-sm-2">
+    <div class="col">
+        <div class="card project-card h-100 border-0 shadow-sm">
+            @* <img src="~/images/projects/crm_pci33.jpg" class="card-img-top" alt="CRM BackOffice PCi33" /> *@
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">CCAMVBA</h5>
+                <p class="card-text text-muted flex-grow-1">
+                    Outil Excel/VBA pour accélérer la recherche dans une base CCAM : filtrage par mots-clés et codes,
+                    surlignage des résultats, application de modificateurs tarifaires et sélection/copie vers une feuille dédiée.
+                </p>
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a asp-page="Projects/crm_backoffice_pci33" class="btn btn-outline-primary">Voir plus</a>
+                    <a href="https://github.com/keekee3091/CCAMVBA" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card project-card h-100 border-0 shadow-sm">
+            @* <img src="~/images/projects/crm_pci33.jpg" class="card-img-top" alt="CRM BackOffice PCi33" /> *@
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Solana Sniper Bot</h5>
+                <p class="card-text text-muted flex-grow-1">
+                    Bot de trading Solana (beta) en Node.js : surveillance en temps réel de nouveaux pools et signaux on-chain,
+                    exécution automatique d’achats/ventes selon des paramètres configurables (slippage, TP/SL, filtres de sécurité).
+                </p>
+                <div class="mt-auto d-flex flex-wrap gap-2">
+                    <a asp-page="Projects/crm_backoffice_pci33" class="btn btn-outline-primary">Voir plus</a>
+                    <a href="https://github.com/fdundjer/solana-sniper-bot" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
