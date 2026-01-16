@@ -4,6 +4,7 @@
 
 html {
     font-size: 14px;
+
 }
 
 @media (min-width: 768px) {
@@ -96,7 +97,8 @@ html, body {
 /* Layout */
 .app-main {
     min-height: 100vh;
-    padding : 110px 90px 100px 90px;
+    padding: 90px 110px 0 110px;
+    overflow: hidden;
 }
 
 /* Container cohérent pour les pages (Projects/Skills/Contact/...) */
@@ -107,6 +109,10 @@ html, body {
 }
 
 @media (max-width: 992px) {
+    .app-main {
+        padding: 110px 22px 90px 22px;
+    }
+
     .app .page-container {
         padding: 0 22px;
     }
@@ -211,7 +217,7 @@ html, body {
 
 /* =========================================
    Hero (Index) — class="home" + section .hero
-   (Le thème est global via .app, home sert aux détails)
+   Nouveau layout "seamless" (photo + contenu)
    ========================================= */
 
 .home .hero {
@@ -221,15 +227,76 @@ html, body {
     justify-content: center;
 }
 
-/* Le hero a son propre container pour rester aligné avec le design */
+/* Container du hero */
 .home .hero__inner {
     max-width: 1320px;
-    margin:  auto;
+    margin: 0 auto;
     width: 100%;
+    padding: 0 48px;
+}
+
+/* Split photo + contenu (utilise hero__inner--split dans le HTML) */
+.home .hero__inner--split {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 0.95fr 1.05fr; /* photo / texte */
+    gap: 56px;
     align-items: center;
-    gap: 48px;
+}
+
+/* Colonne photo — seamless (style "Maxime Dupont") */
+/* PHOTO : conteneur neutre (plus de card) */
+.home .hero__media {
+    height: clamp(420px, 62vh, 640px);
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* L'IMAGE porte le masque (plus fiable que le conteneur) */
+.home .hero__media-img {
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center;
+    /* MASK (feather) -> effet seamless */
+    -webkit-mask-image: linear-gradient( 90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100% );
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: linear-gradient( 90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100% );
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+}
+
+/* OVERLAY violet (renforce la fusion côté texte, même si mask capte mal) */
+.home .hero__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 90deg, rgba(20,10,68,0.00) 0%, rgba(20,10,68,0.10) 52%, rgba(20,10,68,0.55) 75%, rgba(20,10,68,0.92) 100% );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* vignette soft (optionnel mais proche du ref) */
+.home .hero__media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient( 75% 80% at 35% 35%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.00) 55%, rgba(0,0,0,0.22) 100% );
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* Colonne contenu */
+.home .hero__content {
+    max-width: 720px;
+    z-index: 2;
 }
 
 .home .hero__title {
@@ -240,12 +307,12 @@ html, body {
     letter-spacing: -0.5px;
 }
 
-.home .hero__lead {enorz frr
+.home .hero__lead {
     margin: 0;
     font-size: clamp(16px, 1.3vw, 20px);
     line-height: 1.7;
     opacity: 0.85;
-    max-width: 420px;
+    max-width: 520px;
 }
 
 /* underline vert sous un mot */
@@ -265,6 +332,31 @@ html, body {
         border-radius: 999px;
         z-index: -1;
     }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .home .hero__inner {
+        padding: 0 22px;
+    }
+
+    .home .hero__inner--split {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .home .hero__media {
+        height: 360px;
+    }
+
+    .home .hero__media-img {
+        -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%);
+    }
+
+    .home .hero__lead {
+        max-width: 560px;
+    }
+}
+
 
 /* =========================================
    Hero marquee (défilement infini full width)
@@ -295,7 +387,7 @@ html, body {
     white-space: nowrap;
     width: max-content;
     animation: heroMarquee 22s linear infinite;
-    padding-left: 0; /* IMPORTANT : plus de padding */
+    padding-left: 0; /* pas de padding */
 }
 
     /* un item */
@@ -304,7 +396,6 @@ html, body {
         letter-spacing: 0.2px;
         color: rgba(255,255,255,0.78);
     }
-
 
 /* animation */
 @keyframes heroMarquee {
@@ -320,20 +411,16 @@ html, body {
 @media (max-width: 992px) {
     .hero__track {
         gap: 28px;
-        animation-duration: 18s;
-    }
-}
-
-/* responsive padding */
-@media (max-width: 992px) {
-    .hero__track {
-        padding-left: 22px;
-        gap: 28px;
-        animation-duration: 72s;
+        animation-duration: 28s;
+        padding-left: 0;
     }
 }
 
 
+/* =========================================
+   (Optionnel) Ancien bloc services (non utilisé)
+   ========================================= */
+/*
 .home .hero__services {
     max-width: 1320px;
     margin: 0 auto;
@@ -345,22 +432,7 @@ html, body {
     opacity: 0.28;
     font-size: 16px;
 }
-
-@media (max-width: 992px) {
-    .home .hero__inner {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 0 22px;
-    }
-
-    .home .hero__lead {
-        max-width: 560px;
-    }
-
-    .home .hero__services {
-        padding: 0 22px;
-    }
-}
+*/
 
 
 /* =========================================

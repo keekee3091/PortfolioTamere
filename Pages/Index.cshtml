@@ -6,30 +6,32 @@
 }
 
 <section class="hero">
-    <div class="hero__inner">
-        <div class="hero__left">
+    <div class="hero__inner hero__inner--split">
+
+        <!-- PHOTO -->
+        <div class="hero__media" aria-hidden="true">
+            <img src="~/images/profile.png" alt="" class="hero__media-img" />
+        </div>
+
+        <!-- TEXTE + CTA -->
+        <div class="hero__content">
             <h1 class="hero__title">
                 Je construis des<br />
                 expériences <span class="hero__underline">tech</span><br />
                 qui <span class="hero__underline">marquent</span>
             </h1>
-        </div>
 
-        <div class="hero__right">
-            <p class="hero__lead">
+            <p class="hero__lead mt-3">
                 Développement logiciel, architecture et performance.<br />
                 Des projets pensés pour être clairs, fiables et maintenables.
             </p>
 
             <div class="mt-4 d-flex flex-wrap gap-2">
-                <a asp-page="/Projects" class="btn btn-primary">
-                    Voir mon portfolio
-                </a>
-                <a asp-page="/Contact" class="btn btn-outline-primary">
-                    Me contacter
-                </a>
+                <a asp-page="/Projects" class="btn btn-primary">Voir mon portfolio</a>
+                <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
             </div>
         </div>
+
     </div>
 
     <div class="hero__footer">
