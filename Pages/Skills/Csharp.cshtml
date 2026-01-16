@@ -1,0 +1,393 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.CsharpModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">C#</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="d-flex align-items-center gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/CSharp" aria-label="Aller à la page C#">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/csharp.png"
+                         alt="Logo C#"
+                         class="skill-logo"
+                         style="transform: scale(1.55)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">C# — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    C# est un langage moderne et polyvalent : orienté objet, expressif, performant, conçu pour des applications robustes et maintenables.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="csharp_paradigmes"
+                    data-ach-title="Paradigmes & style C#"
+                    data-ach-subtitle="POO, patterns modernes, LINQ, null-safety, code lisible & maintenable">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-code-slash fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Paradigmes & style C#</h5>
+                            <p class="card-text text-muted mb-2">Multi-paradigme : POO + features modernes pour un code propre et robuste.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">POO</span>
+                                <span class="badge wd-badge wd-primary">Records</span>
+                                <span class="badge wd-badge wd-secondary">Pattern matching</span>
+                                <span class="badge wd-badge wd-secondary">LINQ</span>
+                                <span class="badge wd-badge wd-primary">Nullability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="async"
+                    data-ach-title="Asynchronisme"
+                    data-ach-subtitle="async/await, Task, annulation, orchestration d’I/O">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-lightning-charge fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Asynchronisme</h5>
+                            <p class="card-text text-muted mb-2">Gestion des tâches non-bloquantes et amélioration de la réactivité.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">async/await</span>
+                                <span class="badge wd-badge wd-secondary">Task</span>
+                                <span class="badge wd-badge wd-primary">WhenAll</span>
+                                <span class="badge wd-badge wd-accent">CancellationToken</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="concurrency"
+                    data-ach-title="Concurrence & performance"
+                    data-ach-subtitle="Thread-safety, parallélisme, réduction d’allocations, diagnostics">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-speedometer2 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Concurrence & performance</h5>
+                            <p class="card-text text-muted mb-2">Optimisation runtime : stabilité, charge, et réduction de latence.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Thread-safety</span>
+                                <span class="badge wd-badge wd-primary">TPL</span>
+                                <span class="badge wd-badge wd-accent">Parallel</span>
+                                <span class="badge wd-badge wd-primary">GC / Alloc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        C# est un langage de programmation moderne, orienté objet, développé par Microsoft et étroitement lié à la plateforme <a asp-page="/Skills/Dotnet">.NET</a>.
+                        Il permet de créer une grande variété d’applications : APIs, applications web (ASP.NET), services backend, outils internes et applications métier.
+                        Depuis son lancement au début des années 2000, C# a beaucoup évolué pour rester à la fois productif et performant, en intégrant des concepts comme LINQ,
+                        la programmation asynchrone (async/await), les génériques, ainsi qu’un écosystème très complet via NuGet et Visual Studio.
+                        <br />
+                        <br />
+                        En entreprise, C#/.NET est l’un des stacks les plus utilisés, notamment dans les contextes où l’on doit maintenir et faire évoluer des systèmes critiques
+                        sur le long terme. On le retrouve très souvent dans des SI métiers (CRM, backoffice, facturation, outils internes) connectés à des bases comme SQL Server, avec des besoins forts
+                        en stabilité, en sécurité, en traçabilité et en performance. Cette popularité s’explique par la maturité du framework, la qualité de l’outillage et la capacité de .NET à s’intégrer
+                        facilement dans des environnements existants.
+                        <br />
+                        <br />
+                        C# est également adopté à grande échelle par de nombreuses entreprises, aussi bien dans la finance, l’industrie, que les services numériques. Son écosystème s’est
+                        modernisé et permet aujourd’hui de construire des applications scalables et performantes, tout en conservant une forte compatibilité avec les applications plus anciennes.
+                        C’est précisément cette capacité à gérer le legacy tout en restant évolutif qui rend C# très pertinent dans un environnement professionnel.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec C# (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon usage concret de C# s’est construit progressivement, avec un vrai point de bascule : le moment où je suis passé d’un
+                        C# “académique / projet” à du C# “production” sur un outil métier critique utilisé tous les jours.
+                        <br />
+                        <br />
+                        En parallèle de mon parcours académique en ingénierie logicielle, j’ai renforcé mes bases sur les principes structurants du langage
+                        (POO, architecture, gestion des exceptions, tests, asynchronisme). Mais c’est surtout en entreprise que j’ai acquis les réflexes essentiels 
+                        : comprendre un legacy, livrer sans casser, diagnostiquer des lenteurs réelles, et fiabiliser des flux métier qui ont des conséquences directes (facturation, conformité, relances, statuts clients).
+                        <br />
+                        <br />
+                        Mon expérience la plus formatrice en C#/.NET s’est faite sur un CRM BackOffice en production, au cœur des opérations : gestion client, facturation, suivi interne, et processus de conformité (KYC).
+                        L’application reposait sur un stack typique des SI historiques : ASP.NET WebForms, VB.NET / .NET, SQL Server, et des composants Telerik (RadGrid, RadFilter, RadWindow).
+                        <br />
+                        <br />
+                        Le contexte était exigeant : pas question de “tout réécrire”. Il fallait stabiliser, corriger, et moderniser par touches, tout en garantissant la continuité d’activité. Très rapidement, 
+                        j’ai dû adopter une posture orientée fiabilité : comprendre les flux de bout en bout (UI → code serveur → SQL), identifier les écrans critiques, et traiter ce qui avait le plus d’impact en production.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon C# aujourd’hui : moderne, structuré, orienté robustesse</span></h3>
+                    <hr />
+                    <p>
+                        L’utilisation quotidienne de C#/.NET dans un environnement professionnel m’a permis d’acquérir un niveau solide, me rendant autonome sur la majorité des interventions courantes : analyse de bugs, corrections, refactorisations ciblées, évolutions métier, et optimisation des performances (notamment en interaction avec SQL Server).
+                        <br />
+                        <br />
+                        Cependant, je reconnais qu’il me reste encore beaucoup à approfondir, en particulier sur les meilleures pratiques “modern .NET” et l’industrialisation : tests automatisés plus systématiques, patterns d’architecture plus avancés, et stratégies de migration progressive depuis un socle legacy (WebForms) vers des architectures plus modernes (APIs, découplage, services). C’est justement ce qui rend la progression intéressante : C# est un langage riche et l’écosystème .NET couvre un spectre très large de pratiques et d’outils.
+                        <br />
+                        <br />
+                        À mon avis, C# est particulièrement puissant dans les contextes où l’on doit livrer de la valeur métier tout en garantissant robustesse et maintenabilité. La courbe d’apprentissage est relativement accessible quand on a déjà des bases en programmation objet, mais le vrai niveau se construit avec l’expérience : comprendre les performances, la gestion de l’état, la dette technique, et les contraintes de production.
+                        <br />
+                        <br />
+                        Avec le temps, j’ai pris l’habitude d’utiliser C# non seulement pour “coder une feature”, mais pour structurer une base saine : séparation des responsabilités, code lisible, modèles propres, et patterns modernes quand ils apportent une vraie valeur (record, null-safety, pattern matching, async/await bien utilisé).
+
+                        C’est ça qui résume mon usage : je suis passé d’un C# “école / projet” à un C# “production” où chaque ligne a un impact sur la stabilité, la performance, et la maintenabilité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="csharp_paradigmes">
+        <p><strong>Paradigmes :</strong> C# est multi-paradigme : POO (classes, interfaces, polymorphisme) et approche “fonctionnelle” via immutabilité, expressions, lambdas et pattern matching.</p>
+        <ul>
+            <li><strong>POO propre :</strong> encapsulation, composition > héritage, interfaces fines, séparation des responsabilités.</li>
+            <li><strong>Features modernes :</strong> <code>record</code>/<code>record struct</code>, <code>init</code>, pattern matching (<code>switch</code> expressions), <code>required</code> (selon version), expressions-bodied members.</li>
+            <li><strong>Code sûr :</strong> Nullable Reference Types (<code>string?</code>, <code>??</code>, <code>?.</code>), gestion d’erreurs cohérente (exceptions/validation) et conventions de nommage.</li>
+            <li><strong>Style déclaratif :</strong> LINQ pour projection/filtrage/agrégation, en gardant le contrôle sur la lisibilité et les allocations en “hot-path”.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> code plus lisible, moins de bugs (null/edge cases), architecture plus cohérente et maintenance facilitée.</p>
+    </div>
+
+    <div data-ach-id="async">
+        <p><strong>Objectif :</strong> rendre l’application plus fluide en évitant les appels bloquants (I/O) et en structurant correctement les traitements asynchrones.</p>
+        <ul>
+            <li><strong>Patterns async :</strong> usage de <code>async/await</code> avec <code>Task</code>/<code>Task&lt;T&gt;</code>, en évitant les anti-patterns (sync-over-async, <code>async void</code>).</li>
+            <li><strong>Orchestration :</strong> parallélisation contrôlée via <code>Task.WhenAll</code>/<code>WhenAny</code>, regroupement de traitements indépendants pour réduire la latence globale.</li>
+            <li><strong>Annulation :</strong> propagation propre de <code>CancellationToken</code>, timeouts, et gestion des erreurs sans bloquer le thread UI.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> écrans plus réactifs, temps d’attente réduits et comportement plus stable lors des charges ou appels externes.</p>
+    </div>
+
+    <div data-ach-id="concurrency">
+        <p><strong>Objectif :</strong> fiabiliser l’exécution en environnement réel (multi-utilisateurs, gros volumes) en améliorant la gestion concurrente et les performances globales.</p>
+        <ul>
+            <li><strong>Concurrence :</strong> sécurisation d’accès aux ressources partagées (<code>lock</code>, <code>SemaphoreSlim</code>) et utilisation de collections thread-safe (<code>ConcurrentDictionary</code>).</li>
+            <li><strong>Parallélisme :</strong> exécution de traitements CPU-bound via TPL (<code>Task</code>, <code>Parallel</code>) en limitant le sur-parallélisme et les contentions.</li>
+            <li><strong>Performance :</strong> réduction des allocations, nettoyage des hot-path (LINQ trop coûteux, boxing), meilleure gestion des ressources (<code>IDisposable</code>, <code>using</code>) + diagnostic (timings, logs).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins de timeouts et de lenteurs, meilleure stabilité sous charge et exécution plus prédictible côté serveur.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+
