@@ -1,0 +1,389 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.DotnetModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">.NET</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Dotnet" aria-label="Aller à la page .NET">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/dotnet.png"
+                         alt="Logo .NET"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">.NET — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    .NET est une plateforme mature pour construire des applications robustes et scalables : APIs (ASP.NET Core), services backend, applications web, outils métiers,
+                    avec un écosystème complet (DI, EF Core, logging, tests, CI/CD) et d’excellentes performances runtime.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="dotnet_web"
+                    data-ach-title="Web & APIs"
+                    data-ach-subtitle="ASP.NET Core, Razor/Blazor, routing, auth, endpoints">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-globe2 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Web & APIs</h5>
+                            <p class="card-text text-muted mb-2">Construire des backends fiables et des interfaces web.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">ASP.NET Core</span>
+                                <span class="badge wd-badge wd-primary">Razor</span>
+                                <span class="badge wd-badge wd-secondary">Blazor</span>
+                                <span class="badge wd-badge wd-secondary">Auth</span>
+                                <span class="badge wd-badge wd-primary">REST</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="dotnet_data"
+                    data-ach-title="Data & persistance"
+                    data-ach-subtitle="EF Core, migrations, SQL Server, transactions, optimisation">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-database fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Data & persistance</h5>
+                            <p class="card-text text-muted mb-2">Accès données propre, cohérent et performant.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">EF Core</span>
+                                <span class="badge wd-badge wd-secondary">Migrations</span>
+                                <span class="badge wd-badge wd-accent">SQL Server</span>
+                                <span class="badge wd-badge wd-primary">Transactions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="dotnet_arch"
+                    data-ach-title="Architecture & industrialisation"
+                    data-ach-subtitle="DI, clean architecture, tests, logging, observabilité">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-diagram-3 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Architecture & industrialisation</h5>
+                            <p class="card-text text-muted mb-2">Base maintenable : séparation, tests, monitoring.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">DI</span>
+                                <span class="badge wd-badge wd-primary">Clean Arch</span>
+                                <span class="badge wd-badge wd-accent">Tests</span>
+                                <span class="badge wd-badge wd-primary">Logging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        .NET est une plateforme de développement créée par Microsoft, conçue pour construire des applications modernes, robustes et évolutives. Elle regroupe un ensemble complet d’outils, de bibliothèques et de runtimes permettant de développer aussi bien des APIs, des applications web (ASP.NET), des services backend, que des applications desktop ou des outils internes. Aujourd’hui, .NET est une technologie mature et largement adoptée, avec un écosystème riche (NuGet, Visual Studio) et des fonctionnalités clés comme l’asynchrone (async/await), l’injection de dépendances, les performances du runtime, et une intégration fluide avec les bases de données.
+                        <br />
+                        <br />
+                        En entreprise, .NET est extrêmement présent, notamment dans les systèmes d’information où la stabilité, la maintenabilité et l’intégration avec l’existant sont essentielles. On le retrouve souvent dans les environnements métiers critiques : CRM, backoffice, facturation, support, conformité, et applications internes connectées à SQL Server. L’un des grands avantages de .NET est sa capacité à évoluer progressivement : on peut maintenir des applications historiques tout en introduisant des améliorations ciblées (refactor, performance, découplage, modernisation), sans devoir réécrire tout le produit.
+                        <br />
+                        <br />
+                        Enfin, .NET est particulièrement apprécié pour son équilibre entre productivité et fiabilité : typage fort, outillage complet, structuration claire des projets, et frameworks stables pour livrer des fonctionnalités rapidement dans des environnements professionnels.
+                        <br />
+                        <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec .NET (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience la plus concrète avec .NET s’est construite dans un contexte de CRM Backoffice métier critique en production, utilisé quotidiennement par les équipes internes. Ce CRM centralisait des modules clés : gestion client, support, facturation, conformité/KYC, gestion documentaire et plusieurs workflows opérationnels.
+                        <br />
+                        <br />
+                        Le socle était historique et représentatif de nombreux SI d’entreprise : ASP.NET WebForms, VB.NET / .NET, SQL Server et une forte dépendance à des composants UI Telerik (RadGrid, RadFilter, RadWindow). L’objectif n’était pas une réécriture, mais une approche plus réaliste et exigeante : fiabiliser l’existant, améliorer la performance, corriger les comportements instables et préparer progressivement le terrain pour des évolutions futures.
+                        <br />
+                        <br />
+                        Dès le début, j’ai dû comprendre comment les différentes couches interagissaient : la logique serveur .NET (événements WebForms, validations, postbacks), l’état (ViewState), et le SQL sous-jacent. Une partie importante de mon travail a consisté à résoudre des problèmes de performance et de stabilité sur des écrans à gros volume (grilles Telerik, filtres avancés, exports). J’ai utilisé une démarche de diagnostic rigoureuse : identifier les requêtes critiques via SQL Profiler / plans d’exécution, puis agir au bon endroit (optimisation SQL, corrections de bindings Telerik, refactorisations ciblées côté code).
+                        <br />
+                        <br />
+                        En parallèle, j’ai contribué à la solidité de modules métiers sensibles. Sur le volet KYC, l’enjeu était la cohérence des statuts et des documents, avec une traçabilité claire pour la conformité. Sur le volet facturation, il fallait sécuriser les workflows, corriger des écarts, fiabiliser les calculs automatiques et stabiliser les exports. Enfin, sur la partie support, j’ai amélioré la réactivité des recherches et de l’affichage pour augmenter l’efficacité opérationnelle.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon .NET aujourd’hui : approche moderne, stable et maintenable</span></h3>
+                    <hr />
+                    <p>
+                        L’utilisation quotidienne de .NET en environnement professionnel m’a permis d’acquérir un niveau intermédiaire solide, me rendant autonome sur la plupart des tâches concrètes : analyse de bugs, correction, refactorisations ciblées, évolutions fonctionnelles et stabilisation d’écrans en production.
+                        <br />
+                        <br />
+                        Je suis également à l’aise dans les problématiques de performance liées au duo .NET + SQL Server : comprendre les impacts des requêtes sur l’expérience utilisateur, optimiser les points critiques, et rendre un système plus stable sans casser les usages.
+                        <br />
+                        <br />
+                        Cependant, je considère qu’il me reste une marge de progression importante sur les pratiques les plus modernes de l’écosystème .NET : montée en puissance sur les architectures plus découplées, les tests automatisés systématiques, et les approches de migration progressive vers des patterns plus standards (APIs, services, séparation claire des couches).
+                        <br />
+                        <br />
+                        À mon avis, .NET est une plateforme extrêmement complète et fiable, particulièrement adaptée aux systèmes métiers exigeants. Personnellement, je continue à renforcer mes compétences en .NET au quotidien, avec l’objectif d’aller vers des projets plus modernes et plus industrialisés, tout en gardant la capacité à intervenir efficacement sur des systèmes legacy en production.
+                        <br />
+                        <br />
+                        C’est ce terrain qui m’a formé : comprendre un socle existant, diagnostiquer, corriger, moderniser progressivement, et livrer des évolutions propres. Aujourd’hui, .NET est un pilier de mon profil, parce qu’il me permet de construire et maintenir des applications métiers robustes, évolutives, et industrialisables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="dotnet_web">
+        <p><strong>Objectif :</strong> livrer des applications web et APIs stables, sécurisées et faciles à faire évoluer.</p>
+        <ul>
+            <li><strong>ASP.NET Core :</strong> endpoints REST, routing, validation, middleware et gestion des erreurs.</li>
+            <li><strong>UI :</strong> pages Razor / Blazor selon le besoin (composants, state, forms), intégration Bootstrap.</li>
+            <li><strong>Sécurité :</strong> authentification/autorisation (policies/roles), protections de base et bonnes pratiques.</li>
+            <li><strong>Qualité :</strong> conventions, structuration claire des couches (controllers/services), DTOs propres.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> livraison plus rapide, code plus lisible, et évolutions métier plus sûres.</p>
+    </div>
+
+    <div data-ach-id="dotnet_data">
+        <p><strong>Objectif :</strong> garantir une persistance cohérente et performante, notamment sur SQL Server.</p>
+        <ul>
+            <li><strong>EF Core :</strong> mapping, requêtes LINQ maîtrisées, tracking/no-tracking, migrations et gestion du schéma.</li>
+            <li><strong>Transactions :</strong> cohérence des opérations multi-étapes, gestion des erreurs et rollback.</li>
+            <li><strong>Performance :</strong> réduction des N+1, requêtes ciblées, pagination, indexation côté SQL si nécessaire.</li>
+            <li><strong>Interop :</strong> usage ponctuel de SQL brut / procédures stockées quand la perf ou la logique l’exige.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins de régressions data, meilleures perfs et comportement plus prédictible.</p>
+    </div>
+
+    <div data-ach-id="dotnet_arch">
+        <p><strong>Objectif :</strong> construire une base industrialisable, maintenable, et adaptée au long terme.</p>
+        <ul>
+            <li><strong>DI :</strong> injection de dépendances, lifetimes maîtrisés, services testables et découplés.</li>
+            <li><strong>Architecture :</strong> séparation des responsabilités (domain/services/infra), patterns quand utiles (CQRS léger, etc.).</li>
+            <li><strong>Tests :</strong> unit tests / tests d’intégration, validations des cas critiques avant livraison.</li>
+            <li><strong>Observabilité :</strong> logs structurés, métriques basiques, et diagnostic en production.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> évolutions plus rapides, dette réduite, et meilleure stabilité en production.</p>
+    </div>
+
+</div>
+
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+

@@ -1,0 +1,386 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.SqlModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">SQL</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Sql" aria-label="Aller à la page SQL">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/sql.png"
+                         alt="Logo SQL"
+                         class="skill-logo"
+                         style="transform: scale(1.75)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">SQL — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    SQL est le langage de référence pour interroger, structurer et optimiser les données : requêtes complexes, reporting, procédures stockées, et amélioration des performances sur des bases critiques (ex : SQL Server).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="sql_querying"
+                    data-ach-title="Requêtes & analyse"
+                    data-ach-subtitle="SELECT complexes, JOIN, agrégations, CTE, window functions">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-search fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Requêtes & analyse</h5>
+                            <p class="card-text text-muted mb-2">Extraction fiable des données métier et requêtes lisibles.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">JOIN</span>
+                                <span class="badge wd-badge wd-primary">CTE</span>
+                                <span class="badge wd-badge wd-secondary">GROUP BY</span>
+                                <span class="badge wd-badge wd-secondary">Window</span>
+                                <span class="badge wd-badge wd-primary">Filtering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="sql_perf"
+                    data-ach-title="Performance & tuning"
+                    data-ach-subtitle="indexation, plans d’exécution, refactor, réduction de latence">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-speedometer2 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Performance & tuning</h5>
+                            <p class="card-text text-muted mb-2">Optimisation pour écrans critiques et gros volumes.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Indexes</span>
+                                <span class="badge wd-badge wd-secondary">Execution plan</span>
+                                <span class="badge wd-badge wd-accent">Profiler</span>
+                                <span class="badge wd-badge wd-primary">Refactor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="sql_modeling"
+                    data-ach-title="Modélisation & intégrité"
+                    data-ach-subtitle="schéma, clés, contraintes, normalisation, transactions">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-diagram-3 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Modélisation & intégrité</h5>
+                            <p class="card-text text-muted mb-2">Données cohérentes, relations propres, règles garanties.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">PK/FK</span>
+                                <span class="badge wd-badge wd-primary">Constraints</span>
+                                <span class="badge wd-badge wd-accent">Transactions</span>
+                                <span class="badge wd-badge wd-primary">Normalization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        SQL (Structured Query Language) est un langage standard utilisé pour interroger, manipuler et structurer des données dans des bases relationnelles. Créé dans les années 1970, il est devenu un pilier de l’informatique d’entreprise, car il permet de gérer efficacement de grands volumes d’informations : clients, factures, transactions, statuts métier, historiques, logs, etc. SQL ne sert pas uniquement à “faire des requêtes”, il joue un rôle central dans la fiabilité, la performance et la cohérence d’un système d’information.                     
+                        <br />
+                        <br />
+                        En entreprise, SQL est omniprésent. La plupart des applications métiers reposent sur une base de données relationnelle (souvent SQL Server, PostgreSQL ou MySQL), car ce modèle garantit des propriétés essentielles : intégrité des données, transactions, contraintes, relations, et requêtes puissantes. Dans un SI réel, SQL est aussi étroitement lié à la performance : une application peut être très bien codée côté backend, mais si les requêtes sont mal optimisées, l’expérience utilisateur se dégrade immédiatement (latence, timeouts, écrans “lents”).
+                        <br />
+                        <br />
+                        SQL est particulièrement omniprésent dans les outils métiers (CRM, backoffice, facturation, reporting), parce qu’on y manipule des volumes conséquents, des règles de cohérence strictes, et des besoins d’audit / traçabilité. Dans ces contextes, le travail sur SQL a un impact direct sur le quotidien des utilisateurs : temps de chargement, exports, recherches, filtres, et stabilité globale.
+                        <br />                        
+                        <br />
+                        SQL est également indispensable pour toutes les problématiques de reporting, de contrôle, et d’exploitation : exports, dashboards, analyses, rapprochements. C’est donc une compétence transversale, à la fois technique et métier, qui impacte directement la qualité et la stabilité d’un produit.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec SQL (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience la plus concrète en SQL s’est construite dans un contexte de CRM Backoffice métier critique en production. Le système s’appuyait fortement sur SQL Server pour alimenter des écrans à gros volume, des grilles Telerik (RadGrid), des filtres avancés, des exports Excel/PDF, ainsi que des workflows sensibles (KYC, facturation, support). Très vite, j’ai compris que SQL n’était pas un “détail technique”, mais un élément central de la stabilité quotidienne de l’outil.              
+                        <br />
+                        <br />
+                        Au départ, les problèmes étaient typiques d’un SI legacy : certaines pages mettaient trop longtemps à charger, des recherches faisaient exploser les temps de réponse, des exports devenaient instables et des timeouts apparaissaient sur des écrans fortement sollicités. Dans ce type de situation, corriger uniquement côté application ne suffit pas : il faut aller chercher la cause dans les requêtes elles-mêmes.  
+                        <br />
+                        <br />
+                        J’ai donc appris à diagnostiquer proprement : identifier les requêtes dominantes, lire et interpréter les plans d’exécution, repérer les scans inutiles, les conversions implicites, les jointures coûteuses, et les paramètres qui cassent l’optimisation. Pour cela, j’ai utilisé des outils comme SQL Profiler et des analyses de performance plus ciblées pour mesurer l’impact réel des modifications.                    
+                        <br />
+                        <br />
+                        Une fois les causes identifiées, j’ai mené des optimisations concrètes : ajout d’index adaptés, réécriture de requêtes trop lourdes, refactorisation de jointures, amélioration de vues et procédures stockées, et correction de requêtes générées par certains composants (notamment Telerik) qui pouvaient produire des SQL inefficaces. Cette approche m’a permis d’améliorer la réactivité des écrans critiques, de réduire les erreurs récurrentes et de fiabiliser les exports, tout en stabilisant les parcours utilisateurs côté support et facturation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon SQL aujourd’hui : pragmatique, orienté production</span></h3>
+                    <hr />
+                    <p>
+                        L’utilisation quotidienne de SQL, notamment sur SQL Server en environnement de production, m’a permis d’acquérir un niveau intermédiaire solide. Je suis autonome sur la majorité des besoins classiques : requêtes complexes, jointures, agrégations, sous-requêtes, optimisation de filtres, et diagnostic des problèmes de performance sur des écrans métiers.           
+                        <br />
+                        <br />
+                        Je suis également à l’aise avec une approche “performance-oriented” : analyser les requêtes dominantes, identifier ce qui coûte réellement, et proposer des optimisations pragmatiques (indexation, simplification, refactor). C’est une compétence qui se construit surtout avec l’expérience, car on apprend à reconnaître les patterns qui rendent un SQL fragile ou lent dans le temps.    
+                        <br />
+                        <br />
+                        Cependant, je considère qu’il me reste encore une marge de progression importante sur des sujets plus avancés : tuning approfondi, stratégies d’indexation à grande échelle, optimisation fine sur très gros volumes, partitionnement, et industrialisation des requêtes critiques dans une logique d’exploitation long terme.              
+                        <br />
+                        <br />
+                        À mon avis, SQL est une compétence incontournable, particulièrement dans les systèmes métiers complexes. Quand il est maîtrisé, il permet non seulement d’améliorer la performance, mais aussi de rendre une application plus stable, plus fiable, et plus facile à maintenir. Personnellement, je continue à renforcer ma pratique SQL en travaillant sur des cas réels (CRM, exports, reporting) et en cherchant à systématiser les bonnes pratiques de performance et de qualité de données.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="sql_querying">
+        <p><strong>Objectif :</strong> construire des requêtes fiables et lisibles pour alimenter des écrans métier, exports, et reportings.</p>
+        <ul>
+            <li><strong>Requêtes complexes :</strong> <code>JOIN</code> multi-tables, filtrage avancé, agrégations, sous-requêtes quand nécessaire.</li>
+            <li><strong>Structuration :</strong> usage de <code>CTE</code> pour clarifier la logique et faciliter la maintenance.</li>
+            <li><strong>Analytique :</strong> fonctions de fenêtrage (<code>ROW_NUMBER</code>, <code>SUM() OVER</code>, etc.) pour éviter des requêtes trop lourdes ou répétitives.</li>
+            <li><strong>Robustesse :</strong> gestion propre des dates, des valeurs <code>NULL</code>, et cohérence des règles de filtrage.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> requêtes plus claires, moins d’erreurs métier, et données exploitables rapidement.</p>
+    </div>
+
+    <div data-ach-id="sql_perf">
+        <p><strong>Objectif :</strong> réduire la latence et améliorer la stabilité sur des requêtes exécutées en continu en production.</p>
+        <ul>
+            <li><strong>Diagnostic :</strong> analyse des plans d’exécution, détection des scans inutiles et des jointures coûteuses.</li>
+            <li><strong>Indexation :</strong> création / ajustement d’index ciblés (incluant colonnes clés) selon les patterns de requêtes réels.</li>
+            <li><strong>Refactor :</strong> simplification de requêtes, suppression de calculs redondants, remplacement de patterns coûteux (ex: fonctions sur colonnes filtrées).</li>
+            <li><strong>Outils :</strong> usage de SQL Profiler / logs pour identifier les requêtes les plus fréquentes et les plus lentes.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> écrans plus rapides, timeouts réduits, et performances plus prédictibles sur gros volumes.</p>
+    </div>
+
+    <div data-ach-id="sql_modeling">
+        <p><strong>Objectif :</strong> garantir une base cohérente et évolutive, alignée avec les besoins métier.</p>
+        <ul>
+            <li><strong>Relations :</strong> définition des clés primaires/étrangères, cardinalités et contraintes d’intégrité.</li>
+            <li><strong>Transactions :</strong> sécurisation des opérations multi-étapes (cohérence, rollback en cas d’erreur).</li>
+            <li><strong>Qualité des données :</strong> contraintes <code>NOT NULL</code>, <code>CHECK</code>, règles de validation et valeurs par défaut.</li>
+            <li><strong>Évolutivité :</strong> schéma maintenable, structuration claire, normalisation quand utile (et dénormalisation raisonnée si besoin perf).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins d’incohérences, base plus stable et meilleure maintenabilité sur le long terme.</p>
+    </div>
+
+</div>
+
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+

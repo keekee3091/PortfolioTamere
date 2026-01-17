@@ -1,0 +1,387 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.CppModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">C++</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="d-flex align-items-center gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Cpp" aria-label="Aller à la page C#">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/cpp.png"
+                         alt="Logo C++"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">C++ — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    C++ est un langage bas niveau et très performant, utilisé pour construire des systèmes critiques : trading, calculs temps réel, moteurs de pricing, et applications à forte contrainte de latence.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="cpp_paradigmes"
+                    data-ach-title="Paradigmes & style C++"
+                    data-ach-subtitle="RAII, templates, STL, const-correctness, code moderne et maintenable">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-code-slash fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Paradigmes & style C++</h5>
+                            <p class="card-text text-muted mb-2">Contrôle fin, performance, et robustesse via les idiomes modernes.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">RAII</span>
+                                <span class="badge wd-badge wd-primary">STL</span>
+                                <span class="badge wd-badge wd-secondary">Templates</span>
+                                <span class="badge wd-badge wd-secondary">const</span>
+                                <span class="badge wd-badge wd-primary">Move semantics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="cpp_memory"
+                    data-ach-title="Mémoire & ressources"
+                    data-ach-subtitle="ownership, smart pointers, allocations, lifetime, erreurs classiques">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-memory fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Mémoire & ressources</h5>
+                            <p class="card-text text-muted mb-2">Gestion maîtrisée des ressources : sécurité, stabilité, performance.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">unique_ptr</span>
+                                <span class="badge wd-badge wd-secondary">shared_ptr</span>
+                                <span class="badge wd-badge wd-primary">Allocations</span>
+                                <span class="badge wd-badge wd-accent">Lifetime</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="cpp_perf"
+                    data-ach-title="Concurrence & performance"
+                    data-ach-subtitle="threads, atomics, lock-free basics, latence, profiling">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-speedometer2 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Concurrence & performance</h5>
+                            <p class="card-text text-muted mb-2">Optimisation bas niveau : latence, débit, et exécution prédictible.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">std::thread</span>
+                                <span class="badge wd-badge wd-primary">mutex</span>
+                                <span class="badge wd-badge wd-accent">atomics</span>
+                                <span class="badge wd-badge wd-primary">Profiling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                       <p>
+                        C++ est un langage de programmation compilé, reconnu pour ses performances élevées et son contrôle très fin des ressources (mémoire, CPU, allocations). Né au début des années 1980, il a été conçu comme une extension du langage C, en y ajoutant la programmation orientée objet, puis au fil du temps des fonctionnalités modernes (templates avancés, STL, smart pointers, programmation générique, concurrence). Aujourd’hui, C++ reste une référence quand il s’agit de construire des logiciels où la rapidité, la latence et l’optimisation sont des critères critiques.
+                        <br />
+                        <br />
+                        En entreprise, C++ est largement utilisé dans les secteurs où la performance est non négociable : systèmes embarqués, jeux vidéo, moteurs de calcul, traitement d’images, et surtout dans la finance de marché (trading électronique, market data, pricing à faible latence). Sa popularité s’explique par sa capacité à produire du code extrêmement rapide et prévisible, ce qui est essentiel lorsqu’une application doit répondre en quelques millisecondes, traiter un gros volume de données ou s’exécuter sous des contraintes strictes.
+                        <br />
+                        <br />
+                        Contrairement à des langages plus “productifs”, C++ impose une discipline forte : gestion de la mémoire, ownership, coûts implicites (copies, allocations), et choix explicites de modèles de concurrence. C’est aussi ce qui en fait une arme redoutable : quand il est bien utilisé, C++ permet de construire des composants ultra efficaces, capables de traiter de gros volumes, en multi-thread, avec une stabilité excellente.
+                        <br />
+                        <br />
+                        C++ est aussi un langage très présent dans les architectures “core” : on l’utilise pour construire les briques bas niveau d’un système, puis on expose ensuite ces briques à des couches plus haut niveau via des APIs. C’est un langage exigeant, mais c’est aussi ce qui lui donne sa puissance : lorsqu’il est bien maîtrisé, il permet de construire des applications très efficaces et durables.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec C++ (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Lorsque j’ai commencé à m’intéresser sérieusement à C++, mes premières bases venaient surtout de mon parcours académique et de ma culture algorithmique. Je comprenais la logique du langage, mais je n’avais pas encore l’habitude de l’utiliser dans des contextes “production” ou orientés performance. Progressivement, C++ est devenu pour moi un outil complémentaire, particulièrement pertinent dès qu’on parle de calcul, optimisation et structures de données, ce qui correspond naturellement à mes sujets d’intérêt en finance et en ingénierie logicielle.
+                        <br />
+                        <br />
+                        Une grande partie de ma progression s’est faite en cherchant à reproduire des problématiques réelles : gestion de performances, maîtrise des coûts de calcul, et manipulation efficace de flux de données. Contrairement à des langages plus “haut niveau”, C++ oblige à être rigoureux : allocations mémoire, copies inutiles, références, const-correctness… Chaque détail compte. C’est précisément ce qui m’a fait progresser : apprendre à écrire un code plus précis, mieux structuré, et plus proche du fonctionnement réel de la machine.
+                        <br />
+                        <br />
+                        Dans mes travaux et projets orientés finance quantitative, C++ m’a intéressé pour sa capacité à accélérer des calculs comme le pricing (options, simulations), la génération de scénarios ou les boucles intensives. Même lorsque le projet final est exposé via une interface plus accessible, C++ reste très utile pour construire le “moteur” performant derrière. Cette logique de séparation entre une couche “core” optimisée et une couche d’usage plus simple correspond bien aux systèmes qu’on retrouve en trading ou en risk-tech.
+                        <br />
+                        <br />
+                        Au fil du temps, j’ai également appris à apprécier l’écosystème C++ : la STL pour manipuler proprement des collections, l’importance d’écrire du code sûr (smart pointers), et l’usage du multithreading lorsque la performance devient un facteur central. Même si le langage peut être plus difficile à appréhender qu’un langage managé, il apporte une vraie valeur dès qu’on travaille sur des composants critiques.
+                     
+                </div>
+            </div>
+        </div>
+      
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon C++ aujourd’hui : performance sans perdre la lisibilité</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère avoir un niveau avancé en C++. Je suis capable de développer des composants solides, comprendre et optimiser des traitements, et structurer un code propre autour de bonnes pratiques modernes (STL, RAII, smart pointers, séparation des responsabilités). Je peux également analyser les performances d’un traitement, repérer des points de friction (copies inutiles, allocations, boucles coûteuses) et améliorer l’efficacité.                      
+                        <br />
+                        <br />
+                        Cependant, C++ est un langage vaste et il me reste encore beaucoup à approfondir, notamment sur les aspects les plus avancés : optimisation bas niveau plus poussée, concurrence complexe, modèles mémoire, et design de systèmes très “low latency”. C’est justement ce qui rend C++ intéressant : on peut toujours aller plus loin, et chaque progrès se traduit par une meilleure compréhension du fonctionnement interne d’un programme.                     
+                        <br />
+                        <br />
+                        À mon avis, C++ est un langage extrêmement puissant, particulièrement adapté aux domaines exigeants comme le trading électronique, la market data ou les moteurs de calcul quantitatif. La courbe d’apprentissage est plus exigeante que sur des langages managés, mais elle apporte en retour une vraie maîtrise de la performance et de la qualité d’exécution.
+                        <br />
+                        <br />
+                        Personnellement, je continue à renforcer mes compétences en C++ en l’utilisant comme un outil de performance pour mes projets orientés finance, et en approfondissant progressivement les bonnes pratiques modernes. Mon objectif à terme est d’atteindre un niveau avancé me permettant de contribuer sur des systèmes critiques, performants et fortement orientés optimisation (pricing, risk engines, low latency).
+                        <br />
+                        <br />
+                        C’est exactement le type de compétence qui complète bien mon profil : je peux livrer des systèmes métiers en environnement .NET, mais aussi construire des composants de calcul ou de performance en C++ quand le besoin l’exige.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="cpp_paradigmes">
+        <p><strong>Paradigmes :</strong> C++ combine performance et expressivité : programmation orientée objet, générique (templates) et bas niveau quand nécessaire.</p>
+        <ul>
+            <li><strong>Style moderne :</strong> préférence pour C++11+ (initialisation uniforme, <code>auto</code> quand pertinent, range-based for, <code>constexpr</code> si utile).</li>
+            <li><strong>Généricité :</strong> templates + STL pour produire du code réutilisable, tout en gardant une complexité contrôlée.</li>
+            <li><strong>Fiabilité :</strong> const-correctness, invariants clairs, et séparation “API publique / détails d’implémentation”.</li>
+            <li><strong>Qualité :</strong> conventions propres, compilation stricte (warnings), et attention aux comportements indéfinis.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> code solide, maintenable, performant, avec une meilleure maîtrise des coûts runtime.</p>
+    </div>
+
+    <div data-ach-id="cpp_memory">
+        <p><strong>Objectif :</strong> sécuriser la gestion mémoire et garantir des applications stables (éviter fuites, double free, dangling pointers).</p>
+        <ul>
+            <li><strong>RAII :</strong> gestion automatique des ressources via scope (fichiers, sockets, mutex, mémoire), destruction déterministe.</li>
+            <li><strong>Ownership :</strong> <code>std::unique_ptr</code> par défaut, <code>std::shared_ptr</code> seulement si partage réel, éviter les cycles.</li>
+            <li><strong>Allocations :</strong> limiter <code>new/delete</code>, privilégier les containers STL et pré-réserver quand nécessaire (<code>reserve</code>).</li>
+            <li><strong>Lifetimes :</strong> références/pointeurs non-owning clairs, attention aux vues (<code>string_view</code>) et à la durée de vie associée.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins de bugs difficiles à diagnostiquer et une exécution plus fiable en production.</p>
+    </div>
+
+    <div data-ach-id="cpp_perf">
+        <p><strong>Objectif :</strong> obtenir une exécution prédictible sous charge et optimiser les chemins critiques (latence / throughput).</p>
+        <ul>
+            <li><strong>Multithreading :</strong> usage de <code>std::thread</code>, <code>std::mutex</code>, <code>std::lock_guard</code>, et gestion propre des sections critiques.</li>
+            <li><strong>Synchronisation :</strong> évitement des contentions, réduction du lock time, et compréhension des coûts de synchronisation.</li>
+            <li><strong>Atomics :</strong> bases de <code>std::atomic</code> pour des compteurs / flags thread-safe, sans sur-structurer inutilement.</li>
+            <li><strong>Profiling :</strong> mesure avant optimisation (timings, CPU hotspots), puis actions ciblées (allocations, copies, cache locality).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins de latence, meilleures performances et comportement stable sur des workloads intensifs.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+

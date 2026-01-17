@@ -1,0 +1,386 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.DockerModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">Docker</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Docker" aria-label="Aller à la page Docker">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/docker.png"
+                         alt="Logo Docker"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">.NET — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    Docker permet d’isoler et reproduire les environnements d’exécution : conteneurisation d’applications, dépendances maîtrisées,
+                    déploiements plus fiables, et workflows dev/prod homogènes (images, registries, Compose).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="docker_images"
+                    data-ach-title="Images & Dockerfile"
+                    data-ach-subtitle="multi-stage builds, layers, base images, optimisation taille">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-box-seam fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Images & Dockerfile</h5>
+                            <p class="card-text text-muted mb-2">Builds reproductibles et images légères.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Dockerfile</span>
+                                <span class="badge wd-badge wd-primary">Multi-stage</span>
+                                <span class="badge wd-badge wd-secondary">Layers</span>
+                                <span class="badge wd-badge wd-secondary">Caching</span>
+                                <span class="badge wd-badge wd-primary">Slim images</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="docker_compose"
+                    data-ach-title="Docker Compose"
+                    data-ach-subtitle="services, networks, volumes, env, orchestration locale">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-diagram-2 fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Docker Compose</h5>
+                            <p class="card-text text-muted mb-2">Stacks locales prêtes à l’emploi (app + DB + outils).</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">compose.yml</span>
+                                <span class="badge wd-badge wd-secondary">Volumes</span>
+                                <span class="badge wd-badge wd-accent">Networks</span>
+                                <span class="badge wd-badge wd-primary">Env vars</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="docker_ops"
+                    data-ach-title="Run & troubleshooting"
+                    data-ach-subtitle="ports, logs, healthchecks, debugging, best practices">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-wrench-adjustable fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Run & troubleshooting</h5>
+                            <p class="card-text text-muted mb-2">Exécution stable et diagnostic rapide en cas de souci.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Ports</span>
+                                <span class="badge wd-badge wd-primary">Logs</span>
+                                <span class="badge wd-badge wd-accent">Healthcheck</span>
+                                <span class="badge wd-badge wd-primary">Debug</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        Docker est une technologie de conteneurisation qui permet d’exécuter une application avec tout son environnement (runtime, dépendances, configuration) de manière isolée et reproductible. L’objectif principal est de résoudre un problème très courant en développement : <em>“ça marche sur ma machine, mais pas ailleurs”</em>. Avec Docker, on encapsule l’application dans une image qui pourra tourner de façon identique sur un poste développeur, un serveur, ou une plateforme cloud.   
+                        <br />
+                        <br />
+                        En entreprise, Docker est largement utilisé car il facilite la mise en place d’environnements stables, la standardisation des déploiements et l’intégration continue (CI/CD). Il est particulièrement utile dans les architectures modernes (microservices, APIs), mais aussi dans les projets internes où plusieurs composants doivent cohabiter (application + base de données + outils). Docker permet également d’accélérer le onboarding : au lieu de passer du temps à installer et configurer tout un environnement, on lance simplement un conteneur.
+                        <br />
+                        <br />
+                        Dans un contexte de développement moderne, Docker sert souvent à standardiser les environnements (dev/test/prod), à simplifier l’onboarding, à éviter les problèmes de versioning (SDK, outils, OS), et à orchestrer facilement des stacks complètes (ex : app + base SQL + Redis) via docker-compose. C’est particulièrement utile dès qu’on travaille sur des applications web, des APIs, ou des services qui dépendent d’une infrastructure.
+                        <br />
+                        <br />
+                        Docker est devenu un standard de l’industrie car il apporte un vrai gain de productivité : développement plus fluide, déploiements plus propres, environnements identiques, et meilleure maîtrise des dépendances. C’est un outil qui améliore autant la partie technique que l’organisation du delivery.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec Docker (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience avec Docker s’est construite progressivement, en lien direct avec mon besoin d’avoir des environnements de développement plus fiables, plus rapides à lancer et plus proches de la production. J’ai rapidement compris l’intérêt de Docker dès qu’un projet commence à dépendre de plusieurs briques : application web, API, base de données, services annexes. Sans conteneurisation, chaque configuration devient fragile, et la reproductibilité d’un environnement devient difficile.
+                        <br />
+                        <br />
+                        Dans ma pratique, Docker m’a permis de sécuriser deux points essentiels : la cohérence entre environnements et la facilité d’exécution. Par exemple, sur des projets web, il est fréquent d’avoir des différences entre le poste développeur et l’hébergement (ports, certificats, variables d’environnement, dépendances système). Docker permet de figer ces paramètres et de mieux maîtriser ce qui tourne réellement.
+                        <br />
+                        <br />
+                        J’ai également rencontré des cas très concrets où Docker force à être rigoureux : exposition des ports, configuration réseau, HTTPS vs HTTP en local, dépendances manquantes, ou encore différences entre le mode debug et le mode production. Ces situations m’ont appris à diagnostiquer proprement les problèmes : vérifier le mapping des ports, comprendre la chaîne de démarrage, analyser les logs, et corriger les erreurs de configuration.
+                        <br />
+                        <br />
+                        Enfin, Docker m’a aussi permis de structurer mes projets de manière plus “propre” : séparation claire des services, configuration via variables d’environnement, et mise en place d’une base solide pour pouvoir brancher ensuite des pipelines CI/CD. Même dans un usage simple, le fait de containeriser une application apporte une vraie discipline dans la façon de concevoir et déployer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon Docker aujourd’hui : pragmatique, orienté exécution fiable</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère avoir un niveau intermédiaire sur Docker. Je suis autonome pour containeriser une application, écrire un Dockerfile simple, gérer l’exposition de ports, manipuler les images/containers, et comprendre les erreurs classiques liées au runtime ou à la configuration. Je sais également mettre en place un environnement cohérent pour du développement local et m’assurer que le comportement reste reproductible.
+                        <br />
+                        <br />
+                        Cependant, Docker est un outil vaste et il me reste encore beaucoup à approfondir sur les usages plus avancés : orchestration (compose avancé, Kubernetes), optimisation des images (multi-stage builds, caching), sécurité, gestion fine des volumes, et intégration complète dans des pipelines de déploiement.
+                        <br />
+                        <br />
+                        Cependant, je considère qu’il me reste une marge de progression importante sur les pratiques les plus modernes de l’écosystème .NET : montée en puissance sur les architectures plus découplées, les tests automatisés systématiques, et les approches de migration progressive vers des patterns plus standards (APIs, services, séparation claire des couches).
+                        <br />
+                        <br />
+                        À mon avis, Docker est une compétence incontournable dans un contexte moderne : il ne remplace pas les compétences de développement, mais il permet de livrer plus proprement et plus vite. Personnellement, je continue à renforcer ma maîtrise de Docker en l’intégrant de plus en plus dans mes projets, avec l’objectif d’avoir des environnements de travail standardisés et des déploiements plus fiables.                   
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="docker_images">
+        <p><strong>Objectif :</strong> produire des images reproductibles, sécurisées et optimisées pour le déploiement.</p>
+        <ul>
+            <li><strong>Dockerfile :</strong> structuration claire (copy/build/run), bonnes pratiques et cohérence entre environnements.</li>
+            <li><strong>Multi-stage builds :</strong> séparation build/runtime pour réduire la taille et limiter la surface d’attaque.</li>
+            <li><strong>Performance :</strong> optimisation du cache (ordre des layers), limitation des dépendances et cleanup.</li>
+            <li><strong>Versioning :</strong> tags propres, base images maîtrisées, et compatibilité avec les registries.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> builds plus rapides, images plus petites et déploiements plus fiables.</p>
+    </div>
+
+    <div data-ach-id="docker_compose">
+        <p><strong>Objectif :</strong> orchestrer une stack complète en local (et parfois en CI) de manière simple et reproductible.</p>
+        <ul>
+            <li><strong>Services :</strong> définition des dépendances (API, DB, outils) et démarrage cohérent.</li>
+            <li><strong>Volumes :</strong> persistance des données (SQL/Postgres) et partage de fichiers si nécessaire.</li>
+            <li><strong>Réseau :</strong> communication inter-services via networks, noms DNS de services, isolation.</li>
+            <li><strong>Configuration :</strong> variables d’environnement, profils, et overrides selon contexte.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> onboarding plus rapide et environnement de dev standardisé.</p>
+    </div>
+
+    <div data-ach-id="docker_ops">
+        <p><strong>Objectif :</strong> exécuter et diagnostiquer rapidement les problèmes d’exécution en conteneur.</p>
+        <ul>
+            <li><strong>Réseau/ports :</strong> mapping des ports, compréhension du binding (0.0.0.0 vs localhost) et des collisions.</li>
+            <li><strong>Logs :</strong> lecture et interprétation des logs conteneur, niveaux, et signaux d’erreurs fréquentes.</li>
+            <li><strong>Healthchecks :</strong> endpoints de santé, readiness/liveness (selon besoin) pour fiabiliser le run.</li>
+            <li><strong>Debug :</strong> inspection (env, filesystem, processes), exec dans le conteneur, et résolution des cas courants.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins de “ça marche chez moi”, résolution plus rapide et exécution plus stable.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+

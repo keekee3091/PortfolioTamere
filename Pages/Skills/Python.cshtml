@@ -1,0 +1,388 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.PythonModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">Python</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Python" aria-label="Aller à la page SQL">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/python.png"
+                         alt="Logo Python"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">Python — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    Python est un langage polyvalent, très utilisé pour l’automatisation, la data et la finance : scripts ETL, analyse de données, backtesting, APIs, et prototypage rapide avec un écosystème riche (pandas, NumPy, scikit-learn).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="py_automation"
+                    data-ach-title="Automatisation & scripting"
+                    data-ach-subtitle="scripts, parsing, batch, ETL léger, intégrations">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-gear fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Automatisation & scripting</h5>
+                            <p class="card-text text-muted mb-2">Gagner du temps sur les tâches répétitives et fiabiliser les workflows.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Scripting</span>
+                                <span class="badge wd-badge wd-primary">ETL</span>
+                                <span class="badge wd-badge wd-secondary">Parsing</span>
+                                <span class="badge wd-badge wd-secondary">Batch</span>
+                                <span class="badge wd-badge wd-primary">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="py_data"
+                    data-ach-title="Data & analyse"
+                    data-ach-subtitle="pandas, NumPy, stats, nettoyage, reporting">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-bar-chart-line fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Data & analyse</h5>
+                            <p class="card-text text-muted mb-2">Manipulation de données et analyse rapide sur des datasets réels.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">pandas</span>
+                                <span class="badge wd-badge wd-secondary">NumPy</span>
+                                <span class="badge wd-badge wd-accent">EDA</span>
+                                <span class="badge wd-badge wd-primary">Cleaning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="py_finance"
+                    data-ach-title="Quant & finance"
+                    data-ach-subtitle="Monte Carlo, pricing, backtests, risk heuristics">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-graph-up-arrow fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Quant & finance</h5>
+                            <p class="card-text text-muted mb-2">Prototypage rapide de modèles et outils d’aide à la décision.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Monte Carlo</span>
+                                <span class="badge wd-badge wd-primary">Pricing</span>
+                                <span class="badge wd-badge wd-accent">Backtesting</span>
+                                <span class="badge wd-badge wd-primary">Risk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        Python est un langage de programmation open source, réputé pour sa simplicité, sa lisibilité et sa polyvalence. Créé au début des années 1990, il est aujourd’hui l’un des langages les plus utilisés dans le monde, aussi bien pour le développement logiciel classique que pour la data science, l’automatisation, la finance quantitative et le scripting. Sa force vient de sa syntaxe très accessible, de son énorme écosystème de bibliothèques, et de sa capacité à permettre des développements rapides tout en restant suffisamment puissant pour des projets sérieux.
+                        <br />
+                        <br />
+                        En entreprise, Python est particulièrement apprécié pour sa capacité à accélérer la production : prototypage rapide, automatisation de tâches, traitements de données, APIs et outils internes. Il est très présent dans les équipes data, risk, quant, mais aussi dans les équipes IT qui ont besoin d’écrire rapidement des scripts fiables pour manipuler des fichiers, analyser des logs, contrôler des flux ou réaliser des tests. Son écosystème (pandas, numpy, requests, fastapi, etc.) en fait un outil extrêmement efficace dès qu’on doit travailler avec de la donnée ou construire un service rapidement.
+                        <br />
+                        <br />
+                        Python est également très utilisé dans la finance, car il permet de faire le lien entre logique métier et calcul : pricing, simulations Monte Carlo, backtesting, exploitation de market data, stress testing et automatisation de workflows. Même si ce n’est pas le langage le plus rapide en exécution pure, il compense souvent par sa productivité et sa capacité à s’intégrer facilement dans une architecture plus large.
+                        <br />
+                        <br />
+                        En finance et en systèmes de risque, Python est souvent le langage “pont” entre l’idée et la production : on peut tester une logique, backtester un scénario, explorer des données, puis industrialiser progressivement (optimisation, packaging, API, intégration). Il est particulièrement efficace quand il faut manipuler des séries temporelles, faire du calcul numérique, ou automatiser des workflows.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec Python (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience la plus marquante en Python s’est construite autour de sujets orientés finance quantitative et risk-tech, avec une logique constante : transformer des besoins complexes en outils exploitables et automatisables. Ce qui m’a attiré dans Python, c’est justement sa capacité à passer rapidement d’une idée à une implémentation fonctionnelle, tout en gardant une base de code propre et évolutive.
+                        <br />
+                        <br />
+                        Dans mes expériences et projets, Python m’a servi à développer des composants concrets comme des outils d’aide à la décision, des scripts d’automatisation et des traitements de données. J’ai travaillé sur des problématiques très proches de la réalité des desks risk/FO : analyse de scénarios, backtesting, stress testing, nettoyage/normalisation de données, et optimisation de traitements de calcul.
+                        <br />
+                        <br />
+                        Un point important de ma progression a été l’amélioration de la fiabilité des résultats. Dans des modèles type Monte Carlo ou pricing, le vrai défi n’est pas seulement de “faire tourner un script”, mais de contrôler la robustesse : gérer les cas limites, vérifier les hypothèses, comparer plusieurs approches, et s’assurer que les sorties sont cohérentes. Python m’a permis de tester rapidement différentes méthodes, de valider des résultats sur des jeux de données, puis de structurer les scripts en modules plus propres.
+                        <br />
+                        <br />
+                        J’ai également utilisé Python pour l’optimisation : vectorisation de calculs, réduction de boucles inutiles, structuration des données de manière plus efficace, et approche incrémentale (d’abord correct, puis plus rapide). Dans un contexte finance/risk, ce type d’amélioration a un impact direct, car le coût de calcul et le temps de traitement deviennent vite critiques dès qu’on passe à des volumes réels.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon Python aujourd’hui : pragmatique, orienté production</span></h3>
+                    <hr />
+                    <p>
+                        L’utilisation régulière de Python m’a permis d’acquérir un niveau intermédiaire à solide, me rendant autonome sur la majorité des besoins classiques : scripts d’automatisation, manipulation de données, traitements analytiques, et prototypage d’outils. Je suis à l’aise pour structurer un projet Python proprement, travailler avec des bibliothèques adaptées, et produire des résultats fiables.
+                        <br />
+                        <br />
+                        Cependant, je sais qu’il me reste beaucoup à approfondir, notamment sur les aspects “engineering” avancés : industrialisation, packaging, tests automatisés systématiques, performance sur gros volumes, et intégration plus poussée dans des architectures distribuées. Python donne une grande liberté, mais cela demande aussi de la discipline pour garder un code propre, maintenable et scalable.
+                        <br />
+                        <br />
+                        Cependant, je considère qu’il me reste encore une marge de progression importante sur des sujets plus avancés : tuning approfondi, stratégies d’indexation à grande échelle, optimisation fine sur très gros volumes, partitionnement, et industrialisation des requêtes critiques dans une logique d’exploitation long terme.
+                        <br />
+                        <br />
+                        À mon avis, Python est l’un des meilleurs langages pour progresser vite et produire rapidement de la valeur, surtout quand il est utilisé pour la data ou la finance. Sa courbe d’apprentissage est rapide, mais son potentiel est immense dès qu’on maîtrise vraiment l’écosystème et les bonnes pratiques.
+                        <br />
+                        <br />
+                        Personnellement, j’utilise Python comme un outil central pour mes sujets quantitatifs et mes projets techniques, et je vise à continuer à renforcer mes compétences pour développer des outils plus avancés, plus robustes et mieux industrialisés (risk engines, simulations, analyse de marché, automatisation de workflows).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="py_automation">
+        <p><strong>Objectif :</strong> automatiser des tâches récurrentes et fiabiliser des traitements (imports, contrôles, extraction, conversions).</p>
+        <ul>
+            <li><strong>Scripting :</strong> scripts rapides pour transformer des données, renommer/structurer des fichiers, ou enchaîner des traitements.</li>
+            <li><strong>Parsing :</strong> lecture et normalisation de formats variés (CSV/JSON), contrôles de qualité et validation des champs.</li>
+            <li><strong>ETL léger :</strong> pipelines simples de préparation de données avant stockage ou exploitation (filtrage, enrichissement, agrégation).</li>
+            <li><strong>Fiabilité :</strong> logs, gestion d’erreurs, et traitements idempotents quand nécessaire.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> gain de temps, moins d’erreurs manuelles et traitements plus reproductibles.</p>
+    </div>
+
+    <div data-ach-id="py_data">
+        <p><strong>Objectif :</strong> analyser rapidement des datasets et produire des insights exploitables (métriques, contrôles, reporting).</p>
+        <ul>
+            <li><strong>Manipulation :</strong> usage de <code>pandas</code> pour filtrer, agréger, pivoter, et calculer des indicateurs.</li>
+            <li><strong>Nettoyage :</strong> gestion des valeurs manquantes, normalisation, détection d’anomalies et cohérence des colonnes.</li>
+            <li><strong>Exploration :</strong> EDA (distributions, corrélations simples) pour comprendre la structure des données.</li>
+            <li><strong>Export :</strong> génération de fichiers exploitables (CSV/Excel) et outputs structurés pour les équipes métier.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> analyses plus rapides et meilleure capacité à diagnostiquer des problèmes de données.</p>
+    </div>
+
+    <div data-ach-id="py_finance">
+        <p><strong>Objectif :</strong> prototyper des outils quantitatifs rapidement et tester des hypothèses sur des données de marché.</p>
+        <ul>
+            <li><strong>Monte Carlo :</strong> simulation de scénarios (ex: GBM), génération de trajectoires, et calculs d’estimations.</li>
+            <li><strong>Pricing :</strong> implémentations de modèles (ex: Black-Scholes) et calculs de Greeks pour analyser la sensibilité.</li>
+            <li><strong>Backtesting :</strong> tests de stratégies simples, stress tests et métriques de robustesse.</li>
+            <li><strong>Industrialisation légère :</strong> structuration du code en modules réutilisables (fonctions, classes, config), avec une logique orientée production.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> itérations rapides, validation de modèles, et outils concrets pour la décision.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+
