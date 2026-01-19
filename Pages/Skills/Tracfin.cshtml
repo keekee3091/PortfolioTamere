@@ -1,0 +1,378 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.TracfinModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">Compliance</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Com" aria-label="Aller à la page Compliance">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/tracfin.png"
+                         alt="Logo Complicance"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">Complicance — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    La compliance regroupe les exigences de conformité et de contrôle : KYC/AML, traçabilité, auditabilité, gestion des risques, et respect des règles internes/réglementaires dans les processus métiers.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="comp_kyc"
+                    data-ach-title="KYC & due diligence"
+                    data-ach-subtitle="identification, contrôle pièces, statuts, workflows, cohérence">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-person-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">KYC & due diligence</h5>
+                            <p class="card-text text-muted mb-2">Fiabiliser l’entrée en relation et sécuriser les statuts clients.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">KYC</span>
+                                <span class="badge wd-badge wd-primary">Onboarding</span>
+                                <span class="badge wd-badge wd-secondary">Contrôles</span>
+                                <span class="badge wd-badge wd-primary">Statuts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="comp_aml"
+                    data-ach-title="AML & scoring risque"
+                    data-ach-subtitle="règles, alerting, PPE/sanctions, logique de scoring">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">AML & scoring risque</h5>
+                            <p class="card-text text-muted mb-2">Détection et priorisation des risques de conformité.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">AML</span>
+                                <span class="badge wd-badge wd-secondary">Risk scoring</span>
+                                <span class="badge wd-badge wd-accent">Alerts</span>
+                                <span class="badge wd-badge wd-primary">PPE/Sanctions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="comp_audit"
+                    data-ach-title="Traçabilité & audit"
+                    data-ach-subtitle="historisation, logs, preuves, règles, contrôle interne">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-journal-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Traçabilité & audit</h5>
+                            <p class="card-text text-muted mb-2">Rendre les actions vérifiables et les décisions explicables.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Audit trail</span>
+                                <span class="badge wd-badge wd-primary">Logs</span>
+                                <span class="badge wd-badge wd-accent">Historique</span>
+                                <span class="badge wd-badge wd-primary">Contrôle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        La compliance (ou conformité) regroupe l’ensemble des règles, contrôles et obligations qu’une entreprise doit respecter pour rester conforme aux exigences réglementaires et limiter ses risques. Dans le secteur financier, la compliance est un enjeu majeur, car elle touche directement à la sécurité, à la lutte contre la fraude, à la traçabilité, et à la protection du système financier. Elle inclut notamment des domaines comme KYC (Know Your Customer), AML (Anti-Money Laundering), la gestion documentaire, la surveillance des opérations et la justification des décisions en cas d’audit.
+                        <br />
+                        <br />
+                        En entreprise, la compliance n’est pas uniquement “un sujet légal” : c’est aussi un sujet opérationnel et technique. Les outils internes doivent refléter les règles métier, garantir la cohérence des statuts, empêcher des actions incohérentes et conserver un historique exploitable. Un système non fiable sur ces aspects peut provoquer des erreurs, des blocages métiers, ou des risques élevés lors d’un contrôle.
+                        <br />
+                        <br />
+                        Dans les SI bancaires ou fintech, la compliance est donc fortement liée au développement logiciel : on traduit des règles en workflows, on structure des données de conformité, et on s’assure que chaque action est traçable et contrôlable.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec la compliance (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience de la compliance s’est construite dans un contexte très concret : un CRM Backoffice métier qui centralise, entre autres, des processus de KYC et de gestion documentaire. Ce CRM étant utilisé au quotidien, l’enjeu était de maintenir une conformité opérationnelle fiable : statuts cohérents, documents obligatoires présents, transitions maîtrisées, et historique exploitable.
+                        <br />
+                        <br />
+                        En travaillant sur le module KYC, j’ai été confronté à des problématiques typiques : pièces manquantes, statuts incohérents, comportements edge cases qui rendaient le suivi difficile, et situations où l’équipe support avait besoin de comprendre rapidement pourquoi un dossier était bloqué ou incomplet. J’ai donc participé à la fiabilisation de ces workflows en renforçant la logique métier : contrôles de complétude, règles de cohérence, validation des transitions de statuts, et amélioration de la traçabilité via des logs.
+                        <br />
+                        <br />
+                        Ce travail m’a appris que la compliance dépend fortement de la qualité des systèmes : si l’outil est imprécis, les équipes perdent du temps, les erreurs se multiplient, et le risque global augmente. À l’inverse, un module compliance bien conçu permet de réduire les frictions : les dossiers sont plus propres, les statuts plus fiables, et les équipes support/conformité travaillent avec des informations plus exploitables.
+                        <br />
+                        <br />
+                        Au-delà du KYC, cette logique m’a aussi servi sur d’autres modules sensibles (facturation, support) où la cohérence des états et la traçabilité sont essentielles. Dans un SI réel, la conformité n’est pas isolée : elle se croise souvent avec des aspects opérationnels, et c’est justement là que le développement logiciel apporte une vraie valeur.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Ma vision aujourd’hui : compliance = robustesse + traçabilité + workflow</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère avoir un niveau intermédiaire en compliance, dans le sens où je comprends bien les enjeux opérationnels et techniques associés au KYC/AML, à la gestion documentaire, à la cohérence des workflows et à la traçabilité. Je suis capable de traduire ces besoins en contrôles métier, en règles applicatives et en améliorations de fiabilité dans un outil interne.
+                        <br />
+                        <br />
+                        Je reconnais néanmoins qu’il me reste encore beaucoup à approfondir sur les aspects réglementaires plus larges et sur les frameworks de conformité “à grande échelle”. La compliance est un domaine très riche, et chaque entreprise a ses propres règles, ses processus et son niveau d’exigence selon son exposition au risque.
+                        <br />
+                        <br />
+                        À mon avis, la compliance est un excellent terrain pour un développeur orienté “systèmes critiques” : elle demande rigueur, clarté, et une capacité à construire des outils fiables et auditables. Personnellement, je continue à renforcer cette compétence au quotidien à travers les modules KYC, les workflows de validation et l’amélioration de la qualité des données, avec l’objectif de contribuer à des systèmes de conformité plus robustes et plus industrialisés.
+                        <br />
+                        <br />
+                        À mon avis, une bonne communication transforme un développeur en un profil beaucoup plus impactant : on ne fait pas seulement “du code”, on rend les sujets lisibles, on réduit l’incertitude, et on accélère la prise de décision. Personnellement, je continue à renforcer cet aspect au quotidien, car c’est ce qui me permet de livrer plus vite, plus proprement, et avec une meilleure collaboration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="comp_kyc">
+        <p><strong>Objectif :</strong> garantir un onboarding conforme et limiter les incohérences dans les dossiers clients.</p>
+        <ul>
+            <li><strong>Workflows KYC :</strong> suivi des étapes (pièces, complétude, validations), statuts clairs et règles métier cohérentes.</li>
+            <li><strong>Contrôles :</strong> vérifications de champs obligatoires, cohérence des données, et gestion des cas incomplets.</li>
+            <li><strong>Qualité :</strong> réduction des erreurs de saisie via validations et logiques de blocage si nécessaire.</li>
+            <li><strong>Traçabilité :</strong> historisation des changements de statut et des actions clés.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> dossiers plus propres, moins de retours, et processus plus fiable côté conformité.</p>
+    </div>
+
+    <div data-ach-id="comp_aml">
+        <p><strong>Objectif :</strong> renforcer la détection et la priorisation des risques via des règles et un scoring exploitable.</p>
+        <ul>
+            <li><strong>Scoring :</strong> mise en place de logiques de risque (pondérations, critères, déclencheurs) pour prioriser les contrôles.</li>
+            <li><strong>Alerting :</strong> génération d’alertes selon des règles métier (patterns, seuils, événements) pour orienter le traitement.</li>
+            <li><strong>PPE / sanctions :</strong> intégration de contrôles liés aux personnes exposées (PEP/PPE) et listes de sanctions (selon disponibilité des données).</li>
+            <li><strong>Exploitation :</strong> restitution claire du “pourquoi” d’un risque (explicabilité) pour aider les équipes compliance.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> détection plus rapide, tri plus efficace, et meilleure maîtrise du risque opérationnel.</p>
+    </div>
+
+    <div data-ach-id="comp_audit">
+        <p><strong>Objectif :</strong> rendre le système audit-proof : actions traçables, décisions justifiables, preuves disponibles.</p>
+        <ul>
+            <li><strong>Audit trail :</strong> logs d’actions (qui / quoi / quand) et historisation des changements métier sensibles.</li>
+            <li><strong>Contrôle interne :</strong> règles de validation, accès restreints, et séparation des rôles selon contexte.</li>
+            <li><strong>Preuves :</strong> conservation des éléments nécessaires (pièces, statuts, dates, commentaires) pour expliquer une décision.</li>
+            <li><strong>Robustesse :</strong> procédures et exports fiables pour faciliter les contrôles et investigations.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure conformité, moins d’incertitude et audits facilités.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}

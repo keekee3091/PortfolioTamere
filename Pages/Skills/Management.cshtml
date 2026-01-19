@@ -1,0 +1,380 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.ManagementModel
+@{
+}
+<h2 class="mb-1" style="visibility:hidden;">Management</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Management" aria-label="Aller à la page Management">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/management.png"
+                         alt="Logo Finance"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">Gestion de projet — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    La gestion de projet permet de cadrer, planifier et livrer efficacement : priorisation, coordination des parties prenantes,
+                    suivi d’avancement, gestion des risques, et delivery itératif (Agile ou cycle plus classique).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="pm_cadrage"
+                    data-ach-title="Cadrage & pilotage"
+                    data-ach-subtitle="objectifs, périmètre, priorisation, critères de succès">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-bullseye fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Cadrage & pilotage</h5>
+                            <p class="card-text text-muted mb-2">Définir un plan clair et éviter le flou dès le départ.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Scope</span>
+                                <span class="badge wd-badge wd-primary">Priorisation</span>
+                                <span class="badge wd-badge wd-secondary">KPI</span>
+                                <span class="badge wd-badge wd-primary">Roadmap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="pm_execution"
+                    data-ach-title="Exécution & delivery"
+                    data-ach-subtitle="découpage, sprint, suivi, feedback, itération">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-kanban fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Exécution & delivery</h5>
+                            <p class="card-text text-muted mb-2">Livrer étape par étape avec visibilité et feedback.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Agile</span>
+                                <span class="badge wd-badge wd-secondary">Sprints</span>
+                                <span class="badge wd-badge wd-accent">Backlog</span>
+                                <span class="badge wd-badge wd-primary">Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="pm_risk"
+                    data-ach-title="Risques & coordination"
+                    data-ach-subtitle="dépendances, arbitrages, communication, gestion des imprévus">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-exclamation-triangle fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Risques & coordination</h5>
+                            <p class="card-text text-muted mb-2">Anticiper, sécuriser et aligner tout le monde.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Risques</span>
+                                <span class="badge wd-badge wd-primary">Dépendances</span>
+                                <span class="badge wd-badge wd-accent">Arbitrage</span>
+                                <span class="badge wd-badge wd-primary">Stakeholders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        La gestion de projet consiste à organiser et piloter un travail collectif pour livrer un résultat concret dans un cadre donné : objectifs, délais, contraintes, risques et qualité. En ingénierie logicielle, elle ne se limite pas à “faire un planning”, mais vise surtout à structurer la livraison : cadrer le besoin, découper en lots, prioriser, suivre l’avancement, et sécuriser la mise en production.
+                        <br />
+                        <br />
+                        En entreprise, la gestion de projet est essentielle parce que les projets informatiques sont rarement linéaires : il y a des imprévus, des dépendances techniques, des demandes métier qui évoluent, et une nécessité constante de maintenir la stabilité tout en livrant de la valeur. Une bonne gestion de projet permet de limiter la dérive, de réduire les incompréhensions, et d’assurer une progression régulière.
+                        <br />
+                        <br />
+                        Sur des projets logiciels, la gestion de projet prend souvent une forme hybride : un cadre léger (agile/itératif) pour livrer vite, et des points de contrôle solides (validation métier, tests, traçabilité) pour sécuriser la production.
+                        <br />
+                        <br />
+                        Dans les environnements critiques (finance, SI métiers), la gestion de projet a aussi une dimension de contrôle du risque : on doit livrer sans casser l’existant, anticiper les impacts, et communiquer clairement avec les parties prenantes.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec la gestion de projet (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience en gestion de projet s’est construite de manière très concrète à travers des missions où il fallait livrer en continu dans un environnement réel, avec des priorités et des contraintes fortes. Dans mon alternance, j’ai travaillé sur un CRM Backoffice en production, utilisé au quotidien par plusieurs équipes. Dans ce type de contexte, la gestion de projet n’est pas théorique : elle se traduit par une organisation pragmatique autour des tickets, des urgences, des évolutions et de la stabilité.
+                        <br />
+                        <br />
+                        J’ai appris à gérer la priorisation en fonction de l’impact métier : distinguer ce qui bloque une équipe (support, facturation, conformité) de ce qui relève d’une amélioration “confort”. J’ai aussi pris l’habitude de cadrer avant d’agir : comprendre le besoin, reproduire le problème, identifier les dépendances (WebForms, Telerik, SQL), puis proposer une solution réaliste en estimant l’effort et le risque de régression.
+                        <br />
+                        <br />
+                        Sur les modules sensibles (facturation, KYC, support), j’ai dû adopter une démarche structurée : découper les changements en étapes, livrer progressivement, valider avec des cas réels, et documenter ce qui a été fait. Cette approche m’a permis d’avancer sans déstabiliser l’outil, tout en améliorant la performance et la fiabilité.
+                        <br />
+                        <br />
+                        Enfin, ce fonctionnement m’a aussi donné une vision “produit” : un projet n’est pas seulement une suite de tâches techniques, c’est un ensemble cohérent où chaque action doit servir un objectif, être compréhensible pour les autres, et produire un résultat exploitable.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Ma gestion de projet aujourd’hui : pragmatique, orientée livraison</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère avoir un niveau débutant en gestion de projet, surtout dans un cadre IT pragmatique : cadrage, priorisation, suivi, coordination et delivery progressif. Je sais travailler avec une logique orientée résultat, tout en prenant en compte les contraintes du terrain (production, dette technique, risques).
+                        <br />
+                        <br />
+                        Je reconnais qu’il me reste encore une marge de progression sur des aspects plus formalisés : gestion de planning multi-acteurs, pilotage de long terme, gouvernance plus lourde ou approche portefeuille. Mais sur le terrain, j’ai acquis une compétence importante : savoir avancer efficacement, livrer de manière stable, et rendre les sujets lisibles.
+                        <br />
+                        <br />
+                        À mon avis, la gestion de projet est une compétence clé pour un profil technique, car elle transforme un développeur en acteur capable de piloter une livraison de bout en bout : comprendre, organiser, livrer, et sécuriser la valeur produite.
+                        <br />
+                        <br />
+                        Mon expérience m’a appris que la gestion de projet en IT, ce n’est pas “faire du planning”, c’est piloter l’exécution : clarifier, découper, prioriser, livrer, stabiliser.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="pm_cadrage">
+        <p><strong>Objectif :</strong> transformer une demande en projet maîtrisé (qui fait quoi, pourquoi, et quand).</p>
+        <ul>
+            <li><strong>Définition :</strong> objectifs, périmètre, contraintes (techniques/métier) et critères de réussite.</li>
+            <li><strong>Priorisation :</strong> découpage en lots livrables (MVP → itérations), gestion du “must have” vs “nice to have”.</li>
+            <li><strong>Roadmap :</strong> jalons clairs, estimation grossière et plan d’exécution réaliste.</li>
+            <li><strong>Alignement :</strong> validation des décisions et traçabilité pour éviter les changements tardifs.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> projet plus lisible, attentes alignées et delivery plus fluide.</p>
+    </div>
+
+    <div data-ach-id="pm_execution">
+        <p><strong>Objectif :</strong> livrer régulièrement en gardant une bonne visibilité sur l’avancement.</p>
+        <ul>
+            <li><strong>Découpage :</strong> user stories / tâches, définition of done, gestion du backlog.</li>
+            <li><strong>Suivi :</strong> avancement, blocages, relances, et ajustement selon feedback terrain.</li>
+            <li><strong>Qualité :</strong> validation fonctionnelle, gestion des retours et correction rapide des régressions.</li>
+            <li><strong>Communication :</strong> comptes-rendus courts, points de synchro, et partage transparent de l’état.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> cycle de livraison plus court, moins de surprises et meilleure adoption.</p>
+    </div>
+
+    <div data-ach-id="pm_risk">
+        <p><strong>Objectif :</strong> limiter les surprises et sécuriser le delivery en gérant dépendances et imprévus.</p>
+        <ul>
+            <li><strong>Dépendances :</strong> coordination avec d’autres équipes/outils (DB, infra, sécurité, métier).</li>
+            <li><strong>Risques :</strong> identification tôt (tech, data, access, perf), plan de mitigation et suivi.</li>
+            <li><strong>Arbitrages :</strong> décisions rapides sur le scope, compromis coût/délai/qualité.</li>
+            <li><strong>Gestion incident :</strong> réaction structurée, communication claire, et retour d’expérience.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> delivery plus stable, meilleure maîtrise et équipe plus alignée.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}

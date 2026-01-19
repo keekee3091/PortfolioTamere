@@ -1,0 +1,384 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.FinanceModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">Compliance</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Finance" aria-label="Aller à la page Finance">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/finance.png"
+                         alt="Logo Finance"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">Finance — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    La finance combine compréhension des produits, des flux et du risque : instruments (actions, options, taux),
+                    pricing, gestion de portefeuille, et lecture des indicateurs utiles au pilotage (PnL, exposition, volatilité).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="fin_products"
+                    data-ach-title="Produits & marchés"
+                    data-ach-subtitle="actions, options, taux, dérivés, microstructure">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-cash-coin fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Produits & marchés</h5>
+                            <p class="card-text text-muted mb-2">Comprendre les instruments et leurs logiques de marché.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Options</span>
+                                <span class="badge wd-badge wd-primary">Rates</span>
+                                <span class="badge wd-badge wd-secondary">Derivatives</span>
+                                <span class="badge wd-badge wd-primary">Market data</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="fin_pricing"
+                    data-ach-title="Pricing & modèles"
+                    data-ach-subtitle="Black-Scholes, Monte Carlo, Greeks, IV surface">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-calculator fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Pricing & modèles</h5>
+                            <p class="card-text text-muted mb-2">Modéliser, simuler et mesurer le risque.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Black-Scholes</span>
+                                <span class="badge wd-badge wd-secondary">Monte Carlo</span>
+                                <span class="badge wd-badge wd-accent">Greeks</span>
+                                <span class="badge wd-badge wd-primary">IV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="fin_risk"
+                    data-ach-title="Risk & reporting"
+                    data-ach-subtitle="expositions, stress tests, VaR, suivi KPI, PnL explain">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-exclamation fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Risk & reporting</h5>
+                            <p class="card-text text-muted mb-2">Lire les signaux clés et piloter le risque.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Exposure</span>
+                                <span class="badge wd-badge wd-primary">Stress</span>
+                                <span class="badge wd-badge wd-accent">VaR</span>
+                                <span class="badge wd-badge wd-primary">PnL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        La finance regroupe l’ensemble des mécanismes qui permettent de gérer, valoriser et contrôler des flux d’argent, des actifs et des risques. Dans un contexte de marché, elle couvre des sujets comme la valorisation d’instruments financiers (actions, obligations, dérivés), la gestion du risque (exposition, stress tests, VaR), la liquidité, et l’optimisation des décisions. C’est un domaine où la précision, la rigueur et la compréhension des modèles sont essentielles, car de petites erreurs peuvent avoir de gros impacts.
+                        <br />
+                        <br />
+                        La finance est un domaine où la précision, la gestion du risque et la compréhension des mécanismes de marché sont essentiels. Contrairement à une vision “pure business”, la finance moderne est très fortement outillée : modèles de pricing, métriques de risque, automatisation, exploitation de market data, et systèmes capables de produire des résultats fiables en continu. Dans ce contexte, la technique n’est pas un support secondaire : elle devient une composante clé de la performance et de la robustesse.
+                        <br />
+                        <br />
+                        En entreprise, la finance est omniprésente, que ce soit dans des équipes de trading, de risk management, de middle/back-office ou dans des fintechs. Le plus important, c’est que la finance repose sur des systèmes et des workflows très structurés : données, règles, validation, reporting. C’est précisément pour cela que l’ingénierie logicielle et la finance sont fortement liées : un système financier est rarement “simple”, il doit être fiable, auditable et performant.
+                        <br />
+                        <br />
+                        Enfin, la finance moderne est de plus en plus “tech-driven” : automatisation des process, outils analytiques, moteur de calcul, monitoring, et intégration de data. La frontière entre finance et ingénierie devient donc de plus en plus fine, surtout dans les environnements quantitatifs et risk-tech.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec la finance (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon intérêt et mon expérience en finance se sont construits à la fois sur le plan académique et professionnel, dans une logique très concrète : comprendre les mécanismes, puis les transformer en outils exploitables.
+                        <br />
+                        <br />
+                        Sur le plan des projets et de l’ingénierie, j’ai été exposé à des problématiques très proches des environnements de marché : automatisation de workflows, exploitation de données, et logique de contrôle/fiabilité. Ce que j’ai retenu surtout, c’est que la finance n’est pas juste une question de théorie : en entreprise, elle se traduit par des processus opérationnels, des statuts, des règles métier, et des outils à maintenir en production.
+                        <br />
+                        <br />
+                        Dans mon alternance, même si le travail principal était orienté logiciel, j’ai travaillé sur des modules qui touchent directement des enjeux financiers et opérationnels : facturation, cohérence comptable, gestion client, suivi, et conformité. Ce type de système “backoffice” est une composante essentielle de la finance d’entreprise : il structure l’activité, sécurise les flux et permet aux équipes de travailler efficacement.
+                        <br />
+                        <br />
+                        En parallèle, j’ai développé une approche plus quantitative via mes sujets techniques et mes projets personnels orientés finance : exploration de concepts comme la volatilité, la simulation, le pricing et l’analyse de scénarios. Ces projets m’ont permis de relier la théorie à des implémentations : transformer un modèle en code, interpréter ses résultats et vérifier sa cohérence. C’est ce lien entre modèle et application concrète qui m’a réellement fait progresser.
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Ma vision aujourd’hui : finance comme fil conducteur technique</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère avoir un niveau intermédiaire solide en finance, avec une base théorique structurée et une capacité à comprendre les enjeux métier dans des environnements concrets. Je suis à l’aise avec les notions essentielles : produits financiers, logique de valorisation, gestion du risque, et traduction de besoins métiers en solutions.
+                        <br />
+                        <br />
+                        Cependant, la finance est un domaine immense et il me reste encore beaucoup à approfondir, notamment sur les sujets les plus avancés : microstructure, modèles plus complexes, XVA, et la dimension “front-office” à haute intensité. C’est un apprentissage continu, car chaque niveau de profondeur apporte une meilleure compréhension des systèmes et des décisions.
+                        <br />
+                        <br />
+                        À mon avis, la compliance est un excellent terrain pour un développeur orienté “systèmes critiques” : elle demande rigueur, clarté, et une capacité à construire des outils fiables et auditables. Personnellement, je continue à renforcer cette compétence au quotidien à travers les modules KYC, les workflows de validation et l’amélioration de la qualité des données, avec l’objectif de contribuer à des systèmes de conformité plus robustes et plus industrialisés.
+                        <br />
+                        <br />
+                        Mon lien avec la finance est structuré et continu : académique, quantitatif, et orienté implémentation. Ce qui m’attire, c’est la finance “actionnable” : celle où l’on modélise, où l’on mesure, où l’on automatise, et où l’on sécurise la décision.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="fin_products">
+        <p><strong>Objectif :</strong> comprendre les produits, leurs mécanismes de marché et les impacts sur la valorisation.</p>
+        <ul>
+            <li><strong>Produits :</strong> bases solides sur actions, dérivés actions, produits taux, et instruments de couverture.</li>
+            <li><strong>Market data :</strong> notions de carnet d’ordres, liquidité, spreads, et qualité des données de marché.</li>
+            <li><strong>Conventions :</strong> compréhension des inputs (rates, dividends, vol) et de leur rôle dans la valorisation.</li>
+            <li><strong>Culture marché :</strong> lecture des mouvements et mise en lien avec volatilité, corrélations et régime de marché.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure capacité à comprendre les outils FO/Risk et les besoins métier.</p>
+    </div>
+
+    <div data-ach-id="fin_pricing">
+        <p><strong>Objectif :</strong> modéliser et estimer la valeur d’un instrument en comprenant les sensibilités principales.</p>
+        <ul>
+            <li><strong>Modèles :</strong> implémentations type Black-Scholes, et simulations Monte Carlo pour scénarios.</li>
+            <li><strong>Greeks :</strong> Delta, Gamma, Vega, Theta : interprétation et usage pour analyser le risque.</li>
+            <li><strong>Volatilité :</strong> compréhension de l’IV, smile/surface, et impact sur pricing et hedging.</li>
+            <li><strong>Backtests :</strong> tests de robustesse et validation empirique de comportements (PnL, stabilité).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> capacité à prototyper des outils de pricing/risque et interpréter les résultats.</p>
+    </div>
+
+    <div data-ach-id="fin_risk">
+        <p><strong>Objectif :</strong> suivre et quantifier le risque pour orienter la décision (pilotage, contrôle, alerting).</p>
+        <ul>
+            <li><strong>Expositions :</strong> lecture d’exposures et identification des facteurs dominants (marché, vol, taux).</li>
+            <li><strong>Stress tests :</strong> scénarios extrêmes, chocs de marché, et mesure des impacts potentiels.</li>
+            <li><strong>VaR :</strong> compréhension du principe VaR et limites (hypothèses, distribution, non-linéarités).</li>
+            <li><strong>Reporting :</strong> indicateurs clés (KPI), PnL explain basique, et restitution claire à une audience non-tech.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure compréhension des enjeux Risk/FO et analyses plus actionnables.</p>
+    </div>
+
+</div>
+  
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}

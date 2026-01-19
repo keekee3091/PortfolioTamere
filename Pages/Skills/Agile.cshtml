@@ -1,0 +1,379 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.AgileModel
+@{
+}
+<h2 class="mb-1" style="visibility:hidden;">Agile</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Agile" aria-label="Aller à la page Agile">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/cadana.png"
+                         alt="Logo Finance"
+                         class="skill-logo"
+                         style="transform: scale(1.50)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">Méthodologie Agile — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    L’Agile vise à livrer de la valeur rapidement et de façon itérative : découpage en incréments, feedback régulier,
+                    priorisation continue, et amélioration progressive via des rituels simples (sprint, review, rétro).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="agile_backlog"
+                    data-ach-title="Backlog & priorisation"
+                    data-ach-subtitle="user stories, critères d’acceptation, MVP, valeur métier">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-list-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Backlog & priorisation</h5>
+                            <p class="card-text text-muted mb-2">Mettre l’effort sur ce qui apporte le plus de valeur.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">User stories</span>
+                                <span class="badge wd-badge wd-primary">MVP</span>
+                                <span class="badge wd-badge wd-secondary">Priorisation</span>
+                                <span class="badge wd-badge wd-primary">Value</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="agile_sprints"
+                    data-ach-title="Sprints & rituels"
+                    data-ach-subtitle="planning, daily, review, rétro, amélioration continue">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-arrow-repeat fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Sprints & rituels</h5>
+                            <p class="card-text text-muted mb-2">Cadencer l’exécution et sécuriser le delivery.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Sprint</span>
+                                <span class="badge wd-badge wd-secondary">Daily</span>
+                                <span class="badge wd-badge wd-accent">Review</span>
+                                <span class="badge wd-badge wd-primary">Rétro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="agile_quality"
+                    data-ach-title="Qualité & delivery"
+                    data-ach-subtitle="DoD, feedback loop, refactor, réduction des risques">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Qualité & delivery</h5>
+                            <p class="card-text text-muted mb-2">Livrer souvent, sans casser, avec contrôle.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">DoD</span>
+                                <span class="badge wd-badge wd-primary">Feedback</span>
+                                <span class="badge wd-badge wd-accent">Refactor</span>
+                                <span class="badge wd-badge wd-primary">Risk</span>
+                            </div>
+                        </div>
+                    </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        La méthodologie Agile regroupe un ensemble de pratiques de gestion de projet conçues pour livrer de la valeur de manière itérative, en s’adaptant rapidement aux changements. Contrairement à une approche “cycle en V” très figée, l’Agile cherche à avancer par petites étapes, avec des retours fréquents, une priorisation continue, et une collaboration forte entre les équipes techniques et métiers.
+                        <br />
+                        <br />
+                        En entreprise, Agile est largement utilisé parce que les projets évoluent constamment : besoins qui se précisent, contraintes techniques, incidents, dépendances, et arbitrages. L’intérêt principal est de réduire le risque : au lieu d’attendre des mois pour livrer, on livre régulièrement, on valide vite, et on corrige dès qu’un problème apparaît.
+                        <br />
+                        <br />
+                        Agile s’appuie souvent sur des frameworks comme Scrum (sprints, backlog, planning, review, rétrospective) ou Kanban (flux continu, WIP, priorisation dynamique). Dans les deux cas, l’objectif reste le même : livrer de façon fiable et progressive, avec un maximum de visibilité.
+                        <br />
+                        <br />
+                        Agile ne se résume pas à “faire des sprints”. C’est surtout une discipline de pilotage : cadrer un besoin, le découper en incréments livrables, obtenir du feedback rapidement, et sécuriser la production en limitant l’effet tunnel.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec Agile  (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Mon expérience de l’Agile s’est construite dans un contexte très concret : travailler sur un système en production, avec des demandes récurrentes, des tickets, des urgences et des évolutions métiers. Sur un CRM Backoffice utilisé au quotidien, il était impossible de fonctionner en “gros chantier long”. Il fallait avancer rapidement, tout en gardant la stabilité et en évitant les régressions.
+                        <br />
+                        <br />
+                        J’ai appris à gérer la priorisation en fonction de l’impact métier : distinguer ce qui bloque une équipe (support, facturation, conformité) de ce qui relève d’une amélioration “confort”. J’ai aussi pris l’habitude de cadrer avant d’agir : comprendre le besoin, reproduire le problème, identifier les dépendances (WebForms, Telerik, SQL), puis proposer une solution réaliste en estimant l’effort et le risque de régression.
+                        <br />
+                        <br />
+                        Sur les modules sensibles (facturation, KYC, support), j’ai dû adopter une démarche structurée : découper les changements en étapes, livrer progressivement, valider avec des cas réels, et documenter ce qui a été fait. Cette approche m’a permis d’avancer sans déstabiliser l’outil, tout en améliorant la performance et la fiabilité.
+                        <br />
+                        <br />
+                        Enfin, ce fonctionnement m’a aussi donné une vision “produit” : un projet n’est pas seulement une suite de tâches techniques, c’est un ensemble cohérent où chaque action doit servir un objectif, être compréhensible pour les autres, et produire un résultat exploitable.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Ma vision aujourd’hui : Agile = itérer proprement, livrer souvent, stabiliser toujours</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère avoir un niveau débutant sur les méthodologies Agile, avec une capacité à les appliquer concrètement dans un contexte de delivery : gestion de backlog/tickets, priorisation, découpage en itérations, et amélioration continue. Je suis à l’aise avec une logique Scrum/Kanban, surtout dans une organisation orientée production où les priorités évoluent.
+                        <br />
+                        <br />
+                        Je reconnais qu’il me reste encore à approfondir certains aspects plus “formels” : métriques avancées (velocity, lead time), gestion multi-équipes, scaling (SAFe, etc.). Mais sur le terrain, j’ai acquis le plus important : une approche pragmatique et structurée pour livrer de la valeur rapidement sans dégrader la stabilité.
+                        <br />
+                        <br />
+                        À mon avis, Agile est particulièrement adapté aux projets logiciels car il permet de rester efficace dans un environnement incertain. Personnellement, je continue à renforcer ces pratiques au quotidien, car elles améliorent directement la qualité du travail, la collaboration, et la fiabilité des livraisons.
+                        <br />
+                        <br />
+                        Mon expérience m’a appris que l’Agile le plus utile est celui qui colle au réel : livrer de la valeur régulièrement, réduire l’incertitude, et sécuriser la production par petits incréments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="agile_backlog">
+        <p><strong>Objectif :</strong> structurer le backlog pour livrer de la valeur métier de manière progressive.</p>
+        <ul>
+            <li><strong>User stories :</strong> formulation claire (en tant que… je veux… afin de…), avec contexte et périmètre.</li>
+            <li><strong>Critères d’acceptation :</strong> règles de validation explicites pour éviter l’ambiguïté.</li>
+            <li><strong>MVP :</strong> découpage en lots livrables pour sortir vite une première version utile.</li>
+            <li><strong>Priorisation :</strong> arbitrage impact/effort et gestion des dépendances techniques.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> roadmap plus claire, moins de scope creep, et delivery plus régulier.</p>
+    </div>
+
+    <div data-ach-id="agile_sprints">
+        <p><strong>Objectif :</strong> exécuter avec un rythme stable et améliorer en continu via des rituels simples.</p>
+        <ul>
+            <li><strong>Planning :</strong> sélection des items, estimation, objectifs du sprint et engagement réaliste.</li>
+            <li><strong>Daily :</strong> points rapides pour identifier blocages, ajuster et garder une visibilité équipe.</li>
+            <li><strong>Review :</strong> démo orientée valeur (ce qui a changé pour l’utilisateur), feedback direct.</li>
+            <li><strong>Rétro :</strong> analyse process (ce qui a marché / à améliorer) et actions concrètes au sprint suivant.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure coordination, moins de surprises et amélioration continue.</p>
+    </div>
+
+    <div data-ach-id="agile_quality">
+        <p><strong>Objectif :</strong> sécuriser les livraisons tout en gardant un rythme rapide.</p>
+        <ul>
+            <li><strong>Definition of Done :</strong> critères qualité (tests, code review, doc, validation fonctionnelle) avant “done”.</li>
+            <li><strong>Feedback loop :</strong> itérations courtes, retours utilisateurs et ajustements rapides.</li>
+            <li><strong>Refactor :</strong> amélioration continue du code pour limiter la dette technique.</li>
+            <li><strong>Gestion des risques :</strong> livrer petit, mesurer l’impact, et limiter les changements risqués.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> delivery plus fiable, meilleure qualité et adoption plus rapide.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}

@@ -1,0 +1,382 @@
+﻿@page
+@model PortfolioTamere.Pages.Skills.ComModel
+@{
+    ViewData["Title"] = "Skills";
+}
+
+<h2 class="mb-1" style="visibility:hidden;">Communication</h2>
+<section class="skills-hero mb-4">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <a class="skill-logo-wrap" asp-page="/Skills/Com" aria-label="Aller à la page Communication">
+                <span class="skill-logo-box">
+                    <img src="~/images/skills/com.png"
+                         alt="Logo Communication"
+                         class="skill-logo"
+                         style="transform: scale(1.25)" />
+                </span>
+            </a>
+
+            <div>
+                <h2 class="mb-1 fw-bold">Communication — Réalisations clés</h2>
+                <p class="text-muted mb-0">
+                    La communication est une compétence fonctionnelle clé pour cadrer un besoin, aligner les parties prenantes et livrer efficacement :
+                    écoute active, vulgarisation technique, coordination, et restitution claire (écrit + oral).
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Skills" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="comm_cadrage"
+                    data-ach-title="Cadrage & compréhension"
+                    data-ach-subtitle="recueil du besoin, reformulation, priorisation, clarification">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-chat-left-text fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Cadrage & compréhension</h5>
+                            <p class="card-text text-muted mb-2">Transformer un besoin flou en objectifs actionnables.</p>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Écoute active</span>
+                                <span class="badge wd-badge wd-primary">Reformulation</span>
+                                <span class="badge wd-badge wd-secondary">Priorisation</span>
+                                <span class="badge wd-badge wd-primary">Scope</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="comm_coordination"
+                    data-ach-title="Coordination & suivi"
+                    data-ach-subtitle="synchronisation, reporting, gestion des dépendances, relances">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-people fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Coordination & suivi</h5>
+                            <p class="card-text text-muted mb-2">Aligner les acteurs et sécuriser l’avancement.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Coordination</span>
+                                <span class="badge wd-badge wd-secondary">Relances</span>
+                                <span class="badge wd-badge wd-accent">Reporting</span>
+                                <span class="badge wd-badge wd-primary">Dépendances</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="comm_clarity"
+                    data-ach-title="Clarté & vulgarisation"
+                    data-ach-subtitle="synthèse, documentation, partage, communication multi-niveaux">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-journal-text fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Clarté & vulgarisation</h5>
+                            <p class="card-text text-muted mb-2">Faire passer les idées vite, clairement, sans ambiguïté.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Synthèse</span>
+                                <span class="badge wd-badge wd-primary">Documentation</span>
+                                <span class="badge wd-badge wd-accent">Vulgarisation</span>
+                                <span class="badge wd-badge wd-primary">Transmission</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Introduction</span></h3>
+                    <hr />
+                    <p>
+                        La communication est une compétence transversale essentielle en ingénierie logicielle, car elle permet de faire le lien entre des profils différents : développeurs, métiers, support, chefs de projet, et parfois clients. Dans un contexte IT, bien communiquer ne signifie pas seulement “bien parler”, mais surtout transmettre une information claire, structurer un problème, expliquer une décision technique, et s’assurer que tout le monde avance dans la même direction.
+                        <br />
+                        <br />
+                        En entreprise, la communication devient critique dès qu’un projet implique plusieurs acteurs et des contraintes réelles : délais, incidents, priorités, dépendances, risques de régression. Une bonne communication évite les malentendus, accélère la prise de décision, et améliore la qualité du delivery. C’est aussi une compétence qui se traduit directement dans la production : tickets mieux rédigés, changements mieux cadrés, spécifications plus claires, incidents résolus plus vite.
+                        <br />
+                        <br />
+                        Dans les environnements métiers sensibles (finance, conformité, backoffice), la communication est encore plus importante car les sujets sont souvent complexes, les impacts business élevés, et les erreurs coûteuses. Être capable de vulgariser, reformuler et clarifier devient un vrai avantage.
+                   
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Mon parcours avec la communication (pro + académique)</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère que la communication fait partie de mes points forts, car elle me permet d’être efficace dans un environnement où les enjeux sont concrets : production, contraintes métier, priorités. Je suis à l’aise pour expliquer un problème, structurer une solution, et adapter mon discours selon l’interlocuteur (technique ou métier).
+                        <br />
+                        <br />
+                        Je sais également que cette compétence se travaille en continu : apprendre à être encore plus concis, anticiper les incompréhensions, et améliorer la qualité de la documentation. Plus les projets deviennent complexes, plus la communication devient un levier direct de performance.
+                        <br />
+                        <br />
+                        À mon avis, une bonne communication transforme un développeur en un profil beaucoup plus impactant : on ne fait pas seulement “du code”, on rend les sujets lisibles, on réduit l’incertitude, et on accélère la prise de décision. Personnellement, je continue à renforcer cet aspect au quotidien, car c’est ce qui me permet de livrer plus vite, plus proprement, et avec une meilleure collaboration.
+                        <br />
+                        <br />
+                        Enfin, j’ai appris à communiquer dans un contexte “delivery” : annoncer une correction, prévenir du risque de régression, proposer une solution temporaire si besoin, et documenter ce qui a été fait. En pratique, cela se traduit par des messages clairs, des tickets bien écrits, et une meilleure coordination entre les acteurs.
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-skill">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Ma communication aujourd’hui : structurée, concise, orientée décision</span></h3>
+                    <hr />
+                    <p>
+                        Aujourd’hui, je considère que la communication fait partie de mes points forts, car elle me permet d’être efficace dans un environnement où les enjeux sont concrets : production, contraintes métier, priorités. Je suis à l’aise pour expliquer un problème, structurer une solution, et adapter mon discours selon l’interlocuteur (technique ou métier).
+                        <br />
+                        <br />
+                        Je sais également que cette compétence se travaille en continu : apprendre à être encore plus concis, anticiper les incompréhensions, et améliorer la qualité de la documentation. Plus les projets deviennent complexes, plus la communication devient un levier direct de performance.
+                        <br />
+                        <br />
+                        À mon avis, C++ est un langage extrêmement puissant, particulièrement adapté aux domaines exigeants comme le trading électronique, la market data ou les moteurs de calcul quantitatif. La courbe d’apprentissage est plus exigeante que sur des langages managés, mais elle apporte en retour une vraie maîtrise de la performance et de la qualité d’exécution.
+                        <br />
+                        <br />
+                        À mon avis, une bonne communication transforme un développeur en un profil beaucoup plus impactant : on ne fait pas seulement “du code”, on rend les sujets lisibles, on réduit l’incertitude, et on accélère la prise de décision. Personnellement, je continue à renforcer cet aspect au quotidien, car c’est ce qui me permet de livrer plus vite, plus proprement, et avec une meilleure collaboration.                       
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="comm_cadrage">
+        <p><strong>Objectif :</strong> cadrer le besoin et éviter les malentendus dès le départ.</p>
+        <ul>
+            <li><strong>Recueil :</strong> échanges avec le métier/les utilisateurs pour comprendre le contexte, les irritants et la finalité.</li>
+            <li><strong>Reformulation :</strong> validation du besoin avec des mots simples (problème → objectif → contraintes → critères de réussite).</li>
+            <li><strong>Priorisation :</strong> distinguer l’essentiel du “nice-to-have” pour livrer vite et de manière utile.</li>
+            <li><strong>Clarification :</strong> gestion des zones floues (cas limites, règles, exceptions) pour éviter les retours tardifs.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> périmètre clair, décisions rapides et moins d’allers-retours.</p>
+    </div>
+
+    <div data-ach-id="comm_coordination">
+        <p><strong>Objectif :</strong> assurer le suivi et la fluidité entre les parties prenantes.</p>
+        <ul>
+            <li><strong>Coordination :</strong> synchronisation entre dev, support, QA, et interlocuteurs métier.</li>
+            <li><strong>Suivi :</strong> relances, points rapides et gestion des dépendances pour éviter le blocage.</li>
+            <li><strong>Reporting :</strong> synthèse régulière de l’avancement (ce qui est fait / en cours / risques / prochaine étape).</li>
+            <li><strong>Gestion des incidents :</strong> communication calme et structurée en cas de bug/urgence.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure visibilité, moins de frictions, et exécution plus efficace.</p>
+    </div>
+
+    <div data-ach-id="comm_clarity">
+        <p><strong>Objectif :</strong> communiquer clairement en adaptant le niveau de langage selon l’audience.</p>
+        <ul>
+            <li><strong>Synthèse :</strong> capacité à résumer une situation complexe en 2 minutes (cause → impact → solution).</li>
+            <li><strong>Documentation :</strong> tickets bien écrits, notes de release, procédures, et explications structurées.</li>
+            <li><strong>Vulgarisation :</strong> expliquer un sujet technique à un profil non-tech (ou inversement : traduire un besoin métier en exigences).</li>
+            <li><strong>Traçabilité :</strong> décisions formalisées (quoi / pourquoi / quand), pour réduire la dette de communication.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins d’ambiguïté, transmission plus rapide, et équipe plus alignée.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+
+    </style>
+}
+

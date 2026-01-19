@@ -1,0 +1,507 @@
+﻿@page
+@model PortfolioTamere.Pages.SchoolModel
+@{
+}
+<section class="skills-hero mb-4">
+
+    <div class="d-flex flex-column flex-lg-row align-items-start justify-content-between gap-4 mb-3">
+        <div>
+            <h1 class="fw-bold mb-2">Mon parcours</h1>
+            <p class="text-muted mb-0" style="max-width: 1200px;">
+                Un chemin construit entre ingénierie logicielle (C#/.NET, SQL, performance) et finance de marché (pricing, risk, Monte-Carlo),
+                avec une orientation production et systèmes mesurables.
+            </p>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+            <a asp-page="/Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+            <a class="btn btn-outline-primary" href="~/resume Keenan_alt3.pdf" download="">
+                <i class="bi bi-download me-1"></i> Télécharger mon CV
+            </a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-12">
+
+            <div class="card skill-card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="fw-bold mb-3">Expériences</h3>
+
+                    <div class="row g-3">
+
+                        <div class="col-4">
+                            <button type="button"
+                                    style="width: 100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="xp_pci33"
+                                    data-ach-title="PCi33 — FinTech & Risk Systems (Alternance)"
+                                    data-ach-subtitle="03/2024 → 03/2026 · Paris">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="bi bi-shield-check fs-3"></i>
+                                        <div>
+                                            <h5 class="card-title mb-1">PCi33 — FinTech & Risk Systems</h5>
+                                            <p class="card-text text-muted mb-2">
+                                                Automatisation workflow, moteur KYC/AML, scoring de risque, APIs, fiabilisation prod.
+                                            </p>
+
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge wd-badge wd-accent">C#/.NET 8</span>
+                                                <span class="badge wd-badge wd-primary">SQL Server</span>
+                                                <span class="badge wd-badge wd-secondary">GraphQL</span>
+                                                <span class="badge wd-badge wd-primary">Clean Arch / DDD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="col-4">
+                            <button type="button"
+                                    style="width: 100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="xp_theodo"
+                                    data-ach-title="Theodo Fintech — Outils Marchés & Risk Automation (Stage)"
+                                    data-ach-subtitle="03/2023 → 08/2023 · Paris">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="bi bi-graph-up-arrow fs-3"></i>
+                                        <div>
+                                            <h5 class="card-title mb-1">Theodo Fintech — Front-Office & Risk</h5>
+                                            <p class="card-text text-muted mb-2">
+                                                Pipelines market data, optimisation calcul pricing/risque, Monte-Carlo & stress testing.
+                                            </p>
+
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge wd-badge wd-accent">Python</span>
+                                                <span class="badge wd-badge wd-primary">Market Data</span>
+                                                <span class="badge wd-badge wd-secondary">Monte Carlo</span>
+                                                <span class="badge wd-badge wd-primary">Optimisation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="col-4">
+                            <button type="button"
+                                    style="width: 100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="xp_atos"
+                                    data-ach-title="Atos — Back-Office Marchés (Stage)"
+                                    data-ach-subtitle="05/2022 → 09/2022 · Bordeaux">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start gap-3">
+                                        <i class="bi bi-database-check fs-3"></i>
+                                        <div>
+                                            <h5 class="card-title mb-1">Atos — Back-Office Marchés</h5>
+                                            <p class="card-text text-muted mb-2">
+                                                Automatisation contrôles, consolidation/reporting, fiabilisation bases de données.
+                                            </p>
+
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge wd-badge wd-accent">Python</span>
+                                                <span class="badge wd-badge wd-primary">VBA</span>
+                                                <span class="badge wd-badge wd-secondary">Reporting</span>
+                                                <span class="badge wd-badge wd-primary">Data Quality</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card skill-card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="fw-bold mb-3">Formations</h3>
+
+                    <div class="row g-3">
+                       <div class="col-4">
+                            <button type="button"
+                                    style="width:100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="edu_esgi"
+                                    data-ach-title="ESGI — Mastère Ingénierie Logicielle"
+                                    data-ach-subtitle="2024 → 2026 · Paris">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-1">ESGI — Mastère Ingénierie Logicielle</h5>
+                                    <p class="card-text text-muted mb-2">Architecture, qualité, delivery, DevOps.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge wd-badge wd-accent">Architecture</span>
+                                        <span class="badge wd-badge wd-primary">CI/CD</span>
+                                        <span class="badge wd-badge wd-secondary">Qualité</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="col-4">
+                            <button type="button"
+                                    style="width:100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="edu_esgf"
+                                    data-ach-title="ESG Finance — Trading / Finance de marché"
+                                    data-ach-subtitle="2022 → 2023 · Paris">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-1">ESG Finance — Trading / Finance de marché</h5>
+                                    <p class="card-text text-muted mb-2">Dérivés, volatilité, risk, outils quant.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge wd-badge wd-accent">Dérivés</span>
+                                        <span class="badge wd-badge wd-primary">Greeks</span>
+                                        <span class="badge wd-badge wd-secondary">Volatility</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="col-4">
+                            <button type="button"
+                                    style="width:100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="edu_ubordeaux"
+                                    data-ach-title="Université de Bordeaux — Licence Math-Informatique"
+                                    data-ach-subtitle="2019 → 2022 · Bordeaux">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-1">Université de Bordeaux — Licence Math-Informatique</h5>
+                                    <p class="card-text text-muted mb-2">Socle proba/algèbre + algorithmique/POO.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge wd-badge wd-accent">Probabilités</span>
+                                        <span class="badge wd-badge wd-primary">Algo</span>
+                                        <span class="badge wd-badge wd-secondary">POO</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card skill-card border-0 shadow-sm">
+                <div class="card-body">
+                    <h3 class="fw-bold mb-3">Projets</h3>
+
+                    <div class="row g-3">
+
+                        <div class="col-12 col-md-6">
+                            <button type="button"
+                                    style="width: 100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="pj_volatiq"
+                                    data-ach-title="VolatiQ — Monte Carlo Simulator"
+                                    data-ach-subtitle="C++ · Python · Blazor · Docker">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-1">VolatiQ</h5>
+                                    <p class="card-text text-muted mb-2">
+                                        Pricing BS, Greeks, IV surfaces, heuristiques de mispricing, dashboard.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge wd-badge wd-accent">Monte Carlo</span>
+                                        <span class="badge wd-badge wd-primary">IV Surface</span>
+                                        <span class="badge wd-badge wd-secondary">Greeks</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <button type="button"
+                                    style="width: 100%;"
+                                    class="card achievement-card shadow-sm h-100 text-start"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#achievementModal"
+                                    data-ach-id="pj_watchdog"
+                                    data-ach-title="Watchdog API — KYC/AML Engine"
+                                    data-ach-subtitle=".NET 8 · SQL Server · Rules Engine">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-1">Watchdog API</h5>
+                                    <p class="card-text text-muted mb-2">
+                                        Moteur de règles KYC/AML, scoring dynamique, caching, monitoring.
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge wd-badge wd-accent">Rules Engine</span>
+                                        <span class="badge wd-badge wd-primary">Auditability</span>
+                                        <span class="badge wd-badge wd-secondary">Perf</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="xp_pci33">
+        <p><strong>Contexte :</strong> Développement d’outils internes FinTech orientés conformité (KYC/AML) et optimisation des processus opérationnels.</p>
+        <ul>
+            <li>Dév. backend <strong>C#/.NET + Python</strong> pour automatiser des workflows (onboarding, scoring, facturation/relances).</li>
+            <li><strong>Moteur KYC/AML</strong> : règles pondérées, scoring, détection d’anomalies, traçabilité des décisions.</li>
+            <li>Stabilisation & évolution d’APIs <strong>REST/GraphQL</strong> (qualité d’intégration et fiabilité).</li>
+            <li>Industrialisation qualité : <strong>Clean Architecture, DDD, TDD</strong>.</li>
+        </ul>
+        <p class="mb-0"><strong>Stack :</strong> .NET 8, SQL Server, REST, GraphQL, Docker, Linux.</p>
+    </div>
+
+    <div data-ach-id="xp_theodo">
+        <p><strong>Contexte :</strong> Outils d’automatisation FO/Risk, exploitation de market data et amélioration des performances de calcul.</p>
+        <ul>
+            <li>Outils d’aide à la décision en <strong>Python</strong> pour automatiser des workflows front-office & risk.</li>
+            <li><strong>Market data pipeline</strong> : normalisation, contrôles qualité, réduction des erreurs.</li>
+            <li>Optimisation pricing/risque : <strong>vectorisation & parallélisation</strong>.</li>
+            <li>Modèles stochastiques : <strong>GBM</strong>, volatilité locale, analyses de sensibilité.</li>
+        </ul>
+        <p class="mb-0"><strong>Stack :</strong> Python, NumPy/pandas, data pipelines.</p>
+    </div>
+
+    <div data-ach-id="xp_atos">
+        <p><strong>Contexte :</strong> Back-office marchés : fiabiliser les données, réduire les tâches manuelles, améliorer le reporting.</p>
+        <ul>
+            <li>Automatisation contrôles réglementaires & rapprochements (<strong>Python/VBA</strong>).</li>
+            <li>Structuration & fiabilisation de bases de données de flux financiers.</li>
+            <li>Optimisation du reporting & de la consolidation.</li>
+        </ul>
+        <p class="mb-0"><strong>Stack :</strong> Python, VBA, Excel.</p>
+    </div>
+    <div data-ach-id="edu_esgi">
+        <p><strong>Objectif :</strong> renforcer une approche “engineering production” : architecture, qualité, delivery, cloud/DevOps.</p>
+        <ul>
+            <li><strong>Architecture :</strong> Clean Architecture, DDD, patterns, découpage en couches, contrats.</li>
+            <li><strong>Qualité :</strong> tests unitaires/intégration, revue de code, documentation, maintenabilité.</li>
+            <li><strong>Delivery :</strong> CI/CD, conteneurisation, bonnes pratiques de déploiement.</li>
+            <li><strong>Projet fil rouge :</strong> cadrage, user stories, itérations, soutenances et livrables.</li>
+        </ul>
+        <p class="mb-0"><strong>Compétences clés :</strong> conception, industrialisation, robustesse, communication technique.</p>
+    </div>
+
+    <div data-ach-id="edu_esgf">
+        <p><strong>Objectif :</strong> consolider les fondamentaux marchés / dérivés et relier la théorie à des outils quant.</p>
+        <ul>
+            <li><strong>Produits :</strong> options & dérivés, logique de couverture, risques (Delta/Gamma/Vega).</li>
+            <li><strong>Volatilité :</strong> smile/skew, implied vol, lecture de surface et impacts pricing.</li>
+            <li><strong>Risk :</strong> VaR, stress testing, scénarios, sensibilité et exposition.</li>
+            <li><strong>Approche tooling :</strong> mise en pratique via scripts/mini-projets (pricing, simulation, analyses).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une base marchés solide + capacité à traduire en modèles/outils.</p>
+    </div>
+
+    <div data-ach-id="edu_ubordeaux">
+        <p><strong>Objectif :</strong> base math-info solide pour modéliser, coder proprement et raisonner rigoureusement.</p>
+        <ul>
+            <li><strong>Maths :</strong> analyse, proba/stat, algèbre (socle utile pour finance quant et modélisation).</li>
+            <li><strong>Informatique :</strong> algorithmique, structures de données, POO, complexité.</li>
+            <li><strong>Systèmes :</strong> bases de données, logique de performance, rigueur d’implémentation.</li>
+            <li><strong>Orientation progressive :</strong> intérêt croissant pour finance quant + ingénierie logicielle.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> capacité à apprendre vite + passer de la théorie à l’implémentation.</p>
+    </div>
+
+    <div data-ach-id="pj_volatiq">
+        <p><strong>Objectif :</strong> simulateur Monte-Carlo + pricing options avec visualisation interactive.</p>
+        <ul>
+            <li>Pricing : <strong>Black-Scholes</strong>, greeks, IV surface, smile/skew, z-score, heuristiques buy/sell.</li>
+            <li>Modèles : <strong>GBM</strong>, diffusion, calibration volatilité, stress scenarios, risk metrics.</li>
+            <li>Dashboard <strong>Blazor</strong> + API <strong>FastAPI</strong>.</li>
+        </ul>
+        <p class="mb-0"><strong>Stack :</strong> C++, Python, Blazor, Docker.</p>
+    </div>
+
+    <div data-ach-id="pj_watchdog">
+        <p><strong>Objectif :</strong> API KYC/AML orientée performance et auditabilité.</p>
+        <ul>
+            <li>Moteur de règles haute perf, <strong>caching</strong> & monitoring avancé.</li>
+            <li>Scoring dynamique + détection comportements suspects.</li>
+            <li>Traçabilité décisions / audit trail.</li>
+        </ul>
+        <p class="mb-0"><strong>Stack :</strong> .NET 8, SQL Server.</p>
+    </div>
+
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-labelledby="achievementModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalLabel">Titre</h5>
+                    <div id="achievementModalSubtitle" class="text-muted small">Sous-titre</div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div id="achievementModalContent"></div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        (function () {
+            const modal = document.getElementById('achievementModal');
+            if (!modal) return;
+
+            const titleEl = document.getElementById('achievementModalLabel');
+            const subtitleEl = document.getElementById('achievementModalSubtitle');
+            const contentEl = document.getElementById('achievementModalContent');
+            const bodiesRoot = document.getElementById('achievementBodies');
+
+            modal.addEventListener('show.bs.modal', function (event) {
+                const btn = event.relatedTarget;
+                if (!btn) return;
+
+                const id = btn.getAttribute('data-ach-id') || '';
+                const title = btn.getAttribute('data-ach-title') || 'Détail';
+                const subtitle = btn.getAttribute('data-ach-subtitle') || '';
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                if (!bodiesRoot || !id) {
+                    contentEl.innerHTML = `<p class="mb-0 text-muted">Contenu à compléter.</p>`;
+                    return;
+                }
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                contentEl.innerHTML = src ? src.innerHTML : `<p class="mb-0 text-muted">Contenu à compléter.</p>`;
+            });
+        })();
+    </script>
+}
