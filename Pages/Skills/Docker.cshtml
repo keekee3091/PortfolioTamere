@@ -125,7 +125,7 @@
     </div>
     <hr class="my-4" />
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
-        <div class="col-skill">
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Introduction</span></h3>
@@ -145,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-skill">
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Mon parcours avec Docker (pro + académique)</span></h3>
@@ -165,8 +165,48 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Situations concrètes</span></h3>
+                    <hr />
+                    <div>
+                        <p>
+                            Dans mes projets académiques et mon portfolio (.NET), j’ai utilisé Docker pour rendre l’application exécutable de façon reproductible, sans dépendre d’une installation locale spécifique. L’objectif était d’avoir un environnement propre et stable, utilisable pour tester rapidement et présenter le projet.
+                            <br />
+                            <strong>Résultat</strong> : exécution simplifiée, environnement cohérent, et projet plus “deploy-ready”.
 
-        <div class="col-skill">
+                        </p>
+
+                        <div class="align-items-center gap-3 mb-3">
+                            <a asp-page="/Projects" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+
+                        <p>
+                            Docker m’a servi à structurer une exécution propre : configuration explicite via variables d’environnement, ports exposés clairement, et cycle build/run/test cohérent. Cette démarche m’aide à rendre mes projets plus propres et plus proches des pratiques professionnelles.
+                            <br />
+                            <strong>Résultat</strong> : réduction des problèmes “ça marche chez moi” et meilleure discipline d’environnement.
+                        </p>
+
+                        <div class="align-items-center gap-3 mb-3">
+                            <a asp-page="/Projects/Watchdog" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+
+                        <p>
+                            Sur des projets orientés pipeline et traitement (VolatiQ / Market Data), Docker est utile pour figer les dépendances et exécuter un workflow de manière stable. Cela me permet de tester plus facilement sur différents environnements et de garder une base reproductible.
+                            <br />
+                            <strong>Résultat</strong> : exécution plus cohérente et itérations plus propres sur les projets.
+                        </p>
+
+                        <div class="align-items-center gap-3">
+                            <a asp-page="/Projects/Volatiq" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Mon Docker aujourd’hui : pragmatique, orienté exécution fiable</span></h3>

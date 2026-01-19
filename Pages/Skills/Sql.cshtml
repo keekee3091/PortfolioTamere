@@ -124,7 +124,7 @@
     </div>
     <hr class="my-4" />
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
-        <div class="col-skill">
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Introduction</span></h3>
@@ -144,7 +144,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-skill">
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Mon parcours avec SQL (pro + académique)</span></h3>
@@ -164,8 +164,48 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Situations concrètes</span></h3>
+                    <hr />
+                    <div>
+                        <p>
+                            Sur un CRM BackOffice, certains écrans fortement utilisés devenaient lents dès que la volumétrie augmentait (filtres, listes, historiques). J’ai analysé les requêtes exécutées, identifié les jointures coûteuses et les accès non indexés, puis appliqué des optimisations ciblées : refactor de requêtes, limitation des colonnes inutiles, ajustements sur les conditions de filtre et ajout d’index lorsque pertinent.      
+                            <br />
+                            <strong>Résultat</strong> : décisions d’optimisation plus fiables (on optimise la vraie cause, pas au hasard).
+                        </p>
 
-        <div class="col-skill">
+                        <div class="align-items-center gap-3 mb-3">
+                            <a asp-page="/Projects/Backoffice" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+
+                        <p>
+                            Sur des traitements batch orientés échéanciers/statuts (ex : suivi d’échéances et mises à jour), il fallait garantir que les données restent cohérentes : pas de doublons, pas d’état incohérent, et une mise à jour maîtrisée. J’ai travaillé avec des requêtes structurées et des mises à jour contrôlées (ordre de traitement, filtres stricts, opérations atomiques lorsque nécessaire).
+                            <br />
+                            <strong>Résultat</strong> : données plus fiables et traitement plus stable sur des volumes plus élevés.
+                        </p>
+
+                        <div class="align-items-center gap-3 mb-3">
+                            <a asp-page="/Projects/MarketData" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+
+                        <p>
+                            Dans un contexte conformité (KYC/AML), SQL est indispensable pour retrouver rapidement : historique de statuts, événements, justificatifs, et logique de décision. J’ai construit et utilisé des requêtes d’extraction pour tracer l’état d’un dossier et expliquer “pourquoi” un statut est celui-ci, en m’appuyant sur des données fiables et exploitables.
+                            <br />
+                            <strong>Résultat</strong> : meilleure traçabilité, support plus rapide et décisions plus auditables.
+                        </p>
+
+                        <div class="align-items-center gap-3">
+                            <a asp-page="/Projects/Kyc" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Mon SQL aujourd’hui : pragmatique, orienté production</span></h3>

@@ -123,7 +123,7 @@
     </div>
     <hr class="my-4" />
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
-        <div class="col-skill">
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Introduction</span></h3>
@@ -148,7 +148,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-skill">
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Mon parcours avec C# (pro + académique)</span></h3>
@@ -173,7 +173,47 @@
                 </div>
             </div>
         </div>
-        <div class="col-skill">
+        <div class="col-lg-6">
+            <div class="card skill-card h-100 border-0 shadow-sm">
+                <div class="card-body d-flex flex-column text-center">
+                    <h3><span>Situations concrètes</span></h3>
+                    <hr />
+                    <div>
+                        <p>
+                            Sur un écran fortement utilisé (facturation / suivi client), j’ai dû corriger des comportements instables en production et sécuriser les futures évolutions. J’ai analysé le flux complet UI → code serveur → SQL, isolé les points sensibles (couplage + logique dispersée), puis appliqué une correction ciblée et un refactor minimal mais structurant.
+                            <br />
+                            <strong>Résultat</strong> : comportement plus fiable et base plus lisible pour les itérations suivantes.
+                        </p>
+
+                        <div class="align-items-center gap-3 mb-3">
+                            <a asp-page="/Projects/AutoBill" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+
+                        <p>
+                            J’ai travaillé sur des lenteurs réelles liées aux accès SQL Server (volumétrie, filtres, requêtes coûteuses). En réduisant les appels inutiles, en améliorant les requêtes et en rationalisant la logique serveur, j’ai diminué la latence perçue sur des parcours métier.
+                            <br />
+                            <strong>Résultat</strong> : écrans plus réactifs, meilleure fluidité côté utilisateurs.
+                        </p>
+
+                        <div class="align-items-center gap-3 mb-3">
+                            <a asp-page="/Projects/Backoffice" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+
+                        <p>
+                            Dans un contexte conformité, j’ai renforcé la traçabilité des traitements pour mieux comprendre ce qui déclenche une alerte ou influence un statut. J’ai structuré les logs et clarifié les points de décision pour qu’un contrôle reste explicable et auditable.
+                            <br />
+                            <strong>Résultat</strong> : diagnostic plus rapide + décisions métier plus justifiables.
+                        </p>
+
+                        <div class="align-items-center gap-3">
+                            <a asp-page="/Projects/KYC" class="btn btn-outline-primary">Voir plus</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
             <div class="card skill-card h-100 border-0 shadow-sm">
                 <div class="card-body d-flex flex-column text-center">
                     <h3><span>Mon C# aujourd’hui : moderne, structuré, orienté robustesse</span></h3>
