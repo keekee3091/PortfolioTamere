@@ -3,28 +3,38 @@
 @{
     ViewData["Title"] = "Watchdog API";
 }
+<section class="skills-hero mb-4">
 
-<h2 class="mb-1">Watchdog API</h2>
-<p class="lead text-muted mb-4">API .NET 8 KYC/AML avec scoring, PPE, sanctions, anomalies.</p>
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
 
-@* HERO / CTA *@
-<div class="d-flex flex-wrap gap-2 mb-4">
-    <a asp-page="/Projects" class="btn btn-secondary">Retour</a>
-    <a href="https://github.com/keekee3091/Watchdog_v2"
-       class="btn btn-primary"
-       target="_blank"
-       rel="noopener noreferrer">
-        Accéder au Git
-    </a>
-</div>
-@* Réalisations clés : cartes cliquables + modal *@
-<section class="mt-5">
-    <h3><strong>Réalisations clés</strong></h3>
-    <p class="text-muted">
-        Sélection de composants concrets du projet. Chaque carte détaille le besoin, l’implémentation et le résultat.
-    </p>
+        <div class="align-items-center col-lg-9 d-flex gap-3">
+            <div>
+                <h2 class="mb-1 fw-bold">
+                    Watchdog API — Réalisations clés
+                </h2>
+                <p class="text-muted mb-0">
+                    Conception d’un moteur KYC/AML indépendant dédié au risk scoring client, inspiré des logiques conformité industrielles, avec une approche orientée explicabilité et performance. Développement d’un rules engine en .NET 8 permettant de calculer un score dynamique et des statuts automatiques (PPE, sanctions/gel des avoirs, condamnations) en fonction des contacts (UBO, responsables fiscaux), de signaux qualitatifs (justificatifs, cohérence documentaire) et quantitatifs (trésorerie, flux fiscaux, répartition UBO), complété par l’analyse de la facturation interne (volume, fréquence, destinataires, destinations).
+                </p>
+            </div>
+        </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <div>
+                <a asp-page="/Projects" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left me-1"></i> Retour
+                </a>
+                <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+            </div>
+            <div>
+                <a href="https://github.com/keekee3091/Watchdog_V2" target="_blank" rel="noopener" class="btn btn-primary">
+                    Voir le repo
+                </a>
+            </div>
+        </div>     
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
 
         <div class="col">
             <button type="button"
@@ -32,19 +42,19 @@
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="scoring"
-                    data-ach-title="Moteur de scoring AML"
-                    data-ach-subtitle="Critères pondérés, seuils, règles d’alerte et décision explicable">
+                    data-ach-id="wd_rules"
+                    data-ach-title="Rules Engine & scoring dynamique"
+                    data-ach-subtitle="Moteur de règles, pondérations, seuils, score explicable et déterministe">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-speedometer2 fs-3"></i>
+                        <i class="bi bi-shield-lock fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Moteur de scoring AML</h5>
-                            <p class="card-text text-muted mb-2">Pondérations, règles, seuils et explicabilité.</p>
+                            <h5 class="card-title mb-1">Rules Engine & scoring dynamique</h5>
+                            <p class="card-text text-muted mb-2">Calcul de risque automatisé basé sur règles configurables.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">Domain Rules</span>
-                                <span class="badge wd-badge wd-secondary">Explainability</span>
-                                <span class="badge wd-badge wd-accent">.NET 8</span>
+                                <span class="badge wd-badge wd-primary">.NET 8</span>
+                                <span class="badge wd-badge wd-secondary">Rules</span>
+                                <span class="badge wd-badge wd-accent">Scoring</span>
                             </div>
                         </div>
                     </div>
@@ -58,19 +68,71 @@
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="normalisation"
-                    data-ach-title="Pipeline de normalisation"
-                    data-ach-subtitle="Ingestion multi-sources, mapping canonique et validation stricte">
+                    data-ach-id="wd_contacts"
+                    data-ach-title="Contacts, UBO & responsables fiscaux"
+                    data-ach-subtitle="Graph client, liens, rôles, consolidation par entité, scoring par contact">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-diagram-3 fs-3"></i>
+                        <i class="bi bi-people fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Pipeline de normalisation</h5>
-                            <p class="card-text text-muted mb-2">Entrées hétérogènes → modèle canonique.</p>
+                            <h5 class="card-title mb-1">Contacts, UBO & responsables fiscaux</h5>
+                            <p class="card-text text-muted mb-2">Risque client enrichi par la gouvernance et les parties liées.</p>
                             <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">KYC</span>
+                                <span class="badge wd-badge wd-secondary">UBO</span>
+                                <span class="badge wd-badge wd-accent">Risk Graph</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="wd_flags"
+                    data-ach-title="Flags PPE / sanctions / condamnations"
+                    data-ach-subtitle="Statuts dangereux, blocages automatiques, règles d’escalade, priorisation">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-exclamation-triangle fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Flags PPE / sanctions / condamnations</h5>
+                            <p class="card-text text-muted mb-2">Détection et verrouillage automatique des cas critiques.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">PPE</span>
+                                <span class="badge wd-badge wd-primary">Sanctions</span>
+                                <span class="badge wd-badge wd-accent">Escalation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="wd_docs"
+                    data-ach-title="Justificatifs & données qualitatives"
+                    data-ach-subtitle="Complétude, validité, cohérence documentaire, règles KYC, anomalies">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-file-earmark-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Justificatifs & données qualitatives</h5>
+                            <p class="card-text text-muted mb-2">Contrôles documentaires intégrés au scoring.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">Documents</span>
+                                <span class="badge wd-badge wd-secondary">Completeness</span>
                                 <span class="badge wd-badge wd-primary">Validation</span>
-                                <span class="badge wd-badge wd-secondary">Mapping</span>
-                                <span class="badge wd-badge wd-primary">Robustesse</span>
                             </div>
                         </div>
                     </div>
@@ -84,19 +146,19 @@
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="simulateurs"
-                    data-ach-title="Simulateurs de sources externes"
-                    data-ach-subtitle="PPE, sanctions, anomalies et incohérences déclaratives">
+                    data-ach-id="wd_quanti"
+                    data-ach-title="Données quantitatives & flux"
+                    data-ach-subtitle="Trésorerie, flux fiscaux, exposition, parts UBO, signaux chiffrés">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-database fs-3"></i>
+                        <i class="bi bi-graph-up-arrow fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Simulateurs de sources externes</h5>
-                            <p class="card-text text-muted mb-2">Données réalistes sans dépendances réelles.</p>
+                            <h5 class="card-title mb-1">Données quantitatives & flux</h5>
+                            <p class="card-text text-muted mb-2">Indicateurs chiffrés intégrés au risk scoring.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-accent">PPE</span>
-                                <span class="badge wd-badge wd-accent">Sanctions</span>
-                                <span class="badge wd-badge wd-secondary">Scénarios</span>
+                                <span class="badge wd-badge wd-primary">Analytics</span>
+                                <span class="badge wd-badge wd-secondary">Cashflow</span>
+                                <span class="badge wd-badge wd-accent">Risk Signals</span>
                             </div>
                         </div>
                     </div>
@@ -110,19 +172,19 @@
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="audit"
-                    data-ach-title="Logs orientés audit & historisation"
-                    data-ach-subtitle="Traçabilité des décisions, rejouabilité des analyses et preuves">
+                    data-ach-id="wd_invoices"
+                    data-ach-title="Facturation interne & destination"
+                    data-ach-subtitle="Scoring sur volumes, fréquence, destinataires, destinations sensibles, alertes">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-journal-text fs-3"></i>
+                        <i class="bi bi-receipt fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Audit & historisation</h5>
-                            <p class="card-text text-muted mb-2">Justifier, tracer, rejouer.</p>
+                            <h5 class="card-title mb-1">Facturation interne & destination</h5>
+                            <p class="card-text text-muted mb-2">Détection de patterns via factures et bénéficiaires.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">Audit logs</span>
-                                <span class="badge wd-badge wd-secondary">History</span>
-                                <span class="badge wd-badge wd-primary">Explain</span>
+                                <span class="badge wd-badge wd-secondary">Invoices</span>
+                                <span class="badge wd-badge wd-primary">Patterns</span>
+                                <span class="badge wd-badge wd-accent">Alerting</span>
                             </div>
                         </div>
                     </div>
@@ -130,297 +192,333 @@
             </button>
         </div>
 
-        <div class="col">
-            <button type="button"
-                    style="width: 100%;"
-                    class="card achievement-card shadow-sm h-100 text-start"
-                    data-bs-toggle="modal"
-                    data-bs-target="#achievementModal"
-                    data-ach-id="archi"
-                    data-ach-title="Architecture hexagonale"
-                    data-ach-subtitle="Domain isolé, ports/adapters, testabilité et évolutivité">
-                <div class="card-body">
-                    <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-boxes fs-3"></i>
-                        <div>
-                            <h5 class="card-title mb-1">Architecture hexagonale</h5>
-                            <p class="card-text text-muted mb-2">Séparation stricte des responsabilités.</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">DDD</span>
-                                <span class="badge wd-badge wd-secondary">Clean</span>
-                                <span class="badge wd-badge wd-primary">Testable</span>
+    </div>  
+    <hr class="my-4" />
+
+    <div class="mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="presentation"
+                        data-ach-title="Présentation"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Présentation</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-            </button>
-        </div>
+                </button>
+            </div>
 
-        <div class="col">
-            <button type="button"
-                    style="width: 100%;"
-                    class="card achievement-card shadow-sm h-100 text-start"
-                    data-bs-toggle="modal"
-                    data-bs-target="#achievementModal"
-                    data-ach-id="perf"
-                    data-ach-title="Performance & cache"
-                    data-ach-subtitle="Optimisation du temps de réponse et tenue en charge">
-                <div class="card-body">
-                    <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-lightning-charge fs-3"></i>
-                        <div>
-                            <h5 class="card-title mb-1">Performance & cache</h5>
-                            <p class="card-text text-muted mb-2">Latence maîtrisée et charge simulée.</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-accent">Cache</span>
-                                <span class="badge wd-badge wd-secondary">Bench</span>
-                                <span class="badge wd-badge wd-accent">Throughput</span>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="launch"
+                        data-ach-title="Lancement du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Lancement du projet</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-            </button>
-        </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="steps"
+                        data-ach-title="Les étapes"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les étapes</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+         
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="results"
+                        data-ach-title="Les résultats"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les résultats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="me"
+                        data-ach-title="Pour moi"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour moi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+     
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="tmrw"
+                        data-ach-title="Les lendemains du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les lendemain du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="pov"
+                        data-ach-title="Mon point de vue"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    Mon point de vue
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
 
+        </div>
     </div>
 </section>
-@* Contenu principal *@
-<div class="mt-4">
 
-    <h3><strong>Présentation</strong></h3>
-
-    <p>
-        <strong>Watchdog</strong> est un moteur KYC/AML développé comme projet personnel avancé,
-        conçu pour simuler le fonctionnement d’une plateforme de conformité réglementaire
-        similaire à celles utilisées dans les environnements bancaires et fintech.
-    </p>
-
-    <p>
-        Le projet ne se limite pas à l’exposition d’endpoints techniques :
-        il vise à reproduire un <strong>système de décision réglementaire complet</strong>,
-        intégrant la collecte de données, l’application de règles métiers complexes
-        et la production de décisions explicables.
-    </p>
-
-    <p>
-        L’objectif principal était de concevoir un moteur capable de centraliser
-        des données hétérogènes liées à l’identité et au comportement des clients,
-        de les normaliser, puis de produire une analyse structurée du risque AML.
-        Le moteur génère non seulement un score, mais également une
-        <strong>justification détaillée</strong> permettant de comprendre précisément
-        pourquoi une décision donnée a été prise.
-    </p>
-
-    <p>
-        Watchdog a été pensé comme un système autonome, capable de fonctionner
-        sans dépendance à des sources externes réelles, tout en respectant
-        les contraintes structurelles propres aux systèmes réglementés :
-        <strong>auditabilité, traçabilité, robustesse, performance et évolutivité</strong>.
-    </p>
-
-    <h3 class="mt-4"><strong>Lancement du projet</strong></h3>
-
-    <p>
-        À l’origine, Watchdog est né d’un constat personnel :
-        les systèmes AML sont souvent perçus comme des boîtes noires,
-        difficiles à comprendre en dehors des équipes spécialisées,
-        alors qu’ils jouent un rôle central dans la gestion du risque
-        et la conformité réglementaire.
-    </p>
-
-    <p>
-        L’objectif était de reproduire, à échelle réduite mais réaliste,
-        le fonctionnement d’un moteur AML professionnel afin de mieux
-        comprendre les problématiques techniques et métier associées.
-    </p>
-
-    <p>
-        Le projet a été conçu pour permettre de tester différentes
-        approches de scoring, d’affiner des règles métiers et de valider
-        des schémas d’architecture propres aux projets sensibles :
-        <strong>
-            traçabilité, logs, isolation des couches,
-            validation stricte et robustesse technique
-        </strong>.
-    </p>
-
-    <h3 class="mt-4"><strong>Les étapes</strong></h3>
-
-    <ul class="mt-2">
-        <li>
-            Définition d’un <strong>modèle de scoring AML</strong> basé sur des signaux faibles,
-            des critères pondérés et des règles d’alerte explicites.
-        </li>
-        <li>
-            Mise en place d’une <strong>architecture hexagonale</strong>
-            (Domain / Application / Infrastructure) afin d’isoler la logique métier.
-        </li>
-        <li>
-            Développement du moteur de scoring central et de
-            <strong>simulateurs de sources externes</strong>.
-        </li>
-        <li>
-            Implémentation d’un pipeline de <strong>normalisation des données</strong>
-            garantissant la cohérence des entrées quelle que soit la source.
-        </li>
-        <li>
-            Ajout d’un système de <strong>logs explicables orientés audit</strong>
-            et d’une historisation complète des analyses.
-        </li>
-        <li>
-            Conteneurisation du projet, mise en place de tests unitaires
-            et optimisation du cache et des performances globales.
-        </li>
-    </ul>
-
-    <h3 class="mt-4"><strong>Les résultats</strong></h3>
-
-    <h4 class="mt-3"><strong>Pour moi</strong></h4>
-
-    <p>
-        Watchdog m’a permis de pratiquer une architecture de niveau industriel
-        dans un cadre totalement libre. J’ai pu travailler sur la
-        modélisation de règles métiers complexes, la structuration d’un moteur autonome
-        et la construction d’un socle technique comparable à ceux utilisés
-        dans les fintechs et institutions réglementées.
-    </p>
-
-    <h4 class="mt-3"><strong>Pour le projet</strong></h4>
-
-    <p>
-        Le moteur est aujourd’hui <strong>stable, modulaire et extensible</strong>.
-        Il est capable d’ingérer des données hétérogènes et de produire
-        une analyse réglementaire structurée.
-        Watchdog sert désormais de base à d’autres expérimentations :
-        scénarios de fraude, modèles statistiques, outils internes de test
-        ou prototypes réglementaires.
-    </p>
-
-    <h3 class="mt-4"><strong>Insights & KPIs</strong></h3>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card text-center shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">40 ms</h5>
-                    <p class="card-text">
-                        Temps de réponse moyen de l’API en charge nominale,
-                        incluant normalisation, scoring et journalisation.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card text-center shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">1 800 req/min</h5>
-                    <p class="card-text">
-                        Débit maximal simulé lors de scénarios intensifs
-                        afin de valider la tenue en charge du moteur.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card text-center shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">&gt; 95 %</h5>
-                    <p class="card-text">
-                        Cohérence métier du scoring sur des scénarios complexes,
-                        validée par comparaison règles / décisions.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h3 class="mt-4"><strong>Les lendemains du projet</strong></h3>
-
-    <p>
-        Les pistes d’évolution incluent l’intégration de sources réelles,
-        l’ajout de modèles statistiques ou probabilistes,
-        une détection comportementale plus fine
-        et la connexion avec des jeux de données réglementaires publics.
-    </p>
-
-    <p>
-        L’architecture actuelle permet d’étendre facilement le moteur
-        sans remise en cause du cœur métier, ce qui positionne Watchdog
-        comme une base solide pour des projets AML plus avancés.
-    </p>
-
-</div>
-
-@* Source HTML des modals (caché) *@
 <div id="achievementBodies" class="d-none">
 
-    <div data-ach-id="scoring">
-        <p><strong>Objectif :</strong> produire un score de risque et une décision (OK / Review / Alert) à partir de critères AML pondérés.</p>
+    <div data-ach-id="wd_rules">
+        <p><strong>Objectif :</strong> développer un moteur de scoring KYC/AML haute performance pour évaluer automatiquement le risque client sur la base de règles explicites.</p>
         <ul>
-            <li><strong>Modèle de règles :</strong> critères composables avec poids, seuils, règles bloquantes et exceptions.</li>
-            <li><strong>Explicabilité :</strong> contribution par critère (ex : incohérence déclarative, pays à risque, sanctions, PPE) + justification.</li>
-            <li><strong>Testabilité :</strong> scénarios unitaires (cas normaux / cas limites) pour garantir la cohérence métier.</li>
+            <li><strong>Scoring :</strong> score global + sous-scores par dimensions (identité, gouvernance, flux, facturation) avec pondérations paramétrables.</li>
+            <li><strong>Rules :</strong> règles déterministes (seuils, agrégations, combinaisons) pour produire un statut stable et reproductible.</li>
+            <li><strong>Explicabilité :</strong> détail des règles déclenchées et impact sur le score pour éviter toute “boîte noire”.</li>
         </ul>
-        <p class="mb-0"><strong>Résultat :</strong> scoring lisible, stable et extensible.</p>
+        <p class="mb-0"><strong>Résultat :</strong> un moteur de scoring configurable, rapide et audit-ready.</p>
     </div>
 
-    <div data-ach-id="normalisation">
-        <p><strong>Problème :</strong> plusieurs sources produisent des formats différents. Pour scorer correctement, il faut un modèle canonique unique.</p>
+    <div data-ach-id="wd_contacts">
+        <p><strong>Objectif :</strong> intégrer la gouvernance client au scoring via l’analyse des contacts : bénéficiaires effectifs (UBO) et responsables fiscaux.</p>
         <ul>
-            <li><strong>Validation stricte :</strong> contrôles (formats, valeurs attendues, complétude, invariants).</li>
-            <li><strong>Mapping :</strong> conversion vers un <em>profil client</em> canonique (identité, résidence, activité, signaux).</li>
-            <li><strong>Erreurs traçables :</strong> erreurs structurées (champ, cause, gravité).</li>
+            <li><strong>Modèle :</strong> structuration des relations client ↔ contacts ↔ rôles avec consolidation par entité.</li>
+            <li><strong>Scoring contact :</strong> impact du profil et des signaux par personne sur le risque global.</li>
+            <li><strong>Historique :</strong> traçabilité des changements (ajout/retrait UBO, changement de rôle, mises à jour).</li>
         </ul>
-        <p class="mb-0"><strong>Résultat :</strong> pipeline robuste, ajout de nouvelles sources sans casser le moteur.</p>
+        <p class="mb-0"><strong>Résultat :</strong> un risk scoring plus réaliste basé sur les parties liées.</p>
     </div>
 
-    <div data-ach-id="simulateurs">
-        <p><strong>Objectif :</strong> reproduire des flux KYC/AML réalistes sans dépendre d’APIs externes ni de datasets sensibles.</p>
+    <div data-ach-id="wd_flags">
+        <p><strong>Objectif :</strong> automatiser les statuts dangereux et les escalades conformité via des flags PPE/sanctions/condamnations.</p>
         <ul>
-            <li><strong>PPE :</strong> profils exposés (rôles, proximité, niveaux de risque) et variations de cas.</li>
-            <li><strong>Sanctions :</strong> listes simulées, collisions de noms, cas d’homonymie.</li>
-            <li><strong>Anomalies :</strong> incohérences déclaratives, comportements atypiques, signaux faibles combinés.</li>
+            <li><strong>Statuts :</strong> blocages automatiques et escalade en revue selon criticité et règles métier.</li>
+            <li><strong>Priorisation :</strong> tri des cas sensibles (gel des avoirs, sanctions, condamnations) avec seuils stricts.</li>
+            <li><strong>Traçabilité :</strong> justification claire des statuts déclenchés et audit des décisions.</li>
         </ul>
-        <p class="mb-0"><strong>Résultat :</strong> base de scénarios pour valider et faire évoluer les règles.</p>
+        <p class="mb-0"><strong>Résultat :</strong> réduction du risque d’erreur et traitement accéléré des cas critiques.</p>
     </div>
 
-    <div data-ach-id="audit">
-        <p><strong>Objectif :</strong> rendre le moteur audit-ready : chaque décision doit être expliquée et rejouable.</p>
+    <div data-ach-id="wd_docs">
+        <p><strong>Objectif :</strong> intégrer des signaux qualitatifs via l’analyse des justificatifs KYC : complétude, validité et cohérence.</p>
         <ul>
-            <li><strong>Logs explicables :</strong> raisons, critères, score partiel, seuils.</li>
-            <li><strong>Historisation :</strong> sauvegarde des inputs normalisés + décision + détails de calcul.</li>
-            <li><strong>Rejouabilité :</strong> comparer des décisions après évolution de règles.</li>
+            <li><strong>Complétude :</strong> calcul des pièces requises et des éléments manquants par profil client.</li>
+            <li><strong>Validité :</strong> gestion des expirations, incohérences et documents multiples.</li>
+            <li><strong>Qualité :</strong> règles explicites pour détecter les cas “non conformes” ou ambigus.</li>
         </ul>
-        <p class="mb-0"><strong>Résultat :</strong> traçabilité complète et crédibilité “conformité”.</p>
+        <p class="mb-0"><strong>Résultat :</strong> un scoring enrichi par une lecture documentaire fiable.</p>
     </div>
 
-    <div data-ach-id="archi">
-        <p><strong>Choix :</strong> architecture hexagonale pour isoler la logique métier et éviter le couplage aux détails techniques.</p>
+    <div data-ach-id="wd_quanti">
+        <p><strong>Objectif :</strong> exploiter des indicateurs quantitatifs (trésorerie, flux fiscaux, exposition) pour renforcer le risk scoring.</p>
         <ul>
-            <li><strong>Domain :</strong> règles AML, entités, invariants, agrégats (sans dépendances techniques).</li>
-            <li><strong>Application :</strong> orchestration des use-cases (analyse, scoring, historisation).</li>
-            <li><strong>Infrastructure :</strong> persistance, logs, simulateurs, adaptateurs.</li>
+            <li><strong>Indicateurs :</strong> agrégation de métriques chiffrées (niveaux, variations, ratios) et signaux de risque.</li>
+            <li><strong>Consolidation :</strong> prise en compte des parts UBO et de la structure de détention dans l’exposition.</li>
+            <li><strong>Règles :</strong> déclenchement d’alertes selon seuils et patterns quantitatifs.</li>
         </ul>
-        <p class="mb-0"><strong>Résultat :</strong> base testable et évolutive.</p>
+        <p class="mb-0"><strong>Résultat :</strong> une évaluation du risque plus complète et plus discriminante.</p>
     </div>
 
-    <div data-ach-id="perf">
-        <p><strong>Objectif :</strong> tenir une charge simulée tout en conservant une latence faible.</p>
+    <div data-ach-id="wd_invoices">
+        <p><strong>Objectif :</strong> détecter des comportements suspects via l’analyse de factures internes : volume, fréquence, destination et destinataires.</p>
         <ul>
-            <li><strong>Cache :</strong> éviter des recalculs inutiles sur des données stables (listes, paramètres).</li>
-            <li><strong>Optimisations :</strong> réduction d’allocations, simplification de chemins critiques.</li>
-            <li><strong>Bench :</strong> scénarios req/min et observation de la latence.</li>
+            <li><strong>Patterns :</strong> scoring basé sur le nombre de factures, la fréquence et la concentration par destinataire.</li>
+            <li><strong>Destination :</strong> règles de risque selon pays/zone, sensibilité du destinataire et typologie.</li>
+            <li><strong>Alerting :</strong> génération d’alertes et justification automatique (factures, périodes, seuils dépassés).</li>
         </ul>
-        <p class="mb-0"><strong>Résultat :</strong> performances cohérentes avec tes KPIs.</p>
+        <p class="mb-0"><strong>Résultat :</strong> un signal “transactionnel” intégré au scoring KYC/AML pour mieux détecter les risques.</p>
+    </div>
+    <div data-ach-id="presentation">
+        <p>
+            Watchdog est un projet personnel de moteur KYC/AML conçu pour produire un risk scoring client dynamique, explicable et exploitable, à partir d’un ensemble de signaux conformité et financiers. Mon objectif est de construire une brique indépendante, réutilisable dans différents contextes, capable de transformer des informations hétérogènes (identité, gouvernance, justificatifs, indicateurs chiffrés, comportements de facturation) en un score global, des alertes, et des statuts automatiques permettant d’identifier rapidement les profils à risque et de prioriser une revue conformité.
+        </p>
+
+        <p>
+            Le projet repose sur une API .NET 8 adossée à SQL Server, structurée autour d’un rules engine qui applique des règles paramétrables et déterministes. Le scoring prend en compte les parties liées du client (bénéficiaires effectifs, responsables fiscaux), les signaux critiques de conformité (PPE, sanctions, gel des avoirs, condamnations), ainsi que des données qualitatives via les justificatifs (complétude, validité, cohérence) et quantitatives via des indicateurs comme la trésorerie, les flux fiscaux, la répartition des UBO et l’exposition globale.
+        </p>
+
+        <p>
+            Une dimension importante du moteur est l’analyse des factures internes comme signal comportemental : volume, fréquence, concentration par destinataire et destinations sensibles, afin de détecter des patterns anormaux pouvant renforcer le niveau de risque. Chaque décision est conçue pour être traçable et justifiable, avec un historique des événements et des règles déclenchées, afin d’éviter l’effet “boîte noire”.
+        </p>
+        <p>
+            Enfin, Watchdog vise une exécution robuste et performante : caching des référentiels, monitoring, logs structurés et architecture pensée pour recalculer le risque à la demande ou en batch, tout en restant stable et maintenable. Le résultat est une brique KYC/AML orientée production, capable d’unifier la conformité documentaire, l’analyse des parties liées et des signaux financiers dans un scoring explicable.  
+        </p>
     </div>
 
+    <div data-ach-id="launch">
+        <p>
+            Le lancement du projet Watchdog a commencé par une étape de cadrage où j’ai clarifié l’objectif : construire un moteur KYC/AML indépendant capable de produire un risk scoring dynamique, avec des statuts automatiques et une explicabilité comparable à un module conformité “production”. Comme c’est un projet personnel, l’enjeu était aussi de définir un périmètre réaliste mais crédible : intégrer à la fois la gouvernance (UBO / responsables fiscaux), des signaux conformité forts (PPE, sanctions, gel des avoirs, condamnations) et des signaux financiers (trésorerie, flux, facturation interne).
+        </p>
+
+        <p>
+            J’ai ensuite démarré par le socle data, en modélisant SQL Server autour d’un “dossier client” consolidé. J’ai structuré les entités nécessaires au scoring : clients, contacts et rôles, justificatifs, événements, statuts, ainsi que les tables d’indicateurs quantitatifs et de factures internes. L’objectif était d’avoir une base cohérente, capable de stocker à la fois l’état courant et l’historique, pour pouvoir recalculer un score de manière stable et expliquer chaque changement dans le temps.
+        </p>
+
+        <p>
+            Une fois la donnée cadrée, j’ai lancé l’API .NET 8 en posant l’architecture du rules engine. J’ai priorisé une logique déterministe et paramétrable : règles explicites, pondérations, seuils et sous-scores, afin d’éviter un scoring opaque. Le moteur devait pouvoir prendre un client, agréger les signaux (qualitatifs, quantitatifs, parties liées, factures), produire un score global, et déclencher automatiquement les statuts critiques quand des conditions fortes sont détectées.
+        </p>
+        <p>
+            Enfin, dès les premières versions fonctionnelles, j’ai orienté le lancement vers la robustesse : traçabilité des règles déclenchées, historisation des événements, logs structurés, et premières optimisations de performance (caching des référentiels, exécution rapide sur plusieurs dossiers). À ce stade, Watchdog n’était plus une idée de scoring, mais un moteur cohérent “de bout en bout”, prêt à évoluer vers plus de règles, plus de signaux et des scénarios plus réalistes.
+        </p>
+
+    </div>
+
+    <div data-ach-id="steps">
+        <p>
+            J’ai d’abord commencé par cadrer le projet Watchdog comme un moteur KYC/AML indépendant, avec un objectif clair : produire un risk scoring client dynamique, explicable et automatisable, inspiré des workflows conformité en production. J’ai défini les dimensions du scoring dès le départ pour éviter un projet trop vague : gouvernance (UBO / responsables fiscaux), signaux conformité forts (PPE, sanctions, gel des avoirs, condamnations), signaux qualitatifs (justificatifs) et signaux quantitatifs (trésorerie, flux fiscaux, exposition), plus une couche comportementale via la facturation interne.
+        </p>
+
+        <p>
+            Ensuite, j’ai construit la fondation data en SQL Server, parce que la cohérence du scoring dépend entièrement de la qualité des informations stockées. J’ai structuré les entités principales : clients, contacts et rôles, justificatifs, événements, statuts, indicateurs quantitatifs, et factures internes. Cette étape m’a permis de poser un socle capable de supporter la consolidation par client, le recalcul du score, et l’historisation nécessaire à l’audit et à l’explicabilité.
+        </p>
+
+        <p>
+            Une fois le modèle posé, j’ai mis en place les requêtes et vues de consolidation pour reconstruire une vue “client” exploitable par le moteur de scoring. L’objectif était de pouvoir agréger proprement les signaux : composition de la gouvernance, complétude documentaire, drapeaux critiques, métriques financières et patterns de facturation, sans dépendre d’une lecture ligne par ligne.
+        </p>
+        <p>
+            J’ai ensuite développé l’API en .NET 8 et structuré le rules engine. J’ai implémenté une logique déterministe basée sur des règles explicites, avec pondérations et seuils, afin de produire un score global et des sous-scores par dimension. En parallèle, j’ai ajouté les statuts automatiques “bloquants” (sanctions, gel des avoirs, condamnations) et les statuts “sensibles” (PPE) pour déclencher immédiatement des alertes et une escalade.
+        </p>
+        <p>
+            Après la première version fonctionnelle, j’ai renforcé l’explicabilité du moteur en historisant les événements et en gardant la trace des règles déclenchées. L’objectif était de pouvoir expliquer précisément pourquoi un client est considéré à risque, quels contacts ou indicateurs ont contribué au score, et comment la situation a évolué dans le temps.
+        </p>
+        <p>
+            Enfin, j’ai travaillé la partie performance et exploitation : caching des référentiels, logs structurés, métriques de monitoring et exécution stable sur plusieurs dossiers. Le but est de rendre Watchdog capable de recalculer un scoring rapidement, de manière reproductible, et de rester maintenable quand j’ajoute de nouvelles règles ou de nouveaux signaux.
+        </p>
+    </div>
+    
+    <div data-ach-id="results">
+        <p>
+            Le premier résultat du projet Watchdog est la création d’un moteur KYC/AML autonome capable de produire un risk scoring client dynamique avec une logique claire et reproductible. Au lieu d’un simple “score”, l’API fournit une décision exploitable : score global, sous-scores, alertes et statut final, ce qui permet de prioriser immédiatement les dossiers à risque.
+        </p>
+        <p>
+            Le deuxième résultat est un socle SQL Server structuré pour centraliser la donnée nécessaire au scoring. Les clients, contacts (UBO / responsables fiscaux), justificatifs, indicateurs quantitatifs, factures internes et événements sont modélisés de manière cohérente, avec une consolidation par client et une capacité à recalculer le risque sur une base stable.
+        </p>
+        <p>
+            Le troisième résultat est l’implémentation d’un rules engine .NET 8 paramétrable, qui applique des règles déterministes (pondérations, seuils, combinaisons) au lieu d’une logique opaque. Les statuts dangereux (sanctions / gel des avoirs / condamnations) sont automatisés, et les signaux sensibles (PPE) déclenchent des alertes et une priorisation.
+        </p>
+        <p>
+            Le quatrième résultat est l’intégration simultanée de signaux qualitatifs et quantitatifs. Le scoring combine la complétude et la cohérence documentaire avec des métriques financières (trésorerie, flux fiscaux, répartition UBO) pour produire un risque plus réaliste et mieux discriminant qu’une simple checklist conformité.
+        </p>
+        <p>
+            Le cinquième résultat est l’ajout d’une dimension comportementale via la facturation interne, en scorant le volume, la fréquence et la destination des factures selon le destinataire et la sensibilité, afin d’identifier des patterns anormaux pouvant renforcer le niveau de risque.
+        </p>
+        <p>
+            Enfin, un résultat majeur est l’explicabilité et la traçabilité : historisation des événements, trace des règles déclenchées, logs structurés et mécanismes de monitoring/caching. Le moteur n’est pas une boîte noire : il permet de justifier précisément pourquoi un client a été scoré à un certain niveau, et comment cette décision a évolué dans le temps.
+        </p>
+    </div>
+    <div data-ach-id="me">
+        <p>
+            Pour moi, Watchdog m’a surtout permis de construire un projet perso “end-to-end” qui ressemble à une vraie brique conformité en conditions réelles, pas juste un exercice de code. J’ai appris à transformer une idée de scoring en un moteur exploitable, avec un socle data solide, des règles explicites et une sortie actionnable (score, alertes, statuts), plutôt qu’un résultat vague difficile à interpréter.
+        </p>
+        <p>
+            Techniquement, ça m’a fait progresser sur la conception d’une API .NET 8 orientée performance et maintenabilité. J’ai renforcé ma capacité à structurer un rules engine déterministe, à gérer des pondérations/seuils, et à organiser le code pour pouvoir ajouter de nouvelles règles sans tout casser. Le fait de penser “scoring = décision” m’a obligé à être rigoureux sur la cohérence des transitions et sur la stabilité du comportement.
+        </p>
+        <p>
+            Sur la partie SQL, j’ai gagné en maturité sur la modélisation “compliance/risk” : consolidation client, gestion des parties liées (UBO, responsables fiscaux), historisation, et capacité à reconstruire un état complet à partir des événements. Ça m’a rappelé que si la donnée est bancale, le scoring le devient immédiatement, donc la structure et l’intégrité sont aussi importantes que la logique applicative.
+        </p>
+        <p>
+            Enfin, le plus formateur a été l’explicabilité. J’ai appris à éviter l’effet boîte noire en traçant les règles déclenchées et en rendant chaque score défendable : quel signal a compté, quel contact a influencé, quel indicateur a déclenché une alerte. Au final, Watchdog est pour moi un projet vitrine qui montre ma capacité à faire du “risk scoring” sérieux : data + règles + performance + audit, avec une approche production-minded même en projet personnel.
+        </p>
+    </div>
+  
+    <div data-ach-id="tmrw">
+        <p>
+            Les lendemains du projet Watchdog, c’est d’abord le passage d’un moteur “fonctionnel” à un moteur plus réaliste et plus discriminant. Une fois la base en place (modèle SQL, rules engine, scoring, statuts), l’enjeu devient d’enrichir progressivement les signaux et d’éviter que le score soit trop naïf. Ça passe par l’ajout de nouvelles règles, mais surtout par l’amélioration des pondérations, des seuils et des combinaisons pour mieux refléter des cas réels.
+        </p>
+        <p>
+            Ensuite, il y a une phase naturelle de durcissement de l’explicabilité. Plus le moteur grossit, plus il faut structurer proprement “pourquoi” un score a changé : quelles règles ont été déclenchées, lesquelles ont eu le plus d’impact, et comment expliquer un statut en une lecture simple. Les lendemains, c’est donc d’améliorer la trace des décisions, la lisibilité des justifications, et la capacité à comparer deux évaluations d’un même client dans le temps.
+        </p>
+        <p>
+            Le troisième axe, c’est la montée en puissance côté données quantitatives et comportementales. Une fois la base posée, Watchdog peut aller vers des patterns plus fins : régularité des flux, concentration par contrepartie, signaux de rupture, anomalies sur la distribution UBO, et exploitation plus riche de la facturation interne (destinations sensibles, variations brutales, comportements répétitifs). L’objectif est de rendre le scoring plus “risk analytics” sans perdre la stabilité.
+        </p>
+        <p>
+            Enfin, les lendemains du projet, c’est son industrialisation complète comme produit : endpoints plus complets, recalcul batch, monitoring plus structuré, tests automatiques de non-régression des règles, et éventuellement une UI de lecture (score, alertes, historique) pour rendre Watchdog directement démontrable. À ce stade, le projet devient une brique KYC/AML vraiment portable, qui peut être branchée sur différents systèmes ou datasets, avec une approche robuste et maintenable.
+        </p>
+
+    </div>
+    <div data-ach-id="pov">
+        <p>
+            De mon point de vue, Watchdog est exactement le type de projet perso qui a du sens pour mon profil, parce qu’il me permet de réunir ce que j’aime faire : de la conception back-end solide en .NET, de la modélisation SQL propre, et une logique métier “risk/compliance” qui ressemble à du vrai terrain. Je ne l’ai pas construit comme une démo abstraite, mais comme un moteur qui pourrait réellement tourner : un client entre, des signaux sont agrégés, des règles s’appliquent, et une décision sort de manière cohérente.
+        </p>
+        <p>
+            Ce que je voulais surtout prouver avec Watchdog, c’est ma capacité à transformer un sujet complexe en système clair. Le scoring KYC/AML peut vite devenir flou ou arbitraire, donc j’ai choisi une approche déterministe : règles explicites, pondérations, seuils, sous-scores, et statuts automatiques. Pour moi, un scoring utile n’est pas juste un chiffre, c’est un résultat actionnable et justifiable, avec une logique qu’on peut relire et défendre.
+        </p>
+        <p>
+            J’ai aussi voulu donner de la profondeur au moteur en intégrant plusieurs dimensions de risque. Pas seulement le documentaire, mais aussi la gouvernance (UBO, responsables fiscaux), les signaux critiques (PPE, sanctions, gel des avoirs, condamnations), des éléments quantitatifs (trésorerie, flux fiscaux, répartition UBO), et même un signal comportemental via la facturation interne. L’idée, c’est de produire un score plus réaliste qu’un simple checklist, tout en restant explicable.
+        </p>
+        <p>
+            Enfin, Watchdog c’est aussi mon “projet vitrine” sur la qualité logicielle. Même si c’est perso, je le traite comme un produit : architecture claire, performance (caching), observabilité (logs/monitoring), historisation, et capacité à évoluer sans casser le comportement. Pour moi, c’est une preuve directe que je sais construire une brique risk/compliance sérieuse, du modèle de données jusqu’à la décision finale.
+        </p>
+    </div>
 </div>
-
-@* Modal Bootstrap *@
 <div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div>
@@ -468,7 +566,6 @@
 
 @section Styles {
     <style>
-        /* Cards "achievement" alignées au thème */
         .achievement-card {
             cursor: pointer;
             padding: 0;
@@ -489,17 +586,14 @@
                 outline-offset: 2px;
             }
 
-            /* Empêche le texte de "bloquer" le click (tu avais déjà l'idée) */
             .achievement-card .card-body {
                 pointer-events: none;
             }
 
-            /* Texte muted compatible fond sombre */
             .achievement-card .text-muted {
                 color: rgba(255,255,255,0.62) !important;
             }
 
-        /* Badges adaptés (dark theme) */
         .wd-badge {
             font-weight: 600;
             font-size: 0.72rem;
@@ -526,11 +620,7 @@
             border-color: rgba(255,193,7,0.25);
         }
 
-        /* =========================
-                           Modal "dark/glass"
-                           ========================= */
 
-        /* Backdrop un peu plus sombre */
         .modal-backdrop.show {
             opacity: 0.7;
         }
@@ -552,12 +642,10 @@
             font-weight: 800;
         }
 
-        /* Subtitle */
         #achievementModalSubtitle {
             color: rgba(255,255,255,0.65) !important;
         }
 
-        /* Close button visible sur fond sombre */
         .modal-header .btn-close {
             filter: invert(1) grayscale(100%);
             opacity: 0.85;
@@ -567,7 +655,6 @@
                 opacity: 1;
             }
 
-        /* Liens et listes dans le modal */
         .modal-body p, .modal-body li {
             color: rgba(255,255,255,0.78);
         }
@@ -576,7 +663,6 @@
             color: rgba(255,255,255,0.92);
         }
 
-        /* Bouton Fermer */
         .modal-footer .btn-secondary {
             background: rgba(255,255,255,0.10);
             border-color: rgba(255,255,255,0.14);

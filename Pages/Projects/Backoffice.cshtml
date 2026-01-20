@@ -3,28 +3,33 @@
 @{
     ViewData["Title"] = "Cowork-Link";
 }
+<section class="skills-hero mb-4">
 
-<h2 class="mb-1">Cowork-Link</h2>
-<p class="lead text-muted mb-4">
-    Maintenance et modernisation d’un CRM métier critique :
-    optimisation SQL, refactorisation WebForms, stabilisation Telerik,
-    fiabilisation KYC et facturation.
-</p>
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
 
-@* HERO / CTA *@
-<div class="d-flex flex-wrap gap-2 mb-4">
-    <a asp-page="/Projects" class="btn btn-secondary">Retour</a>
-</div>
-@* RÉALISATIONS CLÉS *@
-<section class="mt-5">
-    <h3><strong>Réalisations clés</strong></h3>
-    <p class="text-muted">
-        Sélection de composants concrets du projet. Chaque carte détaille le besoin, l’implémentation et le résultat.
-    </p>
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <div>
+                <h2 class="mb-1 fw-bold">
+                    Cowork-Link — Réalisations clés
+                </h2>
+                <p class="text-muted mb-0">
+                    Refonte progressive d’un écosystème CRM dédié à la domiciliation d’entreprises en France, avec coexistence legacy/prod et nouvelle version en développement puis migration client à partir du printemps 2025. Stabilisation des parcours critiques (contrats, facturation, devis, support, KYC/AML TRACFIN, messagerie et relances), optimisation SQL (requêtes, indexation, diagnostics), modernisation des composants Telerik et mise en place de bases d’APIs internes. Mise en œuvre d’une nouvelle architecture data structurée autour d’une base commune et de bases dédiées par client, incluant une base historisée, afin d’améliorer la cohérence, la traçabilité et l’UX.
+                </p>
+            </div>
+        </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Projects" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
 
-        <!-- 1) Optimisation SQL -->
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -51,7 +56,6 @@
             </button>
         </div>
 
-        <!-- 2) Stabilisation WebForms -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -78,7 +82,6 @@
             </button>
         </div>
 
-        <!-- 3) Telerik -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -105,7 +108,6 @@
             </button>
         </div>
 
-        <!-- 4) KYC -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -132,7 +134,6 @@
             </button>
         </div>
 
-        <!-- 5) Facturation -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -159,7 +160,6 @@
             </button>
         </div>
 
-        <!-- 6) Support -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -187,124 +187,180 @@
         </div>
 
     </div>
+    <hr class="my-4" />
+
+    <div class="mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="presentation"
+                        data-ach-title="Présentation"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Présentation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="launch"
+                        data-ach-title="Lancement du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Lancement du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="steps"
+                        data-ach-title="Les étapes"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les étapes</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="actors"
+                        data-ach-title="Les acteurs"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les acteurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="results"
+                        data-ach-title="Les résultats"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les résultats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="me"
+                        data-ach-title="Pour moi"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour moi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="bus"
+                        data-ach-title="Pour l'entreprise"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour l'entreprise</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="tmrw"
+                        data-ach-title="Les lendemains du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les lendemain du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="pov"
+                        data-ach-title="Mon point de vue"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    Mon point de vue
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
 </section>
-@* CONTENU PRINCIPAL *@
-<div class="mt-4">
 
-    <h3><strong>Présentation</strong></h3>
-
-    <p>
-        <strong>Cowork-Link</strong> constitue le cœur opérationnel du système d’information
-        de l’entreprise. Il centralise la gestion client, la facturation, le support,
-        les processus KYC, la gestion documentaire ainsi que de nombreux workflows internes
-        utilisés quotidiennement par les équipes métier.
-    </p>
-
-    <p>
-        Il s’agit d’un système historique reposant sur
-        <strong>VB .NET</strong>, <strong>ASP.NET WebForms</strong>,
-        <strong>SQL Server</strong> et l’écosystème <strong>Telerik</strong>.
-        Pendant près de deux ans, j’ai travaillé quotidiennement sur ce CRM en production,
-        en assurant sa stabilité tout en amorçant une modernisation progressive
-        de l’ensemble du socle technique.
-    </p>
-
-    <p>
-        Le projet ne consistait pas à réécrire l’existant, mais à
-        <strong>fiabiliser un système critique sans interrompre l’activité</strong>,
-        tout en préparant le terrain pour des évolutions futures vers des architectures plus modernes.
-    </p>
-
-    <h3 class="mt-4"><strong>Lancement du projet</strong></h3>
-
-    <p>
-        À mon arrivée, le CRM présentait plusieurs fragilités : performances hétérogènes,
-        composants Telerik obsolètes, code fortement couplé, et sensibilité élevée
-        aux modifications dans certaines zones critiques.
-    </p>
-
-    <p>
-        La première étape a consisté à cartographier les flux métier,
-        identifier les dépendances entre pages WebForms, logique serveur
-        et requêtes SQL, puis repérer les modules les plus sensibles
-        (KYC, facturation, support).
-    </p>
-
-    <p>
-        L’objectif a rapidement été clarifié :
-        <strong>
-            stabiliser l’existant, améliorer les performances,
-            renforcer la fiabilité métier et préparer une migration progressive
-        </strong>,
-        sans remettre en cause les usages quotidiens.
-    </p>
-
-    <h3 class="mt-4"><strong>Les étapes</strong></h3>
-
-    <ul class="mt-2">
-        <li>
-            Analyse approfondie du code legacy et compréhension des flux WebForms,
-            ViewState et dépendances Telerik.
-        </li>
-        <li>
-            Refactorisation ciblée de pages critiques afin d’améliorer
-            lisibilité, maintenabilité et robustesse.
-        </li>
-        <li>
-            Optimisation SQL avancée : indexation, refonte de requêtes coûteuses,
-            procédures stockées, vues internes et diagnostic via SQL Profiler.
-        </li>
-        <li>
-            Stabilisation et modernisation progressive des composants Telerik
-            (RadGrid, RadFilter, RadWindow).
-        </li>
-        <li>
-            Évolutions fonctionnelles sur les modules KYC, facturation
-            et support, avec ajout de contrôles métier et de logs.
-        </li>
-        <li>
-            Mise en place de bases d’APIs internes afin de réduire
-            la dépendance directe à WebForms.
-        </li>
-    </ul>
-
-    <h3 class="mt-4"><strong>Les résultats</strong></h3>
-
-    <h4 class="mt-3"><strong>Pour moi</strong></h4>
-
-    <p>
-        Ce projet m’a apporté une expérience concrète et complète
-        dans la gestion d’un système d’information en production.
-        J’ai appris à intervenir sur un code legacy volumineux,
-        à anticiper les impacts d’une modification et à arbitrer
-        entre contraintes techniques et besoins métier.
-    </p>
-
-    <p>
-        Il a également renforcé ma compréhension des enjeux
-        de performance SQL, de stabilité applicative et de
-        modernisation progressive d’un SI existant.
-    </p>
-
-    <h4 class="mt-3"><strong>Pour l’entreprise</strong></h4>
-
-    <p>
-        Les modules critiques sont devenus plus stables,
-        plus rapides et plus robustes.
-        Les équipes support et facturation ont gagné en efficacité,
-        les erreurs récurrentes ont été éliminées,
-        et les pages stratégiques affichent désormais
-        des temps de réponse nettement améliorés.
-    </p>
-
-    <p>
-        La modernisation progressive du CRM a permis
-        de préparer sereinement un futur chantier de migration,
-        sans perturber les activités quotidiennes.
-    </p>
-
-</div>
-@* Source HTML des modals (caché) *@
 <div id="achievementBodies" class="d-none">
 
     <div data-ach-id="sql">
@@ -367,8 +423,153 @@
         <p class="mb-0"><strong>Résultat :</strong> module plus fluide, meilleure efficacité support et réduction des incidents liés aux lenteurs.</p>
     </div>
 
+    <div data-ach-id="presentation">
+        <p>
+            Cowork-Link constitue le cœur opérationnel du système d’information de l’entreprise. Il centralise la gestion client, la facturation, le support, les processus KYC, la gestion documentaire ainsi que de nombreux workflows internes utilisés quotidiennement par les équipes métier.
+        </p>
+
+        <p>
+            Le projet s’inscrit dans une refonte complète d’un écosystème d’applications métiers vers une stack moderne. L’ancienne application, historiquement en VB .NET / ASP.NET WebForms avec SQL Server et l’écosystème Telerik, restait en production et supportait l’activité quotidienne. En parallèle, une nouvelle version était développée progressivement avec l’objectif de moderniser l’ensemble du socle technique, de stabiliser les parcours critiques et de préparer une base plus durable pour les évolutions futures.
+        </p>
+
+        <p>
+            Cette refonte ne consistait pas uniquement à “reproduire l’existant” dans une nouvelle technologie. Elle impliquait de revoir les fondations, d’anticiper la migration des utilisateurs, et de garantir que la continuité d’activité soit préservée tout au long de la transition. Jusqu’au printemps 2025, la nouvelle application est restée en phase de développement, puis le projet est entré dans une phase de bascule progressive, avec les premières migrations de clients vers la nouvelle version.
+        </p>
+    </div>
+
+    <div data-ach-id="launch">
+        <p>
+            Au départ, l’entreprise disposait d’un système historique stable mais fortement contraint par son ancienneté. Le CRM et les outils associés répondaient aux besoins métiers, mais la dette technique augmentait et rendait chaque évolution plus coûteuse : maintenance complexe, difficultés de performance sur certains écrans, logiques dispersées, et limites structurelles pour intégrer de nouveaux besoins (notamment sur les workflows et la conformité).
+        </p>
+
+        <p>
+            L’application existante, tout comme la nouvelle version en cours de construction, correspondait avant tout à un CRM dédié à la domiciliation d’entreprises en France. Les utilisateurs devaient pouvoir gérer l’ensemble des opérations du quotidien : création et suivi de contrats, facturation, génération de devis, relances manuelles et automatiques, messagerie interne, suivi administratif et conformité KYC/AML (TRACFIN). Le produit avait donc une vraie dimension “système métier”, au centre de l’activité, avec des parcours à forte criticité opérationnelle.
+        </p>
+
+        <p>
+            Cependant, l’écosystème s’était progressivement fragmenté. Beaucoup de fonctionnalités avaient été développées “en aval” du cœur applicatif, sous forme de modules ou d’évolutions successives, ce qui avait créé une expérience utilisateur moins homogène et des logiques parfois dispersées. Cette fragmentation complexifiait l’évolution du produit et impactait directement la qualité de l’UX : incohérences entre écrans, comportements non uniformes, parcours plus longs et plus difficiles à maintenir.
+        </p>
+        <p>
+            Le projet a donc été lancé avec une ambition claire : construire une version modernisée, capable d’absorber les besoins futurs sans se retrouver bloquée par le socle historique. Le défi principal venait du fait que l’ancien système devait continuer à fonctionner pendant que le nouveau se construisait. Il fallait donc gérer une période longue de coexistence, avec une exigence de cohérence fonctionnelle entre les deux mondes et une stratégie de migration progressive.
+        </p>
+        <p>
+            La refonte représentait aussi une opportunité structurante : recentraliser les fonctionnalités dans une logique produit plus cohérente, harmoniser les workflows, et améliorer la qualité globale de l’expérience utilisateur. L’objectif n’était pas seulement de moderniser la technologie, mais de remettre l’ensemble des features dans une architecture plus claire et un parcours plus fluide, afin de rendre le CRM plus robuste, plus agréable à utiliser, et plus simple à faire évoluer dans le temps.
+        </p>
+    </div>
+
+    <div data-ach-id="steps">
+        <p>
+            La refonte a été menée de manière progressive, avec une logique très orientée migration. L’objectif initial était d’implémenter en priorité les fonctionnalités cœur permettant de basculer les clients le plus rapidement possible, en commençant par les plus gros comptes, notamment ceux opérant plusieurs sites de domiciliation. Cette première phase a donc porté sur la reconstruction des parcours essentiels au fonctionnement quotidien du CRM : gestion des clients et des contacts, gestion contractuelle, facturation, devis et conformité KYC, le tout aligné avec la nouvelle architecture de données.
+        </p>
+
+        <p>
+            En parallèle, une phase structurante a consisté à définir et mettre en place la nouvelle organisation des bases. Le modèle cible reposait sur une base commune pour les informations transverses et, pour chaque client, des bases dédiées avec séparation entre données opérationnelles et historique. Cette architecture a guidé une grande partie du développement, car elle imposait de repenser les accès aux données, les workflows et la manière dont l’application devait isoler et tracer les informations par client.
+        </p>
+
+        <p>
+            Une fois ce socle fonctionnel et data suffisamment stable, le projet est entré dans une phase de transition d’infrastructure. Les données ont été migrées vers un nouvel hébergeur, avec un focus particulier sur la conservation de l’intégrité et la continuité des données utilisateurs. Cette étape était critique, car elle conditionnait la fiabilité de la bascule côté production et la capacité à onboarder les clients sur la nouvelle version sans perte d’historique ni incohérence.
+        </p>
+        <p>
+            La performance a été un fil conducteur constant, en particulier sur les écrans à forte volumétrie. J’ai mené des optimisations SQL avancées à travers l’indexation, la refonte de requêtes coûteuses, l’utilisation de procédures stockées et de vues internes, ainsi que du diagnostic via SQL Profiler, afin de réduire la latence sur les parcours les plus utilisés et stabiliser le comportement sous charge.
+        </p>
+        <p>
+            À mesure que la nouvelle version devenait capable d’absorber les clients migrés, les autres applications métiers et features périphériques ont été branchées progressivement sur la nouvelle architecture. Cette phase a consisté à reconnecter et intégrer des modules complémentaires comme la facturation automatisée, les relances automatiques, certains workflows d’onboarding, et des contrôles conformité plus riches, en veillant à conserver une logique produit cohérente et une UX plus unifiée que dans l’écosystème initial fragmenté.
+        </p>
+        <p>
+            Enfin, pour réduire la dépendance directe au modèle WebForms et préparer la suite, des bases d’APIs internes ont été mises en place afin d’extraire certaines logiques vers des services plus modulaires. Cette démarche visait à sécuriser l’évolution future, faciliter l’intégration des autres briques métiers et rendre le système plus extensible dans le temps.
+        </p>
+    </div>
+    <div data-ach-id="results">
+        <p>
+            Pour l’entreprise, cette refonte a permis de transformer progressivement un socle historique contraignant en un écosystème beaucoup plus solide et évolutif, sans interruption d’activité. La migration vers la nouvelle version a pu être engagée au printemps 2025 avec une stratégie de bascule progressive, en commençant par les clients les plus structurants, notamment ceux gérant plusieurs sites de domiciliation. Cette approche a sécurisé la transition, tout en rendant possible une montée en charge maîtrisée sur la nouvelle plateforme.
+        </p>
+        <p>
+            Sur le plan produit, le projet a amélioré la cohérence fonctionnelle et l’expérience utilisateur. Là où l’écosystème était auparavant fragmenté par l’ajout de fonctionnalités “en aval” du CRM, la refonte a permis de recentraliser les parcours clés dans une logique plus homogène. Les utilisateurs disposent désormais d’un outil mieux structuré pour gérer les opérations essentielles : contrats, facturation, devis, support, messagerie interne, workflows de relance et conformité KYC/AML (TRACFIN), avec une meilleure continuité entre les modules.
+        </p>
+        <p>
+            D’un point de vue technique, les améliorations ont été visibles sur la stabilité et la performance. Les refactorisations ciblées sur les pages critiques ont rendu le système moins fragile et plus maintenable, tandis que les optimisations SQL (indexation, refonte de requêtes, procédures stockées, diagnostic via Profiler) ont permis de réduire la latence sur des écrans à forte volumétrie, notamment ceux reposant sur des grilles et filtres Telerik. Les composants UI ont été stabilisés et modernisés progressivement, ce qui a contribué à améliorer la fluidité globale en production.
+        </p>
+        <p>
+            Le chantier data a également apporté un bénéfice structurant. La nouvelle architecture de bases, articulée autour d’une base commune et de bases dédiées par client, incluant une séparation historique, a permis d’isoler plus proprement les données, de mieux structurer l’exploitation et de préparer des évolutions futures avec moins de risque. La migration vers un nouvel hébergeur et la reprise des données utilisateurs ont consolidé la transition et sécurisé l’environnement d’exploitation.
+        </p>
+        <p>
+            Enfin, la mise en place des bases d’APIs internes a posé les fondations d’une architecture plus moderne et plus modulaire. Cela réduit progressivement la dépendance directe au WebForms historique et facilite l’intégration des autres applications métiers (facturation automatique, relances automatisées, onboarding, workflows complémentaires) dans une trajectoire cohérente. En résumé, le projet a permis de concilier continuité opérationnelle, modernisation technique et amélioration produit, tout en préparant l’écosystème à une évolution durable.
+        </p>
+      
+    </div>
+    <div data-ach-id="actors">
+        <p>
+            La refonte de Cowork-Link s’est construite autour d’une collaboration continue entre les équipes métier et les équipes techniques, car l’application restait un outil central en production pendant toute la durée du projet. Les équipes opérationnelles, qui utilisaient quotidiennement le CRM pour gérer les contrats, la facturation, les devis, le support et les workflows de conformité, étaient des interlocuteurs essentiels pour remonter les irritants, prioriser les parcours critiques et valider la cohérence fonctionnelle des évolutions.
+        </p>
+        <p>
+            Du côté technique, le projet impliquait une forte coordination autour du socle applicatif historique et de la nouvelle version en cours de développement. L’enjeu n’était pas seulement de produire des fonctionnalités, mais de garantir que la transition se fasse sans rupture, en maintenant une cohérence entre les deux environnements jusqu’à la phase de migration progressive. Cette coordination était particulièrement importante sur les choix structurants : la nouvelle organisation des bases de données, la manière d’isoler les données par client, et l’intégration progressive des modules périphériques dans une logique plus unifiée.
+        </p>
+        <p>
+            Dans ce contexte, mon rôle s’inscrivait à la fois dans l’exécution technique et dans l’alignement opérationnel. Les échanges réguliers avec les parties prenantes permettaient de cadrer les évolutions, clarifier les attentes, anticiper les impacts et sécuriser les mises en production. Cette dimension de communication était indispensable pour faire avancer un projet long, critique et transversal, où la réussite dépend autant de la qualité du code que de la capacité à synchroniser les besoins métier avec la trajectoire de migration et la modernisation du SI.
+        </p>
+      
+
+    </div>
+    <div data-ach-id="me">
+        <p>
+            Ce projet a été un tournant dans ma progression, parce qu’il m’a placé au cœur d’une refonte complète en conditions réelles, avec une contrainte rare : maintenir un legacy en production tout en construisant sa version de remplacement. J’ai appris à raisonner sur un système entier et pas uniquement sur des fonctionnalités isolées, en comprenant que la réussite d’une migration dépend autant de la stratégie de transition que de la qualité du développement.
+        </p>
+        <p>
+            Sur le plan technique, j’ai énormément renforcé mon niveau sur les environnements historiques .NET (WebForms, ViewState, Telerik) et sur les réflexes indispensables en production : diagnostiquer vite, livrer sans casser, refactoriser de façon ciblée et mesurer l’impact réel. J’ai aussi consolidé une approche très orientée performance, en liant directement l’expérience utilisateur aux causes techniques côté serveur et côté SQL Server, jusqu’à identifier précisément les requêtes et comportements qui dégradaient les parcours critiques.
+        </p>
+        <p>
+            Le projet m’a également donné une vision plus mature de l’architecture et de la donnée. La mise en place d’un nouveau modèle de bases (base commune + bases dédiées par client + historique) m’a fait travailler sur des problématiques de structuration, d’isolation, de cohérence et de migration, qui sont exactement celles qu’on retrouve dans des systèmes métiers à grande échelle. J’ai compris l’importance de concevoir une organisation data qui facilite l’exploitation et réduit la complexité future.
+        </p>
+        <p>
+            Enfin, cette expérience m’a appris à gérer un projet long et à forte criticité avec pragmatisme. J’ai développé une vraie posture “produit” : prioriser les fonctionnalités clés pour accélérer la migration des clients, sécuriser les parcours indispensables, intégrer la traçabilité et la conformité dans le fonctionnement quotidien, et préparer l’avenir sans sur-engineering. C’est le type de contexte qui m’a le plus formé, parce que chaque décision technique a un impact direct sur les utilisateurs et sur la stabilité du système.
+        </p>
+
+    </div>
+    <div data-ach-id="bus">
+        <p>
+            Pour l’entreprise, ce projet a permis de sécuriser la transition d’un système historique critique vers une plateforme moderne, sans interrompre l’activité. La coexistence entre l’ancienne application en production et la nouvelle version en développement a été maîtrisée jusqu’au printemps 2025, moment où la migration progressive des clients a pu démarrer dans de bonnes conditions. Cette approche a limité le risque opérationnel et a rendu la bascule contrôlable client par client, en commençant par les comptes les plus structurants (notamment ceux disposant de plusieurs sites de domiciliation).
+        </p>
+        <p>
+            La refonte a aussi amélioré l’efficacité globale de l’écosystème. Là où les fonctionnalités étaient auparavant fragmentées et parfois développées “en aval” du CRM, la nouvelle version a permis de recentraliser les parcours essentiels dans une logique produit plus cohérente. Les équipes disposent d’un outil plus homogène pour gérer l’ensemble des opérations liées à la domiciliation d’entreprises : contrats, facturation, devis, support, messagerie interne, relances manuelles et automatiques, onboarding et conformité KYC/AML (TRACFIN). Cette centralisation améliore directement l’UX, réduit les frictions, et rend les workflows plus fluides au quotidien.
+        </p>
+        <p>
+            Sur le plan technique, l’entreprise a gagné en stabilité, en maintenabilité et en capacité d’évolution. Les refactorisations ciblées et la stabilisation des pages critiques ont renforcé la fiabilité du système, tandis que les optimisations SQL et la modernisation progressive des composants UI ont amélioré la réactivité sur les écrans à forte volumétrie. Cela se traduit par moins de lenteurs sur les parcours sensibles et une meilleure expérience utilisateur en production.
+        </p>
+        <p>
+            Enfin, l’impact le plus structurant concerne la donnée et l’architecture. La mise en place d’une base commune associée à des bases dédiées par client, dont une base historisée, a apporté une organisation plus propre et plus scalable. Cette architecture facilite l’isolation, la traçabilité et l’exploitation des données, tout en préparant l’intégration progressive des autres applications métiers autour du CRM. L’entreprise dispose désormais d’un socle plus moderne et plus durable, capable d’absorber les évolutions futures avec moins de dette technique et moins de risques.
+        </p>
+    </div>
+    <div data-ach-id="tmrw">
+        <p>
+            À court terme, la priorité après le démarrage de la migration est de poursuivre la bascule progressive des clients vers la nouvelle version, en sécurisant chaque étape pour éviter toute rupture opérationnelle. L’objectif est de maintenir une qualité constante pendant la montée en charge : cohérence des données, stabilité des parcours critiques, et accompagnement des utilisateurs lors du changement d’outil. Cette phase est déterminante, car elle conditionne la confiance dans la nouvelle plateforme et la vitesse à laquelle l’entreprise peut réduire sa dépendance à l’ancien système.
+        </p>
+        <p>
+            À moyen terme, l’enjeu est d’achever l’intégration complète des modules métiers autour du CRM dans la nouvelle architecture. Cela inclut le branchement et la consolidation des fonctionnalités périphériques comme la facturation automatisée, les relances automatiques, les workflows d’onboarding et les contrôles conformité enrichis. L’objectif n’est pas uniquement d’ajouter des features, mais de conserver une logique produit cohérente et unifiée, avec une UX stable et homogène, contrairement à l’écosystème historique fragmenté.
+        </p>
+        <p>
+            Sur le plan technique, la trajectoire vise à renforcer l’industrialisation et la modularité. La mise en place progressive d’APIs internes ouvre la voie à une architecture plus découplée, où les règles métier et les traitements peuvent évoluer sans dépendre directement des contraintes WebForms. Cela facilite l’intégration de nouvelles briques, réduit les risques de régression, et prépare une évolution plus fluide du système dans le temps.
+        </p>
+        <p>
+            Enfin, l’objectif final du projet est de rendre possible le décommissionnement complet de l’ancien CRM. Une fois l’ensemble des clients migrés et toutes les fonctionnalités critiques couvertes par la nouvelle plateforme, l’entreprise pourra fermer progressivement l’ancien socle technique, réduire la maintenance legacy, et concentrer l’effort sur une base plus moderne, plus robuste et plus évolutive. Cette étape marque l’aboutissement de la refonte : un écosystème centralisé, cohérent, et durable, capable de supporter la croissance et les besoins futurs sans recréer la même dette technique.
+        </p>
+
+    </div>
+    <div data-ach-id="pov">
+        <p>
+            Cowork-Link a été l’un des projets les plus structurants de mon parcours, parce qu’il ne s’agissait pas simplement de développer des fonctionnalités, mais de participer à une transformation complète d’un système métier critique. Travailler sur une refonte avec une contrainte de continuité d’activité change totalement la manière de coder : on ne cherche pas “la solution idéale sur le papier”, mais une trajectoire solide, réaliste et progressive, capable de tenir en production.
+        </p>
+        <p>
+            Ce projet m’a confirmé que la difficulté d’une modernisation n’est pas seulement technique. Le vrai défi, c’est d’aligner l’architecture, la donnée, l’UX et la stratégie de migration, tout en gardant un produit utilisable chaque jour. La coexistence entre un legacy en production et une nouvelle version en construction impose une rigueur particulière : comprendre profondément les flux existants, anticiper les impacts, et livrer des évolutions sans introduire d’instabilité.
+        </p>
+        <p>
+            Avec du recul, je retiens surtout l’importance du pragmatisme. La refonte était l’occasion de corriger la fragmentation progressive de l’écosystème, de recentraliser les features et de reconstruire une expérience plus cohérente. Mais ces objectifs ne peuvent pas être atteints par une “réécriture totale” rapide : ils nécessitent une progression maîtrisée, des priorités claires, et un focus constant sur ce qui a le plus d’impact pour les utilisateurs.
+        </p>
+        <p>
+            C’est exactement le type de projet dans lequel je me sens le plus pertinent : là où le code a un impact réel, où la performance et la fiabilité comptent, et où chaque choix technique doit rester compatible avec le métier et le long terme. Cette expérience correspond parfaitement à mon positionnement : construire des systèmes critiques, robustes et traçables, dans des environnements FinTech où la stabilité n’est pas négociable.
+        </p>
+
+    </div>
 </div>
-@* Modal Bootstrap *@
 <div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
@@ -418,7 +619,6 @@
 
 @section Styles {
     <style>
-        /* Cards "achievement" alignées au thème */
         .achievement-card {
             cursor: pointer;
             padding: 0;
@@ -439,17 +639,14 @@
                 outline-offset: 2px;
             }
 
-            /* Empêche le texte de "bloquer" le click (tu avais déjà l'idée) */
             .achievement-card .card-body {
                 pointer-events: none;
             }
 
-            /* Texte muted compatible fond sombre */
             .achievement-card .text-muted {
                 color: rgba(255,255,255,0.62) !important;
             }
 
-        /* Badges adaptés (dark theme) */
         .wd-badge {
             font-weight: 600;
             font-size: 0.72rem;
@@ -476,11 +673,7 @@
             border-color: rgba(255,193,7,0.25);
         }
 
-        /* =========================
-                           Modal "dark/glass"
-                           ========================= */
 
-        /* Backdrop un peu plus sombre */
         .modal-backdrop.show {
             opacity: 0.7;
         }
@@ -502,12 +695,10 @@
             font-weight: 800;
         }
 
-        /* Subtitle */
         #achievementModalSubtitle {
             color: rgba(255,255,255,0.65) !important;
         }
 
-        /* Close button visible sur fond sombre */
         .modal-header .btn-close {
             filter: invert(1) grayscale(100%);
             opacity: 0.85;
@@ -517,7 +708,6 @@
                 opacity: 1;
             }
 
-        /* Liens et listes dans le modal */
         .modal-body p, .modal-body li {
             color: rgba(255,255,255,0.78);
         }
@@ -526,7 +716,6 @@
             color: rgba(255,255,255,0.92);
         }
 
-        /* Bouton Fermer */
         .modal-footer .btn-secondary {
             background: rgba(255,255,255,0.10);
             border-color: rgba(255,255,255,0.14);

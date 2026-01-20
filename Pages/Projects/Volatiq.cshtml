@@ -3,166 +3,86 @@
 @{
     ViewData["Title"] = "VolatiQ";
 }
+<section class="skills-hero mb-4">
 
-<h2 class="mb-1">VolatiQ</h2>
-<p class="lead text-muted mb-4">
-    Analyseur quantitatif de micro-volatilité (Black-Scholes, Monte-Carlo, grecs, scoring d’anomalies) — pipeline Python + C++.
-</p>
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
 
-@* HERO / CTA *@
-<div class="d-flex flex-wrap gap-2 mb-4">
-    <a asp-page="/Projects" class="btn btn-secondary">Retour</a>
-    <a href="https://github.com/keekee3091/black_scholesEU" target="_blank" rel="noopener" class="btn btn-primary">
-        Voir le repo
-    </a>
-</div>
-@* Source HTML des modals (caché) *@
-<div id="achievementBodies" class="d-none">
-
-    <div data-ach-id="data">
-        <p><strong>Objectif :</strong> construire une ingestion fiable des chaînes d’options (calls/puts, strikes, maturités) et réduire la dépendance aux quotas.</p>
-        <ul>
-            <li><strong>Ingestion :</strong> récupération des données options + underlyings, normalisation des champs (dates, strikes, mid/last, IV).</li>
-            <li><strong>Cache :</strong> persistance locale (TTL, invalidation) pour rejouer les analyses sans re-taper l’API.</li>
-            <li><strong>Qualité :</strong> filtrage de données incohérentes (valeurs manquantes, spreads extrêmes, maturités invalides).</li>
-        </ul>
-        <p class="mb-0"><strong>Résultat :</strong> latence plus stable et pipeline exploitable offline sur des snapshots.</p>
-    </div>
-
-    <div data-ach-id="api">
-        <p><strong>Objectif :</strong> exposer le pipeline quant via une API propre pour itération rapide et intégration future (UI, scripts, notebooks).</p>
-        <ul>
-            <li><strong>Endpoints :</strong> chaines d’options, pricer, grecs, IV/surfaces, scoring anomalies.</li>
-            <li><strong>Validation :</strong> schémas Pydantic, erreurs explicites, paramètres contrôlés (r, q, vol, maturité).</li>
-            <li><strong>Perf :</strong> cache côté API + appels batch pour minimiser l’overhead réseau.</li>
-        </ul>
-        <p class="mb-0"><strong>Résultat :</strong> interface stable et testable pour itérer sur le quant sans coupler l’UI au moteur.</p>
-    </div>
-
-    <div data-ach-id="cpp">
-        <p><strong>Objectif :</strong> obtenir un moteur de pricing/grecs très rapide pour traiter des lots d’options sans latence.</p>
-        <ul>
-            <li><strong>BS + grecs :</strong> prix théorique, Delta/Gamma/Vega/Theta/Rho.</li>
-            <li><strong>Optimisation :</strong> calculs batch, réduction d’allocations, structures de données orientées throughput.</li>
-            <li><strong>Bridge :</strong> intégration avec Python via bindings/bridge (selon ton implémentation : Python C API, HTTP local, etc.).</li>
-        </ul>
-        <p class="mb-0"><strong>Résultat :</strong> pricing réactif sur grandes séries, base solide pour ajouter d’autres modèles.</p>
-    </div>
-
-    <div data-ach-id="iv">
-        <p><strong>Objectif :</strong> transformer les données options en signaux exploitables (micro-vol) via extraction IV et features robustes.</p>
-        <ul>
-            <li><strong>IV :</strong> extraction/derivation, cohérence par maturité, normalisation strike (moneyness/log-moneyness).</li>
-            <li><strong>Surfaces :</strong> préparation smile/skew (interpolation simple si besoin), comparaisons cross-maturités.</li>
-            <li><strong>Features :</strong> métriques d’écart IV, courbure, pentes, outliers relatifs.</li>
-        </ul>
-        <p class="mb-0"><strong>Résultat :</strong> inputs propres pour scoring et détection d’anomalies sur séries.</p>
-    </div>
-
-    <div data-ach-id="score">
-        <p><strong>Objectif :</strong> repérer des anomalies de pricing/volatilité et prioriser les opportunités de manière déterministe.</p>
-        <ul>
-            <li><strong>Mispricing :</strong> écart marché vs théorique (BS), normalisation par vega/price pour éviter les biais d’échelle.</li>
-            <li><strong>Filtres :</strong> liquidité, spreads, maturités trop courtes/longues, outliers bruyants.</li>
-            <li><strong>Ranking :</strong> score composite + seuils pour remonter une shortlist exploitable.</li>
-        </ul>
-        <p class="mb-0"><strong>Résultat :</strong> une sortie “actionnable” (tri + explications) plutôt qu’une simple liste brute.</p>
-    </div>
-
-    <div data-ach-id="mc">
-        <p><strong>Objectif :</strong> poser un socle de simulation pour aller au-delà de Black-Scholes (scénarios, stress, modèles stochastiques).</p>
-        <ul>
-            <li><strong>GBM :</strong> génération de trajectoires, agrégation de payoffs, estimation de prix.</li>
-            <li><strong>Scénarios :</strong> stress sur vol/rates/dividendes, analyse de sensibilité.</li>
-            <li><strong>Extensions :</strong> préparation vers Heston/SABR, variance reduction, parallélisation.</li>
-        </ul>
-        <p class="mb-0"><strong>Résultat :</strong> base technique pour enrichir le moteur quant et améliorer la robustesse des signaux.</p>
-    </div>
-
-</div>
-@* RÉALISATIONS CLÉS *@
-<section class="mt-5">
-    <h3><strong>Réalisations clés</strong></h3>
-    <p class="text-muted">
-        Sélection de composants concrets du projet. Chaque carte détaille le besoin, l’implémentation et le résultat.
-    </p>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
-
-        <!-- 1) Acquisition & cache -->
-        <div class="col">
-            <button type="button"
-                    style="width: 100%;"
-                    class="card achievement-card shadow-sm h-100 text-start"
-                    data-bs-toggle="modal"
-                    data-bs-target="#achievementModal"
-                    data-ach-id="data"
-                    data-ach-title="Acquisition options + cache persistant"
-                    data-ach-subtitle="Chaîne d’ingestion (calls/puts), normalisation, cache disque pour réduire les hits API">
-                <div class="card-body">
-                    <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-cloud-download fs-3"></i>
-                        <div>
-                            <h5 class="card-title mb-1">Acquisition + cache</h5>
-                            <p class="card-text text-muted mb-2">Moins d’appels API, latence stable, données homogénéisées.</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">Python</span>
-                                <span class="badge wd-badge wd-secondary">yfinance</span>
-                                <span class="badge wd-badge wd-accent">Cache</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </button>
+        <div class="align-items-center col-lg-9 d-flex gap-3">
+            <div>
+                <h2 class="mb-1 fw-bold">
+                    VolatiQ — Réalisations clés
+                </h2>
+                <p class="text-muted mb-0">
+                    Conception d’un simulateur de pricing et d’analyse options dédié à la détection de mispricing et à la lecture risque, avec une approche orientée performance et exploitabilité. Développement d’un moteur Monte-Carlo haute performance en C++ (GBM, simulations massives, distributions) pour estimer prix et sensibilités, complété par une couche de pricing Black-Scholes (Greeks, implied volatility) et une construction de smile/surface de volatilité (calibration, interpolation) pour une lecture marché cohérente. Mise en place d’heuristiques de décision (z-score, vega-weighted signals, gamma risk, theta bleed, scoring de liquidité) et de scénarios de stress afin de produire des signaux buy/sell interprétables. Le projet est rendu exploitable via un dashboard Blazor interactif connecté à une API FastAPI, le tout packagé avec Docker pour des exécutions reproductibles.
+                </p>
+            </div>
         </div>
 
-        <!-- 2) API -->
-        <div class="col">
-            <button type="button"
-                    style="width: 100%;"
-                    class="card achievement-card shadow-sm h-100 text-start"
-                    data-bs-toggle="modal"
-                    data-bs-target="#achievementModal"
-                    data-ach-id="api"
-                    data-ach-title="API REST (FastAPI) + endpoints quant"
-                    data-ach-subtitle="Endpoints : chaines d’options, pricer, grecs, surfaces IV, scoring">
-                <div class="card-body">
-                    <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-braces-asterisk fs-3"></i>
-                        <div>
-                            <h5 class="card-title mb-1">API REST</h5>
-                            <p class="card-text text-muted mb-2">Pipeline exposé proprement pour exploitation locale / UI.</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">FastAPI</span>
-                                <span class="badge wd-badge wd-secondary">Pydantic</span>
-                                <span class="badge wd-badge wd-primary">Caching</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </button>
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <div>
+                <a asp-page="/Projects" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left me-1"></i> Retour
+                </a>
+                <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+            </div>
+            <div>
+                <a href="https://github.com/keekee3091/Watchdog_V2" target="_blank" rel="noopener" class="btn btn-primary">
+                    Voir le repo
+                </a>
+            </div>
         </div>
+    </div>
 
-        <!-- 3) Moteur C++ -->
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <!-- 1) Monte Carlo Core -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="cpp"
-                    data-ach-title="Moteur quant C++ (latence basse)"
-                    data-ach-subtitle="Black-Scholes + grecs, calculs vectorisés, intégration via bindings/bridge">
+                    data-ach-id="vq_mc"
+                    data-ach-title="Monte Carlo Engine (GBM) haute perf"
+                    data-ach-subtitle="Simulations massives, log-normal distribution, paths, stats, convergence">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
                         <i class="bi bi-cpu fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Moteur C++</h5>
-                            <p class="card-text text-muted mb-2">Pricing rapide et reproductible sur grands volumes.</p>
+                            <h5 class="card-title mb-1">Monte Carlo Engine (GBM) haute perf</h5>
+                            <p class="card-text text-muted mb-2">Cœur C++ optimisé pour simuler et valoriser à grande échelle.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-secondary">C++</span>
+                                <span class="badge wd-badge wd-primary">C++</span>
+                                <span class="badge wd-badge wd-secondary">Monte Carlo</span>
+                                <span class="badge wd-badge wd-accent">GBM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- 2) Pricing + Greeks -->
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="vq_pricing"
+                    data-ach-title="Pricing complet & Greeks"
+                    data-ach-subtitle="Black-Scholes, IV, smile/skew, estimation Greeks, risk sensitivities">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-graph-up-arrow fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Pricing complet & Greeks</h5>
+                            <p class="card-text text-muted mb-2">Valorisation + sensibilités pour analyse et arbitrage.</p>
+                            <div class="d-flex flex-wrap gap-2">
                                 <span class="badge wd-badge wd-primary">Black-Scholes</span>
-                                <span class="badge wd-badge wd-accent">Low-latency</span>
+                                <span class="badge wd-badge wd-secondary">Greeks</span>
+                                <span class="badge wd-badge wd-accent">Implied Vol</span>
                             </div>
                         </div>
                     </div>
@@ -170,26 +90,26 @@
             </button>
         </div>
 
-        <!-- 4) IV + surfaces -->
+        <!-- 3) Vol Surface -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="iv"
-                    data-ach-title="IV, smile/skew & features"
-                    data-ach-subtitle="Extraction IV, normalisation strikes/maturités, features pour signaux de micro-vol">
+                    data-ach-id="vq_surface"
+                    data-ach-title="Surface IV & calibration"
+                    data-ach-subtitle="Smile/skew, interpolation, calibration, stress scenarios, stability">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-graph-up fs-3"></i>
+                        <i class="bi bi-grid-3x3-gap fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">IV & surfaces</h5>
-                            <p class="card-text text-muted mb-2">Préparation de données robuste pour scoring/anomalies.</p>
+                            <h5 class="card-title mb-1">Surface IV & calibration</h5>
+                            <p class="card-text text-muted mb-2">Construction et calibration pour une vol exploitable en pricing.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">Implied Vol</span>
-                                <span class="badge wd-badge wd-secondary">Smile/Skew</span>
-                                <span class="badge wd-badge wd-primary">Features</span>
+                                <span class="badge wd-badge wd-secondary">Smile</span>
+                                <span class="badge wd-badge wd-primary">Surface</span>
+                                <span class="badge wd-badge wd-accent">Calibration</span>
                             </div>
                         </div>
                     </div>
@@ -197,26 +117,26 @@
             </button>
         </div>
 
-        <!-- 5) Scoring anomalies -->
+        <!-- 4) Mispricing Detection -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="score"
-                    data-ach-title="Scoring de mispricing & anomalies"
-                    data-ach-subtitle="Écart prix théorique vs marché, filtres liquidité, ranking des opportunités">
+                    data-ach-id="vq_mispricing"
+                    data-ach-title="Détection de mispricing & heuristiques"
+                    data-ach-subtitle="Z-score, vega-weighted signals, gamma risk, theta bleed, liquidity scoring">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-bullseye fs-3"></i>
+                        <i class="bi bi-exclamation-triangle fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Scoring anomalies</h5>
-                            <p class="card-text text-muted mb-2">Détection exploitable sur séries d’options (tri + seuils).</p>
+                            <h5 class="card-title mb-1">Détection de mispricing & heuristiques</h5>
+                            <p class="card-text text-muted mb-2">Signaux buy/sell orientés risk-adjusted.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-secondary">Mispricing</span>
-                                <span class="badge wd-badge wd-primary">Filters</span>
-                                <span class="badge wd-badge wd-accent">Ranking</span>
+                                <span class="badge wd-badge wd-secondary">Z-Score</span>
+                                <span class="badge wd-badge wd-primary">Heuristics</span>
+                                <span class="badge wd-badge wd-accent">Signals</span>
                             </div>
                         </div>
                     </div>
@@ -224,26 +144,26 @@
             </button>
         </div>
 
-        <!-- 6) Monte-Carlo -->
+        <!-- 5) Risk & Stress -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
                     class="card achievement-card shadow-sm h-100 text-start"
                     data-bs-toggle="modal"
                     data-bs-target="#achievementModal"
-                    data-ach-id="mc"
-                    data-ach-title="Monte-Carlo & backtesting (prototype)"
-                    data-ach-subtitle="GBM, scénarios, stress tests, base pour Heston/SABR & extensions">
+                    data-ach-id="vq_risk"
+                    data-ach-title="Risk metrics & stress scenarios"
+                    data-ach-subtitle="Distribution P&L, VaR-like metrics, sensitivities, scenario shocks, limits">
                 <div class="card-body">
                     <div class="d-flex align-items-start gap-3">
-                        <i class="bi bi-shuffle fs-3"></i>
+                        <i class="bi bi-shield-check fs-3"></i>
                         <div>
-                            <h5 class="card-title mb-1">Monte-Carlo</h5>
-                            <p class="card-text text-muted mb-2">Cadre extensible pour simulations et métriques de risque.</p>
+                            <h5 class="card-title mb-1">Risk metrics & stress scenarios</h5>
+                            <p class="card-text text-muted mb-2">Mesure du risque et robustesse sous chocs de marché.</p>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge wd-badge wd-primary">GBM</span>
-                                <span class="badge wd-badge wd-secondary">Monte-Carlo</span>
-                                <span class="badge wd-badge wd-accent">Scenarios</span>
+                                <span class="badge wd-badge wd-primary">Stress</span>
+                                <span class="badge wd-badge wd-secondary">Risk</span>
+                                <span class="badge wd-badge wd-accent">Metrics</span>
                             </div>
                         </div>
                     </div>
@@ -251,105 +171,362 @@
             </button>
         </div>
 
+        <!-- 6) Dashboard + API -->
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="vq_stack"
+                    data-ach-title="Dashboard Blazor + API Python"
+                    data-ach-subtitle="UI interactive, API FastAPI, orchestration, Docker, runs reproductibles">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-window fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Dashboard Blazor + API Python</h5>
+                            <p class="card-text text-muted mb-2">Visualisation et exécution des analyses via interface web.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Blazor</span>
+                                <span class="badge wd-badge wd-secondary">FastAPI</span>
+                                <span class="badge wd-badge wd-accent">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>    <hr class="my-4" />
+
+    <div class="mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="presentation"
+                        data-ach-title="Présentation"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Présentation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="launch"
+                        data-ach-title="Lancement du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Lancement du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="steps"
+                        data-ach-title="Les étapes"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les étapes</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="results"
+                        data-ach-title="Les résultats"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les résultats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="me"
+                        data-ach-title="Pour moi"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour moi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="tmrw"
+                        data-ach-title="Les lendemains du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les lendemain du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="pov"
+                        data-ach-title="Mon point de vue"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    Mon point de vue
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+        </div>
     </div>
 </section>
 
-@* CONTENU PRINCIPAL *@
-<div class="mt-4">
+<div id="achievementBodies" class="d-none">
 
-    <h3><strong>Présentation</strong></h3>
-
-    <p>
-        <strong>VolatiQ</strong> est un analyseur quantitatif construit autour d’un pipeline hybride
-        <strong>Python + C++</strong>. L’objectif : récupérer des données d’options, les valoriser rapidement
-        (modèle <strong>Black-Scholes</strong> + grecs) et produire des <strong>signaux de micro-volatilité</strong>
-        via un scoring d’anomalies (mispricing, déformations IV, outliers).
-    </p>
-
-    <p>
-        Python assure l’<strong>ingestion</strong>, la <strong>normalisation</strong> et l’exposition via
-        <strong>FastAPI</strong> (avec cache persistant). Le C++ porte le <strong>moteur quant</strong>
-        (pricing/grecs) pour maintenir une latence basse sur des lots d’options.
-    </p>
-
-    <h3 class="mt-4"><strong>Lancement du projet</strong></h3>
-
-    <p>
-        Le point de départ : la difficulté d’obtenir des données d’options à la fois rapides et exploitables,
-        et le manque d’outils locaux permettant de reproduire une chaîne simple “acquisition → pricer → signaux”.
-        VolatiQ a donc été conçu pour :
-    </p>
-    <ul class="mt-2">
-        <li>récupérer efficacement les chaînes (calls/puts, strikes, maturités, IV, prix),</li>
-        <li>mettre en cache localement pour réduire la dépendance à l’API,</li>
-        <li>valoriser vite (Black-Scholes + grecs) sur de grands volumes,</li>
-        <li>détecter des anomalies (mispricing, outliers IV, signaux micro-vol).</li>
-    </ul>
-
-    <h3 class="mt-4"><strong>Les étapes</strong></h3>
-
-    <ul class="mt-2">
-        <li>Création d’une API <strong>FastAPI</strong> : endpoints options, pricing, grecs, scoring, surfaces IV.</li>
-        <li>Mise en place d’un <strong>cache persistant</strong> (TTL / invalidation) pour limiter le trafic et stabiliser les temps de réponse.</li>
-        <li>Développement d’un <strong>moteur C++</strong> pour pricing Black-Scholes et calcul des grecs (Delta/Gamma/Vega/Theta/Rho).</li>
-        <li>Construction de features micro-vol : normalisation strike/maturité, métriques IV, filtres liquidité.</li>
-        <li>Implémentation d’un <strong>score de mispricing</strong> + ranking (seuils, tri, heuristiques anti-bruit).</li>
-        <li>Prototype <strong>Monte-Carlo</strong> (GBM) comme base d’extension vers Heston/SABR et stress tests.</li>
-    </ul>
-
-    <h3 class="mt-4"><strong>Les résultats</strong></h3>
-
-    <h4 class="mt-3"><strong>Pour moi</strong></h4>
-    <p>
-        VolatiQ m’a permis d’approfondir la construction d’un pipeline quant complet : intégration multi-langages,
-        séparation ingestion/calcul, optimisation de performance, et design orienté “signal” (features + scoring).
-    </p>
-
-    <h4 class="mt-3"><strong>Pour le projet</strong></h4>
-    <p>
-        Le système se comporte comme un <strong>mini-pricer local</strong> : acquisition → cache → pricing/grecs → scoring,
-        avec une architecture extensible (modèles stochastiques, WebSockets, parallélisation, UI).
-    </p>
-
-    <h3 class="mt-4"><strong>Insights & KPIs</strong></h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card text-center shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">1000+ options/s</h5>
-                    <p class="card-text">Débit local du moteur de pricing C++ (selon machine/dataset).</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card text-center shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">-90 %</h5>
-                    <p class="card-text">Réduction des hits API via cache persistant + TTL.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card text-center shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title">~5 ms</h5>
-                    <p class="card-text">Ordre de grandeur d’un batch de pricing BS optimisé (selon taille).</p>
-                </div>
-            </div>
-        </div>
+    <div data-ach-id="vq_mc">
+        <p><strong>Objectif :</strong> construire un moteur Monte-Carlo rapide pour simuler des trajectoires de prix et valoriser des options à grande échelle.</p>
+        <ul>
+            <li><strong>Simulation :</strong> génération massive de paths GBM, distribution log-normale, statistiques et convergence.</li>
+            <li><strong>Performance :</strong> cœur C++ optimisé pour exécuter des runs volumineux avec latence maîtrisée.</li>
+            <li><strong>Output :</strong> distributions, quantiles et agrégations prêtes pour pricing et risk metrics.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une base Monte-Carlo robuste pour pricing et stress d’options.</p>
     </div>
 
-    <h3 class="mt-4"><strong>Les lendemains du projet</strong></h3>
-    <p>
-        Évolutions prévues : volatilité stochastique (Heston), calibration, surfaces IV plus riches,
-        WebSockets temps réel, parallélisation, et une UI dédiée (dashboard anomalies + courbes).
-    </p>
+    <div data-ach-id="vq_pricing">
+        <p><strong>Objectif :</strong> fournir un pricing complet et des sensibilités fiables pour analyser la valeur et les risques d’une position optionnelle.</p>
+        <ul>
+            <li><strong>Black-Scholes :</strong> pricing closed-form, implied vol, smile/skew et comparaisons modèle vs marché.</li>
+            <li><strong>Greeks :</strong> estimation Delta/Gamma/Vega/Theta, cohérence numérique et stabilité des résultats.</li>
+            <li><strong>Exploitabilité :</strong> outputs orientés desk (prix, greeks, IV, écarts) pour décision rapide.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> un pricing utilisable pour screening et analyse de risque.</p>
+    </div>
 
+    <div data-ach-id="vq_surface">
+        <p><strong>Objectif :</strong> construire une surface de volatilité implicite exploitable pour pricing multi-strikes et multi-maturités.</p>
+        <ul>
+            <li><strong>Surface :</strong> smile/skein par maturité, interpolation et contrôle de cohérence.</li>
+            <li><strong>Calibration :</strong> ajustement des paramètres pour coller au marché et stabiliser la valorisation.</li>
+            <li><strong>Stress :</strong> scénarios de déplacement de vol (parallel shift, skew change) et impacts pricing.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une IV surface prête pour mispricing et scénarios.</p>
+    </div>
+
+    <div data-ach-id="vq_mispricing">
+        <p><strong>Objectif :</strong> détecter des opportunités ou anomalies via des heuristiques orientées mispricing et risk-adjusted signals.</p>
+        <ul>
+            <li><strong>Z-score :</strong> détection d’écarts statistiques prix/IV vs historique.</li>
+            <li><strong>Heuristiques :</strong> signaux vega-weighted, gamma risk, theta bleed, scoring de liquidité.</li>
+            <li><strong>Buy/Sell :</strong> propositions orientées opportunité vs coût du risque (carry, convexity, exposure).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> un screening d’options avec signaux interprétables.</p>
+    </div>
+
+    <div data-ach-id="vq_risk">
+        <p><strong>Objectif :</strong> compléter la valorisation par des métriques de risque et des stress tests pour quantifier la robustesse.</p>
+        <ul>
+            <li><strong>Risk metrics :</strong> distribution P&amp;L, quantiles, métriques “VaR-like” et exposition par greek.</li>
+            <li><strong>Scenarios :</strong> shocks spot/vol/rates et mesure des impacts sur prix et greeks.</li>
+            <li><strong>Monitoring :</strong> comparaisons runs, tracking des résultats et détection d’instabilité.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une lecture risque intégrée au workflow de pricing.</p>
+    </div>
+
+    <div data-ach-id="vq_stack">
+        <p><strong>Objectif :</strong> rendre VolatiQ exploitable via une UI interactive et une API pour lancer des analyses de pricing/simulation.</p>
+        <ul>
+            <li><strong>Dashboard :</strong> Blazor pour visualiser IV, greeks, distributions et signaux.</li>
+            <li><strong>API :</strong> FastAPI pour exposer les calculs et orchestrer les runs depuis le front.</li>
+            <li><strong>Docker :</strong> environnement reproductible pour exécuter, déployer et tester facilement.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> un outil complet “quant + web” utilisable pour exploration et démonstration.</p>
+    </div>
+    <div data-ach-id="presentation">
+        <p>
+            VolatiQ est un projet personnel conçu comme un laboratoire de pricing et d’analyse de risque sur options, orienté simulation et détection de mispricing. L’objectif est de construire un outil complet capable de valoriser des options, d’estimer les sensibilités (Greeks), de reconstruire une volatilité implicite exploitable (smile/surface), puis de générer des signaux d’opportunité en intégrant à la fois la valeur théorique et les risques associés (gamma, vega, theta, liquidité).
+        </p>
+
+        <p>
+            Le cœur de VolatiQ repose sur un moteur Monte-Carlo en C++, pensé pour exécuter des simulations massives de trajectoires de prix (GBM, distribution log-normale) et produire des distributions de résultats utiles au pricing et aux stress tests. En parallèle, le projet inclut une couche de pricing plus “market-ready” avec Black-Scholes, le calcul d’implied volatility, et une logique de calibration/interpolation pour exploiter le smile/skew et construire une surface de vol cohérente sur plusieurs strikes et maturités.
+        </p>
+
+        <p>
+            Au-delà du pricing pur, VolatiQ se concentre sur l’analyse décisionnelle : identification d’écarts statistiques (z-score), heuristiques vega-weighted pour repérer des anomalies de volatilité, évaluation du gamma risk et du theta bleed, et intégration de signaux de liquidité. L’objectif est de ne pas rester au niveau “prix”, mais de proposer une lecture actionnable de la situation : opportunité potentielle vs coût du risque.
+        </p>
+        <p>
+            Enfin, le projet est rendu exploitable via un dashboard Blazor interactif connecté à une API FastAPI, le tout packagé en Docker pour des exécutions reproductibles. VolatiQ est donc à la fois un projet quant (modèles, simulation, calibration) et un projet d’ingénierie (architecture, API, UI), conçu pour démontrer une capacité à construire un outil de pricing/risk complet, performant et utilisable.
+        </p>
+    </div>
+
+    <div data-ach-id="launch">
+        <p>
+            Le lancement de VolatiQ a commencé par une décision de design claire : construire un projet perso qui ne se limite pas à un “pricing Black-Scholes”, mais un outil complet orienté simulation, risk metrics et détection de mispricing. J’ai cadré dès le départ le périmètre autour de trois blocs : un moteur de calcul performant, une couche de modèles exploitable (IV/smile/surface, greeks), et une interface permettant de visualiser et comparer rapidement les résultats.
+        </p>
+
+        <p>
+            J’ai d’abord posé le socle math/quant en définissant les inputs minimaux nécessaires (spot, strike, maturité, taux, dividende, volatilité) et les outputs attendus (prix, greeks, IV, distributions, scénarios). Ensuite, j’ai démarré par le cœur du projet : le moteur Monte-Carlo en C++. L’objectif était d’avoir une base rapide et stable capable de générer des trajectoires GBM, calculer des payoffs, agréger les résultats et sortir une distribution exploitable, tout en gardant une architecture suffisamment propre pour étendre vers d’autres modèles ensuite.
+        </p>
+
+        <p>
+            Une fois le moteur de simulation fonctionnel, j’ai ajouté une couche “pricing de référence” avec Black-Scholes, pour obtenir un benchmark immédiat, comparer Monte-Carlo vs closed-form, et valider les résultats. C’est à ce moment que j’ai intégré le calcul des Greeks et les premières métriques de risque, afin de ne pas produire seulement un prix, mais une lecture de l’exposition (gamma, vega, theta) qui est indispensable pour analyser un mispricing.
+        </p>
+        <p>
+            Après ça, j’ai lancé la partie volatilité implicite en construisant le calcul d’IV puis en structurant la surface (smile/skew par maturité, interpolation/calibration). Cette étape était essentielle pour faire le lien avec le marché, parce que la plupart des opportunités et anomalies se lisent à travers la vol, pas uniquement à travers le prix.
+        </p>
+        <p>
+            Enfin, dès que les premières briques calcul étaient stables, j’ai lancé l’enveloppe produit : une API FastAPI pour piloter les runs et un dashboard Blazor pour visualiser les outputs (IV, greeks, distributions, signaux), le tout packagé via Docker pour exécuter de façon reproductible. À ce stade, VolatiQ n’était plus un simple code quant, mais une base d’outil utilisable, prête à accueillir des heuristiques buy/sell, des stress scénarios et des métriques de risque plus poussées.
+        </p>
+    </div>
+
+    <div data-ach-id="steps">
+        <p>
+            J’ai d’abord commencé par cadrer VolatiQ comme un projet perso orienté “pricing + risk”, avec un objectif précis : valoriser des options, reconstruire la volatilité implicite (smile/surface), puis détecter des mispricings via des signaux interprétables. Dès le départ, j’ai défini les outputs attendus (prix, IV, greeks, distributions, stress) pour construire un outil cohérent et pas une simple collection de scripts.
+        </p>
+
+        <p>
+            Ensuite, j’ai attaqué le cœur calcul en développant le moteur Monte-Carlo en C++. J’ai implémenté la simulation de trajectoires GBM, la génération de payoffs, l’agrégation statistique (moyennes, quantiles, convergence) et la production de distributions exploitables. Cette étape m’a permis de poser une base rapide et stable, capable de supporter des runs volumineux.
+        </p>
+
+        <p>
+            Une fois le moteur Monte-Carlo fonctionnel, j’ai ajouté une couche de pricing de référence avec Black-Scholes pour avoir un benchmark immédiat. J’ai intégré le pricing closed-form, puis l’estimation des Greeks afin de relier le prix à une lecture de risque (delta, gamma, vega, theta). Cela a rendu l’analyse plus “desk-ready”, parce qu’une opportunité n’a de sens que si on comprend l’exposition associée.
+        </p>
+        <p>
+            Après validation du pricing, j’ai développé la partie volatilité implicite : calcul d’IV à partir de prix observés, puis structuration du smile/skew par maturité. J’ai ensuite construit une surface IV multi-strikes/multi-maturités avec interpolation/calibration, pour disposer d’une représentation cohérente de la vol et pouvoir comparer marché vs modèle de manière robuste.
+        </p>
+        <p>
+            Une fois la vol exploitable, j’ai implémenté les briques de détection de mispricing. J’ai ajouté des signaux statistiques (z-score) et des heuristiques orientées risques : vega-weighted signals, gamma risk, theta bleed et scoring de liquidité. L’objectif était de produire une lecture actionnable, où le signal n’est pas juste “cheap/expensive”, mais intégré à une mesure de coût du risque.
+        </p>
+        <p>
+            Ensuite, j’ai complété le projet avec des métriques de risque et des stress scénarios. J’ai exploité les distributions issues de la simulation pour produire des quantiles “VaR-like”, mesurer les impacts spot/vol et suivre l’évolution des sensibilités sous chocs.
+        </p>
+        <p>
+            Enfin, j’ai rendu VolatiQ démontrable et utilisable via une couche produit : une API FastAPI pour orchestrer les runs et un dashboard Blazor interactif pour visualiser les surfaces IV, greeks, distributions et signaux. Le tout est packagé avec Docker pour garantir des exécutions reproductibles et faciliter le déploiement.
+        </p>
+    </div>
+
+    <div data-ach-id="results">
+        <p>
+            Le premier résultat de VolatiQ est la mise en place d’un moteur de pricing complet capable de produire rapidement des valorisations d’options et une lecture de risque associée. Le projet ne sort pas uniquement un prix, mais fournit aussi les sensibilités (Greeks) nécessaires pour comprendre l’exposition et comparer différentes structures.
+        </p>
+        <p>
+            Le deuxième résultat est un moteur Monte-Carlo en C++ capable d’exécuter des simulations massives de trajectoires GBM, de produire des distributions de payoffs et des statistiques robustes. Cela apporte une base solide pour analyser les résultats au-delà d’un prix moyen, notamment via quantiles et comportements en scénarios.
+        </p>
+        <p>
+            Le troisième résultat est la construction d’une volatilité implicite exploitable : calcul d’IV, smile/skew par maturité, puis structuration d’une surface multi-strikes/multi-maturités avec interpolation/calibration. Cette brique permet de comparer plus proprement la vol “marché” à la vol “modèle” et d’analyser les écarts de manière cohérente.
+        </p>
+        <p>
+            Le quatrième résultat est l’ajout d’une couche de détection de mispricing orientée décision, via des signaux statistiques (z-score) et des heuristiques pondérées par le risque. Le projet intègre des notions comme le vega-weighting, le gamma risk et le theta bleed, afin que les signaux ne soient pas uniquement “cheap/expensive”, mais contextualisés par le coût du risque.
+        </p>
+        <p>
+            Le cinquième résultat est l’intégration de stress scénarios et de métriques de risque. VolatiQ permet de mesurer l’impact de chocs spot/vol et de produire des indicateurs issus des distributions (quantiles “VaR-like”), renforçant la lecture robustesse et limites des positions.
+        </p>
+        <p>
+            Enfin, un résultat majeur est la partie “produit” : un dashboard Blazor interactif couplé à une API FastAPI, le tout packagé avec Docker. VolatiQ devient un outil démontrable et reproductible, utilisable pour explorer des options, visualiser IV/Greeks/distributions, et exécuter des analyses de pricing/risk dans un workflow complet.
+        </p>
+    </div>
+    <div data-ach-id="me">
+        <p>
+            Pour moi, VolatiQ a été un vrai projet “quant + engineering” complet, parce qu’il m’a obligé à faire le lien entre la théorie (pricing, vol implicite, modèles stochastiques) et un outil réellement utilisable. Au lieu de coder un modèle isolé, j’ai construit une chaîne cohérente : simulation → pricing → greeks → volatilité → signaux → visualisation, avec une logique orientée décision.
+        </p>
+        <p>
+            Techniquement, j’ai progressé sur la construction d’un moteur de calcul performant, en particulier sur la partie Monte-Carlo en C++. Ça m’a donné une bonne discipline sur la précision numérique, la stabilité des résultats, et la façon d’obtenir des distributions exploitables plutôt qu’un simple prix. J’ai aussi consolidé ma capacité à comparer un moteur simulation à un benchmark closed-form (Black-Scholes) pour valider les outputs et détecter les erreurs.
+        </p>
+        <p>
+            Sur la partie finance, VolatiQ m’a permis de mieux maîtriser la volatilité implicite et le smile/surface, qui est un point central en options. Construire une surface cohérente, interpoler/calibrer et comprendre l’impact sur le pricing m’a donné une vision beaucoup plus “marché” que des exercices académiques classiques.
+        </p>
+        <p>
+            Enfin, le projet m’a fait progresser sur l’approche “desk-ready”. Avec les heuristiques (z-score, vega-weighted signals, gamma risk, theta bleed, liquidité), j’ai appris à penser en termes de trade-off : opportunité potentielle vs coût du risque. Et avec le dashboard Blazor + API FastAPI + Docker, j’ai transformé des calculs quant en outil démontrable, ce qui est exactement ce que je veux montrer pour un poste quant/dev finance.
+        </p>
+    </div>
+
+    <div data-ach-id="tmrw">
+        <p>
+            Les lendemains de VolatiQ, c’est d’abord l’extension naturelle du moteur vers des modèles plus riches que le GBM. Une fois la base Monte-Carlo stable, l’étape logique est d’ajouter des dynamiques plus réalistes pour capturer le smile/skew de marché : volatilité locale plus robuste, modèles à volatilité stochastique, ou diffusion avec paramètres calibrés. L’objectif est d’améliorer la qualité du pricing et de rendre les simulations plus proches des comportements observés.
+        </p>
+        <p>
+            Ensuite, le projet peut évoluer sur la calibration et la stabilité de la surface IV. Les lendemains, c’est renforcer l’interpolation, la cohérence entre maturités, et la gestion des zones moins liquides, afin d’avoir une surface utilisable même quand le marché est bruité. C’est aussi le moment d’ajouter des contrôles qualité : détection d’arbitrages statiques, smoothing maîtrisé, et comparaison systématique modèle vs marché.
+        </p>
+        <p>
+            Le troisième axe est l’approfondissement de la partie “signal”. Une fois les heuristiques en place, VolatiQ peut intégrer des scores plus structurés : pondération dynamique selon régime de volatilité, prise en compte de la liquidité réelle, et lecture de carry/convexity plus précise. L’idée est de rendre le scoring buy/sell plus robuste et moins sensible à un seul indicateur.
+        </p>
+        <p>
+            Enfin, les lendemains du projet, c’est son industrialisation comme outil complet. Cela passe par plus de monitoring sur les runs, des tests automatiques de non-régression sur le pricing/greeks, des performances encore meilleures sur la simulation massive, et un dashboard plus riche pour comparer plusieurs options, scénarios et stratégies. À terme, VolatiQ devient une vraie plateforme de recherche et d’exploration options, capable de produire des analyses reproductibles et directement exploitables.
+        </p>
+
+    </div>
+    <div data-ach-id="pov">
+        <p>
+            VolatiQ, pour moi, c’est un projet vitrine qui résume exactement le type de travail que je veux faire : du quant appliqué et du software engineering au service d’un usage réel. Je ne voulais pas juste “implémenter Black-Scholes”, je voulais construire un outil complet qui me force à réfléchir comme en finance de marché : comment on price, comment on mesure le risque, comment on interprète un écart, et comment on rend tout ça exploitable.
+        </p>
+        <p>
+            Ce projet représente aussi ma façon d’apprendre. Plutôt que d’empiler des notions théoriques, j’ai voulu les transformer en système : Monte-Carlo, volatilité implicite, smile/surface, Greeks, stress scénarios… Tout devient concret parce qu’il faut produire des résultats cohérents, comparables, et reproductibles. Ça m’a donné une vraie intuition sur ce qui est “sensible” dans un modèle et sur les erreurs classiques (numérique, calibration, incohérences de surface, instabilité des greeks).
+        </p>
+        <p>
+            Enfin, VolatiQ veut dire pour moi “capacité à livrer”. Même si c’est perso, je l’ai construit comme un produit : un moteur C++ pour la perf, une API pour orchestrer, un dashboard pour visualiser, Docker pour exécuter proprement. C’est une preuve directe que je sais relier calcul, architecture, et interface, et que je peux construire un outil quant de bout en bout, pas juste coder une formule sur un notebook.
+        </p>
+    
+    </div>
 </div>
-
-@* Modal Bootstrap *@
 <div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div>
@@ -397,7 +574,6 @@
 
 @section Styles {
     <style>
-        /* Cards "achievement" alignées au thème */
         .achievement-card {
             cursor: pointer;
             padding: 0;
@@ -418,17 +594,14 @@
                 outline-offset: 2px;
             }
 
-            /* Empêche le texte de "bloquer" le click (tu avais déjà l'idée) */
             .achievement-card .card-body {
                 pointer-events: none;
             }
 
-            /* Texte muted compatible fond sombre */
             .achievement-card .text-muted {
                 color: rgba(255,255,255,0.62) !important;
             }
 
-        /* Badges adaptés (dark theme) */
         .wd-badge {
             font-weight: 600;
             font-size: 0.72rem;
@@ -455,11 +628,7 @@
             border-color: rgba(255,193,7,0.25);
         }
 
-        /* =========================
-                   Modal "dark/glass"
-                   ========================= */
 
-        /* Backdrop un peu plus sombre */
         .modal-backdrop.show {
             opacity: 0.7;
         }
@@ -481,12 +650,10 @@
             font-weight: 800;
         }
 
-        /* Subtitle */
         #achievementModalSubtitle {
             color: rgba(255,255,255,0.65) !important;
         }
 
-        /* Close button visible sur fond sombre */
         .modal-header .btn-close {
             filter: invert(1) grayscale(100%);
             opacity: 0.85;
@@ -496,7 +663,6 @@
                 opacity: 1;
             }
 
-        /* Liens et listes dans le modal */
         .modal-body p, .modal-body li {
             color: rgba(255,255,255,0.78);
         }
@@ -505,7 +671,6 @@
             color: rgba(255,255,255,0.92);
         }
 
-        /* Bouton Fermer */
         .modal-footer .btn-secondary {
             background: rgba(255,255,255,0.10);
             border-color: rgba(255,255,255,0.14);

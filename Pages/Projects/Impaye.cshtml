@@ -1,0 +1,705 @@
+﻿@page
+@model PortfolioTamere.Pages.Projects.ImpayerModel
+@{
+}
+<section class="skills-hero mb-4">
+
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <div>
+                <h2 class="mb-1 fw-bold">
+                    Module Impayé — Réalisations clés
+                </h2>
+                <p class="text-muted mb-0">
+                    Conception d’un projet standalone orienté traitement de données clients, visant à détecter et gérer les impayés sur des échéances de paiement. Développement d’une logique de consolidation des statuts et d’analyse des retards en C++, couplée à une base SQL pour stocker les clients, paiements, échéanciers et historiques. Mise en place de requêtes structurées pour calculer les retards, suivre l’évolution des statuts et produire des extractions exploitables (suivi, reporting), avec un focus sur la robustesse des règles et l’efficacité du traitement sur des volumes importants.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Projects" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="sql"
+                    data-ach-title="Modélisation SQL & requêtes"
+                    data-ach-subtitle="Schéma clients/paiements, calcul retards, vues de suivi, requêtes optimisées">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-database-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Modélisation SQL & requêtes</h5>
+                            <p class="card-text text-muted mb-2">Suivi impayés, échéances, historique et extraction reporting.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">SQL Schema</span>
+                                <span class="badge wd-badge wd-primary">Views</span>
+                                <span class="badge wd-badge wd-secondary">Indexes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="webforms"
+                    data-ach-title="Moteur C++ batch"
+                    data-ach-subtitle="Traitement échéanciers, consolidation statuts, règles de relance">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-file-earmark-code fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Moteur C++ batch</h5>
+                            <p class="card-text text-muted mb-2">Traitement déterministe et performant sur volumes clients.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">C++17</span>
+                                <span class="badge wd-badge wd-secondary">STL</span>
+                                <span class="badge wd-badge wd-primary">Batch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="telerik"
+                    data-ach-title="Détection retards & statuts"
+                    data-ach-subtitle="J-1/J+X, pénalités, états consolidés, règles d’impayé">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-grid-3x3-gap fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Détection retards & statuts</h5>
+                            <p class="card-text text-muted mb-2">Mise à jour fiable des statuts et anomalies d’échéances.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Rules</span>
+                                <span class="badge wd-badge wd-primary">Delays</span>
+                                <span class="badge wd-badge wd-accent">Consistency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="kyc"
+                    data-ach-title="Historisation & audit"
+                    data-ach-subtitle="Journal des événements, changements de statuts, traçabilité des paiements">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Historisation & audit</h5>
+                            <p class="card-text text-muted mb-2">Traçabilité complète pour expliquer un statut d’impayé.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">History</span>
+                                <span class="badge wd-badge wd-secondary">Events</span>
+                                <span class="badge wd-badge wd-primary">Audit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="billing"
+                    data-ach-title="Consolidation échéancier"
+                    data-ach-subtitle="Calcul cumul, reste dû, pénalités, regroupement par client">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-receipt fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Consolidation échéancier</h5>
+                            <p class="card-text text-muted mb-2">Vision claire des montants dus et des échéances en retard.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Schedule</span>
+                                <span class="badge wd-badge wd-secondary">Amounts</span>
+                                <span class="badge wd-badge wd-accent">Reporting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="support"
+                    data-ach-title="Exports & exploitation"
+                    data-ach-subtitle="Listes d’impayés, filtres, extractions, priorisation recouvrement">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-life-preserver fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Exports & exploitation</h5>
+                            <p class="card-text text-muted mb-2">Sorties exploitables pour suivi et actions de recouvrement.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Export</span>
+                                <span class="badge wd-badge wd-primary">Filters</span>
+                                <span class="badge wd-badge wd-accent">Ops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>    <hr class="my-4" />
+
+    <div class="mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="presentation"
+                        data-ach-title="Présentation"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Présentation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="launch"
+                        data-ach-title="Lancement du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Lancement du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="steps"
+                        data-ach-title="Les étapes"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les étapes</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="actors"
+                        data-ach-title="Les acteurs"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les acteurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="results"
+                        data-ach-title="Les résultats"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les résultats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="me"
+                        data-ach-title="Pour moi"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour moi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="bus"
+                        data-ach-title="Pour l'entreprise"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour l'entreprise</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="tmrw"
+                        data-ach-title="Les lendemains du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les lendemain du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="pov"
+                        data-ach-title="Mon point de vue"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    Mon point de vue
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="sql">
+        <p><strong>Objectif :</strong> structurer une base SQL dédiée à la gestion d’impayés et produire des requêtes fiables pour le suivi des clients et échéances.</p>
+        <ul>
+            <li><strong>Modèle :</strong> conception des tables clients, contrats, échéances et paiements avec relations cohérentes et contraintes utiles.</li>
+            <li><strong>Requêtes :</strong> calcul des retards, identification des échéances en défaut, agrégations par client et vues de reporting.</li>
+            <li><strong>Performance :</strong> indexation ciblée et requêtes stables pour tenir sur des volumes plus importants.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> données structurées, extraction rapide des impayés et base solide pour alimenter le moteur de traitement en C++.</p>
+    </div>
+
+    <div data-ach-id="webforms">
+        <p><strong>Objectif :</strong> développer un moteur batch en C++ pour analyser les échéanciers et mettre à jour les statuts d’impayé de manière déterministe.</p>
+        <ul>
+            <li><strong>Traitement :</strong> lecture des échéances, calcul J+X, consolidation des montants dus et mise à jour des statuts.</li>
+            <li><strong>Robustesse :</strong> gestion des cas limites (paiements partiels, dates incohérentes, échéances manquantes) et règles explicites.</li>
+            <li><strong>Performance :</strong> boucles optimisées, usage STL adapté, limitation des copies et allocations inutiles.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> traitement fiable et rapide, capable de passer sur des jeux de données clients volumineux.</p>
+    </div>
+
+    <div data-ach-id="telerik">
+        <p><strong>Objectif :</strong> définir des règles claires d’identification des retards et produire un état consolidé des impayés.</p>
+        <ul>
+            <li><strong>Règles :</strong> définition de seuils (J-1, J+X), statuts (à jour, en retard, impayé) et transitions cohérentes.</li>
+            <li><strong>Consolidation :</strong> agrégation par contrat/client pour obtenir une vue actionnable des montants dus et des échéances critiques.</li>
+            <li><strong>Qualité :</strong> vérifications de cohérence et détection d’anomalies de planification ou de paiement.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> statuts fiables et interprétables, facilitant le suivi et la priorisation des actions de recouvrement.</p>
+    </div>
+
+    <div data-ach-id="kyc">
+        <p><strong>Objectif :</strong> historiser les événements de paiement et les changements d’état afin de pouvoir expliquer l’origine d’un impayé.</p>
+        <ul>
+            <li><strong>Journal :</strong> enregistrement des événements (paiement reçu, rejet, partiel, retard) et des transitions de statuts.</li>
+            <li><strong>Traçabilité :</strong> conservation de l’historique pour comparer les évolutions et comprendre les décisions du moteur.</li>
+            <li><strong>Auditabilité :</strong> extraction simple des événements pour analyse et reporting.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure explicabilité du suivi impayés grâce à un historique complet et consultable.</p>
+    </div>
+
+    <div data-ach-id="billing">
+        <p><strong>Objectif :</strong> construire une vision consolidée d’échéancier pour connaître le reste dû et la criticité d’un dossier client.</p>
+        <ul>
+            <li><strong>Montants :</strong> calcul du cumul payé, reste dû, retards et pénalités éventuelles selon règles définies.</li>
+            <li><strong>Groupements :</strong> regroupement par client et par contrat pour une lecture rapide des positions ouvertes.</li>
+            <li><strong>Restitution :</strong> préparation de sorties claires pour exploitation opérationnelle et reporting.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> tableau de suivi plus lisible et directement exploitable pour le pilotage des impayés.</p>
+    </div>
+
+    <div data-ach-id="support">
+        <p><strong>Objectif :</strong> rendre les données impayés exploitables via des exports et des filtres orientés opération.</p>
+        <ul>
+            <li><strong>Exports :</strong> génération de listes d’impayés (par criticité, date, montant) pour suivi et actions de recouvrement.</li>
+            <li><strong>Filtres :</strong> filtres rapides (client, statut, ancienneté) pour isoler les cas prioritaires.</li>
+            <li><strong>Exploitation :</strong> restitution claire des dossiers à traiter et des prochaines échéances à risque.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> meilleure capacité d’exploitation des données et priorisation facilitée des actions.</p>
+    </div>
+
+    <div data-ach-id="presentation">
+        <p>
+            Ce projet est une application standalone orientée data, conçue pour analyser et gérer des situations d’impayés à partir de données clients. L’objectif est de centraliser l’information de paiement, de suivre des échéanciers, et de produire des statuts fiables (à jour, en retard, impayé) permettant d’identifier rapidement les dossiers à risque et de prioriser les actions.
+        </p>
+
+        <p>
+            Le cœur du projet repose sur un moteur C++ dédié au traitement batch et au calcul des retards, combiné à une base SQL structurée pour stocker les clients, contrats, échéances, paiements et historiques. Cette séparation permet d’avoir un socle robuste : SQL assure la cohérence, la traçabilité et l’exploitabilité des données, tandis que C++ apporte une exécution rapide et déterministe pour traiter efficacement des volumes importants.
+        </p>
+
+        <p>
+            Le projet vise à reproduire une logique proche d’un système de recouvrement simplifié : consolider les informations de paiement, détecter les anomalies et retards, historiser les transitions d’état, et fournir des extractions exploitables pour du suivi ou du reporting. L’ensemble est conçu comme une base technique solide, extensible vers des règles plus complexes (relances automatiques, pénalités, segmentation par criticité) et des besoins métier plus avancés.
+        </p>
+    </div>
+
+    <div data-ach-id="launch">
+        <p>
+            L’idée de ce projet est née d’un besoin simple mais concret : disposer d’un outil capable d’identifier rapidement les impayés à partir de données clients, sans dépendre d’un CRM ou d’une application métier existante. Dans beaucoup de systèmes, les informations sont dispersées entre paiements, échéances et statuts, ce qui rend le suivi difficile dès que le volume augmente ou que les règles deviennent plus complexes (paiements partiels, retards multiples, historique).
+        </p>
+
+        <p>
+            J’ai donc lancé ce projet comme un exercice de conception “end-to-end” centré sur la donnée, avec une contrainte claire : obtenir un moteur capable de produire des statuts d’impayé fiables et explicables, en s’appuyant sur un modèle SQL propre et une logique de traitement déterministe. L’objectif n’était pas seulement d’afficher un résultat, mais de construire une base qui tienne dans le temps : cohérence des calculs, historisation des événements, et extraction exploitable pour du suivi ou du reporting.
+        </p>
+
+        <p>
+            Le choix du couple C++ / SQL s’est imposé naturellement. SQL permet de structurer proprement les entités (clients, contrats, échéances, paiements) et de garantir la cohérence des données, tandis que C++ apporte une capacité de traitement performante sur des volumes importants, avec un contrôle complet sur la logique de consolidation. Cette approche correspond aussi à mon profil : une logique métier claire, des règles maîtrisées, et une attention particulière à la robustesse et à la traçabilité.
+        </p>
+        
+    </div>
+
+    <div data-ach-id="steps">
+        <p>
+            J’ai d’abord commencé par définir le modèle de données SQL, car toute la logique du projet repose sur la qualité et la cohérence des informations stockées. J’ai structuré les entités principales nécessaires au suivi des impayés : clients, contrats, échéances, paiements, ainsi qu’une couche d’historique pour conserver l’évolution des statuts et des événements. Cette étape m’a permis de poser un socle clair, capable de supporter à la fois la lecture opérationnelle (où en est un client aujourd’hui) et l’analyse (comment un dossier a évolué dans le temps).
+        </p>
+
+        <p>
+            Une fois la base en place, j’ai construit les requêtes fondamentales servant à reconstruire un échéancier exploitable : calcul des montants dus, comparaison entre dates théoriques et paiements réellement reçus, identification des retards et des situations anormales. L’objectif était d’obtenir des extractions fiables, utilisables autant pour alimenter le moteur C++ que pour produire des vues de suivi directement en SQL.
+        </p>
+
+        <p>
+            Une fois ce socle fonctionnel et data suffisamment stable, le projet est entré dans une phase de transition d’infrastructure. Les données ont été migrées vers un nouvel hébergeur, avec un focus particulier sur la conservation de l’intégrité et la continuité des données utilisateurs. Cette étape était critique, car elle conditionnait la fiabilité de la bascule côté production et la capacité à onboarder les clients sur la nouvelle version sans perte d’historique ni incohérence.
+        </p>
+        <p>
+            J’ai ensuite développé le moteur C++ en logique batch. Il lit les données d’échéances et de paiements, applique les règles de consolidation, puis calcule un statut cohérent pour chaque échéance et chaque dossier client. Cette partie m’a demandé de rendre les règles explicites : gestion des paiements partiels, retards multiples, échéances manquantes, incohérences de dates, et transitions de statuts. Le but était de produire un résultat déterministe, stable, et compréhensible.
+        </p>
+        <p>
+            Après avoir obtenu une logique de détection fiable, j’ai ajouté une dimension de traçabilité en historisant les transitions d’état et les événements importants. L’objectif était de pouvoir expliquer facilement pourquoi un dossier est considéré comme impayé, depuis quand, et à partir de quelle échéance. Cette historisation rend le projet plus réaliste et plus proche de ce qu’on attend d’un outil exploitable dans un cadre opérationnel.
+        </p>
+        <p>
+            Enfin, j’ai terminé par une phase orientée exploitation : consolidation par client, production de listes d’impayés par criticité, et extraction de données structurées pour du reporting. L’idée était de ne pas rester au niveau “calcul”, mais de rendre la sortie actionnable, avec une vision claire des dossiers à traiter et des priorités de recouvrement.
+        </p>
+    </div>
+    <div data-ach-id="results">
+        <p>
+            Le projet aboutit à un outil standalone capable de gérer un cycle complet d’analyse d’impayés à partir de données clients. La base SQL structure proprement les entités (clients, contrats, échéances, paiements) et permet de reconstruire une vision claire de la situation d’un dossier : montants dus, paiements reçus, retards et historique.
+        </p>
+        <p>
+            Le moteur C++ applique ensuite des règles de consolidation déterministes pour qualifier chaque échéance et produire un statut exploitable au niveau client. Cette logique permet d’identifier rapidement les dossiers en retard, de distinguer les cas simples des cas ambigus (paiements partiels, retards cumulés), et de générer des sorties directement actionnables pour du suivi ou du reporting.
+        </p>
+        <p>
+            L’historisation des événements renforce la traçabilité : il devient possible d’expliquer pourquoi un impayé a été déclenché, depuis quand, et sur quelle échéance. Cette transparence rend le système plus proche d’un usage réel et évite le “statut boîte noire”. Enfin, l’architecture retenue rend le projet extensible : de nouvelles règles (critères de priorité, pénalités, relances, scoring) peuvent être ajoutées sans remettre en cause le socle data ni le moteur de traitement.
+        </p>
+       
+    </div>
+    <div data-ach-id="actors">
+        <p>
+            Ce projet a été réalisé comme un projet standalone, ce qui signifie que j’ai assuré seul l’ensemble des étapes, depuis la conception jusqu’à l’implémentation. J’ai joué à la fois le rôle de concepteur fonctionnel, en définissant les règles de gestion des impayés et les statuts attendus, et le rôle d’architecte technique, en structurant le modèle de données SQL et le moteur de traitement en C++.
+        </p>
+        <p>
+            Même sans équipe métier associée, j’ai construit le projet comme s’il devait être exploité dans un contexte réel. J’ai donc pris en compte des contraintes typiques d’un outil opérationnel : données incomplètes, paiements partiels, échéances multiples, besoin d’historique et nécessité d’obtenir des résultats explicables. Cette approche m’a permis de travailler avec une logique “produit”, en visant une sortie actionnable plutôt qu’un simple calcul.
+        </p>
+        <p>
+            Enfin, ce projet m’a servi de démonstration personnelle de compétences transverses. Il combine une dimension data (modélisation SQL, cohérence, extraction) et une dimension système/performance (moteur C++ batch), ce qui reflète mon positionnement : construire des outils robustes, orientés règles métier, avec une attention particulière à la traçabilité et à l’efficacité d’exécution.
+        </p>
+    </div>
+    <div data-ach-id="me">
+        <p>
+            Ce projet m’a permis de consolider une approche très “système” : partir d’un besoin métier simple (détecter et suivre des impayés) et construire une solution complète, cohérente et exploitable, sans dépendre d’un framework ou d’une application existante. J’ai pu travailler comme sur un vrai produit, en prenant en charge toute la chaîne : modélisation de la donnée, définition des règles de gestion, traitement batch, historisation et restitution.
+        </p>
+        <p>
+            Sur le plan technique, j’ai renforcé mes compétences en conception SQL, notamment sur la structuration d’un modèle relationnel propre, la cohérence des relations, et l’écriture de requêtes capables de reconstituer un état fiable à partir d’événements. J’ai aussi progressé sur l’usage de C++ comme moteur de calcul : implémentation de règles déterministes, gestion des cas limites, structuration du code, et recherche d’efficacité sur des traitements potentiellement volumineux.
+        </p>
+        <p>
+            Enfin, ce projet m’a appris à rendre une logique métier explicable. Plutôt que de produire un simple “statut impayé”, j’ai structuré le système pour pouvoir justifier l’état d’un dossier, tracer les transitions et conserver un historique. C’est exactement le type de rigueur que j’essaie d’appliquer sur tous mes projets : robustesse, traçabilité et output réellement exploitable.
+        </p> 
+    </div>
+    <div data-ach-id="bus">
+        <p>
+            Ce type de projet apporte avant tout une capacité de pilotage plus claire sur les impayés, en structurant les données et en rendant les statuts fiables et exploitables. Grâce à une base SQL bien organisée et à une logique de consolidation déterministe, l’entreprise peut obtenir une vision consolidée des dossiers en retard, identifier rapidement les échéances critiques et réduire le temps perdu à reconstituer manuellement une situation client.
+        </p>
+        <p>
+            L’intérêt opérationnel principal est la standardisation des règles. Au lieu d’avoir des interprétations différentes selon les équipes ou les fichiers de suivi, le moteur applique des critères cohérents pour qualifier un dossier (à jour, en retard, impayé), et l’historisation permet d’expliquer précisément les changements de statut. Cette traçabilité améliore la fiabilité du suivi, facilite les échanges internes et sécurise le traitement des cas litigieux.
+        </p>
+        <p>
+            Enfin, l’architecture du projet permet de s’intégrer facilement dans un SI plus large. Le socle data peut alimenter du reporting, des exports ou une interface de suivi, et la logique batch peut évoluer vers des scénarios plus avancés comme la priorisation automatique, la segmentation par criticité, ou des relances orchestrées. Pour l’entreprise, cela représente une base propre, extensible et industrialisable pour améliorer le recouvrement sans dépendre d’un outil lourd dès le départ.
+        </p>   
+    </div>
+    <div data-ach-id="tmrw">
+        <p>
+            La suite naturelle du projet consiste à enrichir progressivement la logique métier pour se rapprocher d’un outil de pilotage réellement “recouvrement-ready”. Le socle actuel permet déjà de détecter et consolider les impayés, mais il peut évoluer vers une qualification plus fine des situations : distinction entre retards ponctuels et retards récurrents, gestion de seuils de criticité, et catégorisation automatique des dossiers selon leur urgence.
+        </p>
+        <p>
+            Une deuxième évolution serait d’introduire un mécanisme de relance plus structuré. À partir des statuts et de l’historique, le système pourrait déclencher des actions selon des règles : relance J+X, escalade après plusieurs retards, ou priorisation des dossiers à plus fort montant. L’objectif serait de transformer la simple détection en un workflow complet, capable d’orienter les actions de recouvrement de manière cohérente et traçable.
+        </p>
+        <p>
+            Sur le plan technique, le projet est également extensible vers une couche de restitution plus riche. Une interface simple (web ou desktop) pourrait permettre de visualiser les dossiers, filtrer par criticité, consulter l’historique et exporter des listes de suivi. Cette couche ne remettrait pas en cause le cœur du moteur, car l’architecture actuelle sépare déjà clairement la donnée, le calcul et la restitution.
+        </p>
+        <p>
+            Enfin, une dernière étape de maturité serait de renforcer l’industrialisation : planification du batch, tests automatisés sur les règles, jeux de données de validation, et mesures de performance sur volumétrie importante. À terme, le projet pourrait devenir une brique intégrable dans un SI plus large, capable de fonctionner comme un module autonome de détection et de pilotage des impayés.
+        </p>
+
+    </div>
+    <div data-ach-id="pov">
+        <p>
+            Ce projet représente pour moi un bon exemple de “projet utile” : partir d’un problème métier très concret — suivre des impayés de manière fiable — et construire une solution complète, structurée et explicable, sans dépendre d’un CRM ou d’un framework lourd. J’ai volontairement choisi une approche orientée données et règles, parce que dans ce type de sujet, la qualité du résultat dépend d’abord de la cohérence du modèle, de la stabilité des calculs et de la traçabilité des décisions.
+        </p>
+        <p>
+            Ce que j’ai trouvé le plus intéressant, c’est l’équilibre entre SQL et C++. SQL impose de penser proprement la donnée : relations, intégrité, historique, vues de restitution. C++ impose de formaliser les règles et de traiter les cas limites avec rigueur. Au final, le projet m’a appris à construire un moteur “déterministe” : un statut n’est pas juste une étiquette, c’est une conclusion logique qui doit pouvoir être justifiée et reproduite.
+        </p>
+        <p>
+            Avec du recul, c’est aussi un projet qui reflète bien mon positionnement. J’aime construire des briques robustes, orientées métier, avec un noyau de calcul clair et une donnée propre. Même sur un sujet simple en apparence, on se rend vite compte que les détails comptent : paiements partiels, échéances multiples, anomalies de dates, et besoin d’historique. C’est précisément ce type de complexité réaliste qui rend le projet formateur et crédible.
+        </p>
+   
+    </div>
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+    </style>
+}

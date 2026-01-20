@@ -2,3 +2,622 @@
 @model PortfolioTamere.Pages.Projects.AutoBillModel
 @{
 }
+<section class="skills-hero mb-4">
+
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <div>
+                <h2 class="mb-1 fw-bold">
+                    Module de relance automatique — Réalisations clés
+                </h2>
+                <p class="text-muted mb-0">
+                    Développement d’un module de relance automatique intégré au CRM Cowork-Link afin d’industrialiser le suivi des dossiers clients et réduire le traitement manuel des équipes opérationnelles. Mise en place d’une logique SQL Server de sélection des dossiers éligibles (statuts, délais, exclusions), consolidation par client/dossier et protections anti-doublons, puis implémentation en C#/.NET d’un moteur batch planifié capable d’exécuter les relances de manière reproductible, avec historisation complète, logs métiers et vues de pilotage pour le support et le reporting.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Projects" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="relance_sql"
+                    data-ach-title="Socle SQL & sélection des relances"
+                    data-ach-subtitle="Critères d’éligibilité, vues/queries, consolidation par client, prévention doublons">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-database-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Socle SQL & sélection des relances</h5>
+                            <p class="card-text text-muted mb-2">Requêtes fiables pour cibler les dossiers à relancer sans bruit ni doublons.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">SQL Server</span>
+                                <span class="badge wd-badge wd-primary">Views</span>
+                                <span class="badge wd-badge wd-secondary">Rules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="relance_dotnet"
+                    data-ach-title="Moteur de relance .NET"
+                    data-ach-subtitle="Jobs planifiés, orchestration, templates, idempotence, logs métiers">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-file-earmark-code fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Moteur de relance .NET</h5>
+                            <p class="card-text text-muted mb-2">Traitement C# robuste pour exécuter les relances de façon sûre et répétable.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">C#</span>
+                                <span class="badge wd-badge wd-secondary">.NET</span>
+                                <span class="badge wd-badge wd-primary">Batch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="relance_ops"
+                    data-ach-title="Suivi, historique & pilotage"
+                    data-ach-subtitle="Traçabilité relances, statuts, relances échouées, exports et vues support">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Suivi, historique & pilotage</h5>
+                            <p class="card-text text-muted mb-2">Vision claire : qui a été relancé, quand, pourquoi, et quoi corriger.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Audit</span>
+                                <span class="badge wd-badge wd-secondary">History</span>
+                                <span class="badge wd-badge wd-accent">Ops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+    <hr class="my-4" />
+
+    <div class="mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="presentation"
+                        data-ach-title="Présentation"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Présentation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="launch"
+                        data-ach-title="Lancement du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Lancement du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="steps"
+                        data-ach-title="Les étapes"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les étapes</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="actors"
+                        data-ach-title="Les acteurs"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les acteurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="results"
+                        data-ach-title="Les résultats"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les résultats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="me"
+                        data-ach-title="Pour moi"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour moi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="bus"
+                        data-ach-title="Pour l'entreprise"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour l'entreprise</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="tmrw"
+                        data-ach-title="Les lendemains du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les lendemain du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="pov"
+                        data-ach-title="Mon point de vue"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    Mon point de vue
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="relance_sql">
+        <p><strong>Objectif :</strong> sélectionner automatiquement les dossiers à relancer dans Cowork-Link, avec des règles fiables et une cible “sans doublons”.</p>
+        <ul>
+            <li><strong>Critères :</strong> définition des conditions d’éligibilité (statut, délai depuis dernière action, événements récents, exclusions).</li>
+            <li><strong>Consolidation :</strong> vues SQL regroupées par client/dossier pour une relance unique et une lecture synthétique.</li>
+            <li><strong>Qualité :</strong> protections anti-doublons (fenêtrage par date, verrouillage, détection des relances déjà envoyées).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une sélection robuste des dossiers à relancer, prête pour exécution batch côté .NET.</p>
+    </div>
+
+    <div data-ach-id="relance_dotnet">
+        <p><strong>Objectif :</strong> industrialiser l’envoi de relances via un moteur C#/.NET, exécutable sur volume et sécurisé contre les relances répétées.</p>
+        <ul>
+            <li><strong>Orchestration :</strong> job planifié lisant la sélection SQL, appliquant la stratégie de relance (niveau 1/2/3, escalade).</li>
+            <li><strong>Idempotence :</strong> exécution répétable (re-run safe) avec clés fonctionnelles, reprise sur incident, et gestion des erreurs.</li>
+            <li><strong>Observabilité :</strong> logs métiers, codes de retour, et diagnostics pour isoler rapidement les cas en échec.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> relances automatisées, reproductibles, et stables en production sur gros volumes.</p>
+    </div>
+
+    <div data-ach-id="relance_ops">
+        <p><strong>Objectif :</strong> rendre les relances pilotables : traçabilité, suivi des échecs, et vues opérationnelles pour support et gestion.</p>
+        <ul>
+            <li><strong>Historique :</strong> stockage des relances (date, canal, niveau, motif) et des changements de statut associés.</li>
+            <li><strong>Suivi :</strong> vues SQL et extractions pour relances échouées, dossiers non joignables, relances en attente d’action.</li>
+            <li><strong>Exploitation :</strong> exports priorisés pour traitement manuel des cas bloquants et reporting interne.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une chaîne de relance transparente, contrôlable et actionnable par les équipes.</p>
+    </div>
+    <div data-ach-id="presentation">
+        <p>
+            Le projet consistait à mettre en place un module de relance automatique directement intégré au CRM Cowork-Link, afin d’industrialiser le suivi des dossiers clients et réduire le traitement manuel côté équipes opérationnelles. L’objectif était de détecter automatiquement les situations nécessitant une action (dossier incomplet, pièces manquantes, échéances administratives, demandes en attente) et de déclencher des relances structurées, cohérentes et traçables.
+        </p>
+
+        <p>
+            J’ai d’abord construit la logique de sélection en SQL Server, en définissant des règles d’éligibilité précises pour identifier les dossiers à relancer sans bruit ni doublons. Cette couche SQL permettait de consolider les informations par client/dossier, de contrôler les délais depuis la dernière action, et de produire une liste fiable “prête à exécuter” pour l’automatisation.
+        </p>
+
+        <p>
+            Une fois la sélection stabilisée, j’ai développé le moteur de relance en C#/.NET sous forme de traitement batch planifié. Il lit les vues SQL, applique une stratégie de relance (niveaux, priorités, exclusions), enregistre l’action dans l’historique et gère les erreurs de manière robuste afin de garantir une exécution reproductible, même en cas de relance partielle ou de reprise après incident.
+        </p>
+        <p>
+            Enfin, j’ai complété le module avec une couche de suivi et de traçabilité : historisation des relances envoyées, états de traitement, diagnostics exploitables, et exports pour les cas bloquants. Le résultat est un workflow de relance fiable et pilotable dans Cowork-Link, capable d’augmenter la réactivité sur les dossiers, d’améliorer la qualité de suivi client, et de sécuriser la continuité opérationnelle grâce à une automatisation stable en production.
+        </p>
+    </div>
+
+    <div data-ach-id="launch">
+        <p>
+            Le lancement du projet a commencé par un cadrage très orienté production avec les équipes Cowork-Link, parce que le vrai problème n’était pas “d’envoyer des messages”, mais de fiabiliser un processus de relance qui était trop manuel, irrégulier et difficile à suivre. On avait besoin d’un module capable d’identifier automatiquement les dossiers à relancer, de déclencher l’action au bon moment, et surtout de garantir qu’on ne relance pas n’importe qui, n’importe quand, ou plusieurs fois pour la même raison.
+        </p>
+
+        <p>
+            J’ai d’abord attaqué le sujet par la couche SQL Server, car toute l’automatisation dépend de la qualité de la sélection. La première étape a été de formaliser les critères d’éligibilité : quels statuts déclenchent une relance, quels délais doivent être respectés, quelles exceptions doivent être exclues, et comment regrouper les informations pour ne pas générer de doublons. À partir de là, j’ai construit des vues et requêtes consolidées par client/dossier, capables de sortir une liste “propre” et directement exploitable pour exécution.
+        </p>
+
+        <p>
+            Une fois la sélection stabilisée, le lancement est entré dans la phase d’industrialisation côté .NET. J’ai développé un moteur de relance en C# capable de lire la sélection SQL, d’exécuter la stratégie définie (ordre de priorité, niveau de relance, règles de blocage), puis d’enregistrer systématiquement chaque action dans un historique. L’objectif était de rendre le traitement idempotent et reproductible : un job planifié peut être relancé sans risque de doublonner, et en cas d’erreur, on peut reprendre proprement.
+        </p>
+        <p>
+            Enfin, dès que les premiers runs ont été concluants, j’ai sécurisé le lancement avec la traçabilité et l’exploitation. J’ai ajouté des logs métiers et des états de traitement pour diagnostiquer rapidement les cas en échec, et j’ai produit des vues de suivi permettant aux équipes de vérifier qui a été relancé, quand, et pour quel motif. À ce stade, le module n’était plus un simple batch, mais un flux de relance automatisé intégré au CRM, pilotable et stable en conditions réelles.
+        </p>
+
+    </div>
+
+    <div data-ach-id="steps">
+        <p>
+            J’ai d’abord commencé par cadrer le besoin métier avec les équipes Cowork-Link, pour comprendre précisément pourquoi les relances étaient difficiles à gérer : manque de régularité, relances manuelles chronophages, absence de visibilité sur “qui a été relancé et quand”, et risques de doublons. L’objectif a été défini comme un flux automatisé, intégré au CRM, avec une logique claire et des résultats traçables.
+        </p>
+
+        <p>
+            Ensuite, j’ai construit la fondation SQL Server, car toute l’automatisation dépend de la capacité à sélectionner les bons dossiers. J’ai modélisé les éléments nécessaires au suivi des relances (dossiers, événements, statuts, dates de dernière action) et j’ai mis en place les requêtes de sélection permettant d’identifier les cas éligibles. Cette étape m’a permis de transformer un état CRM “dispersé” en une vue consolidée par client/dossier, directement exploitable.
+        </p>
+
+        <p>
+            Une fois la sélection en place, j’ai défini les règles de relance : délais minimum entre deux actions, priorités selon le statut, exclusions, et logique de niveaux (relance 1, relance 2, escalade). L’objectif était d’obtenir un comportement déterministe, stable, et cohérent avec les usages opérationnels, sans effets de bord.
+        </p>
+        <p>
+            Après stabilisation des règles, j’ai développé le moteur de relance en C#/.NET sous forme de job planifié. Le traitement lit les vues SQL, applique la stratégie de relance, enregistre l’action réalisée, puis met à jour l’état du dossier si nécessaire. Cette partie a été pensée pour être robuste sur volume, avec gestion des erreurs, reprise propre, et exécution répétable sans duplication.
+        </p>
+        <p>
+            Ensuite, j’ai ajouté la traçabilité et l’historisation pour rendre le module pilotable. Chaque relance est stockée avec son motif, sa date et son niveau, et les événements associés permettent de reconstituer la séquence complète. Cette étape était essentielle pour donner de la visibilité aux équipes et permettre un diagnostic rapide en cas de problème.
+        </p>
+        <p>
+            Enfin, j’ai terminé par l’outillage d’exploitation : vues de suivi, listes de dossiers à traiter, relances échouées, et exports prêts à l’emploi. Le résultat final est une chaîne de relance automatisée et intégrée à Cowork-Link, capable de réduire le manuel, d’améliorer la réactivité, et de sécuriser un suivi client stable en production.
+        </p>
+    </div>
+    <div data-ach-id="actors">
+        <p>
+            Dans ce projet de relance automatique, les acteurs principaux côté métier étaient d’abord les équipes opérationnelles Cowork-Link, celles qui suivent les dossiers au quotidien. Ce sont elles qui définissent ce qui doit être relancé, à quel moment, et ce qui est considéré comme bloquant ou urgent. Elles utilisent directement les listes, les filtres et l’historique pour traiter les dossiers et piloter le flux.
+        </p>
+        <p>
+            Le deuxième acteur clé était le support / service client, qui récupère les cas complexes ou les situations qui ne se résolvent pas automatiquement. Leur besoin principal est d’avoir une traçabilité claire : savoir si une relance a été envoyée, quand, pour quel motif, et pouvoir reprendre un dossier sans repartir de zéro.
+        </p>
+        <p>
+            Le troisième acteur est la partie “gestion” / pilotage interne (responsable d’activité, admin CRM), qui a besoin de visibilité globale sur le backlog et l’efficacité des relances. Même si ce n’est pas un utilisateur “technique”, c’est ce rôle qui consomme les exports, les vues consolidées et le reporting pour suivre l’état des dossiers et prioriser.
+        </p>
+        <p>
+            Côté technique, l’acteur central est le développeur (toi) qui met en place la logique du module : sélection SQL Server, règles d’éligibilité, moteur batch C#/.NET, idempotence, historique, et diagnostics. C’est ce rôle qui garantit que le flux est stable, reproductible et maintenable en production, sans relances incohérentes ni doublons.
+        </p>
+        <p>
+            Enfin, il y a les acteurs infrastructure/exploitation (DBA/IT), qui assurent la stabilité de l’exécution : performances SQL, planification des jobs, supervision, droits et sauvegardes. Même s’ils interviennent moins sur la logique métier, ils conditionnent la fiabilité globale du module en production.
+        </p>
+    </div>
+    <div data-ach-id="results">
+        <p>
+            Le premier résultat du projet a été d’industrialiser le suivi des dossiers dans Cowork-Link avec un module de relance automatique réellement intégré au CRM. Au lieu d’un traitement manuel et irrégulier, l’entreprise dispose désormais d’un flux structuré capable d’identifier les dossiers à relancer et de déclencher l’action au bon moment, de façon constante.
+        </p>
+        <p>
+            Le deuxième résultat est une sélection fiable des relances grâce à la couche SQL Server. Les règles d’éligibilité et les vues consolidées permettent de cibler les bons dossiers sans bruit, avec une logique anti-doublons et une consolidation par client/dossier. Cela réduit fortement les relances inutiles et sécurise la cohérence du processus.
+        </p>
+        <p>
+            Le troisième résultat est l’automatisation robuste via le moteur C#/.NET. Le job planifié lit la sélection SQL, applique la stratégie de relance, enregistre l’action et gère les erreurs. Le traitement est reproductible et stable sur volume, et peut être relancé sans provoquer de duplication, ce qui est essentiel pour un usage production.
+        </p>
+        <p>
+            Le quatrième résultat est la traçabilité complète des actions. Chaque relance est historisée avec son motif, son niveau et sa date, ce qui permet aux équipes de comprendre immédiatement ce qui a été fait, d’éviter les relances contradictoires, et de diagnostiquer rapidement les cas bloquants.
+        </p>
+        <p>
+            Enfin, le dernier résultat est un meilleur pilotage opérationnel : vues de suivi, listes exploitables, exports prioritaires et segmentation des dossiers. Les équipes gagnent en réactivité, le backlog devient plus lisible, et la charge manuelle diminue, tout en conservant un contrôle clair sur le process.
+        </p>
+
+    </div>
+    <div data-ach-id="me">
+        <p>
+            Pour moi, le principal résultat a été d’apprendre à construire un workflow d’automatisation “production-ready”, où le plus important n’est pas seulement que ça fonctionne, mais que ça reste stable, contrôlable et explicable dans le temps. La relance automatique paraît simple sur le papier, mais dès qu’on la met dans un CRM réel, il faut gérer les cas limites, les exceptions métier, les retards, et surtout éviter les doublons ou les relances incohérentes.
+        </p>
+        <p>
+            Techniquement, j’ai renforcé ma capacité à transformer un besoin opérationnel en logique SQL exploitable : structurer la sélection des dossiers éligibles, consolider les données par client/dossier, et écrire des requêtes robustes qui tiennent la volumétrie. Ça m’a aussi obligé à être rigoureux sur la donnée, parce qu’une mauvaise sélection en amont fait immédiatement dériver tout le système.
+        </p>
+        <p>
+            Côté C#/.NET, j’ai gagné en maturité sur la mise en place d’un batch fiable : exécution planifiée, idempotence, gestion des erreurs, logs métiers, reprise après incident. C’est exactement le type de logique “invisible” mais critique en entreprise, parce que le module doit pouvoir tourner tous les jours sans casser le CRM ni générer des actions imprévues.
+        </p>
+        <p>
+            Enfin, en termes de posture produit, j’ai appris à rendre l’automatisation pilotable par les équipes. L’historisation, les vues de suivi et les exports ont été essentiels pour transformer un moteur technique en outil opérationnel. Au final, c’est un projet qui démontre ma capacité à construire une brique CRM orientée workflow, avec du SQL solide et une exécution .NET robuste.
+        </p>
+    </div>
+    <div data-ach-id="bus">
+        <p>
+            Pour l’entreprise, le premier bénéfice est d’avoir transformé un processus de relance manuel et irrégulier en un flux automatisé intégré à Cowork-Link, capable de fonctionner de manière constante sans dépendre des actions individuelles. Cela améliore la réactivité sur les dossiers et réduit la charge opérationnelle liée au suivi.
+        </p>
+        <p>
+            Le deuxième bénéfice est la fiabilisation des relances grâce à une sélection SQL Server robuste. Les dossiers éligibles sont identifiés avec des règles claires (statut, délais, exclusions), consolidés par client/dossier, et protégés contre les doublons. L’entreprise évite ainsi les relances inutiles, les erreurs de ciblage et les effets “spam” qui détériorent la relation client.
+        </p>
+        <p>
+            Le troisième bénéfice est la stabilité de l’exécution en production via le moteur C#/.NET. Le job planifié automatise le traitement sur volume, enregistre chaque action, gère les cas d’échec et permet une reprise propre. Cela sécurise le process et garantit un résultat reproductible, même en cas d’incident ou de re-run.
+        </p>
+        <p>
+            Le quatrième bénéfice est le gain de visibilité et de contrôle. Avec l’historique des relances et les vues de suivi, les équipes savent immédiatement qui a été relancé, quand, et pour quel motif. Cette traçabilité facilite le support, réduit les investigations, et rend le pilotage plus simple.
+        </p>
+        <p>
+            Enfin, le module améliore la qualité de service globale : traitement plus rapide des dossiers, réduction des blocages qui s’accumulent, meilleure priorisation du backlog, et capacité à gérer plus de volume sans augmenter proportionnellement les ressources. C’est un levier direct d’efficacité opérationnelle et de fiabilité du CRM.
+        </p>
+    </div>
+    <div data-ach-id="tmrw">
+        <p>
+            Les lendemains du projet, c’est d’abord le passage d’un module “déployé” à un module réellement piloté dans la durée. Une fois la relance automatique en production, l’enjeu devient la stabilité quotidienne : vérifier que la sélection SQL reste cohérente malgré l’évolution des statuts et des données, s’assurer que le batch tourne sans dérive, et détecter rapidement les cas où la relance n’apporte pas l’effet attendu.
+        </p>
+        <p>
+            Ensuite, le projet ouvre une phase d’ajustement fin des règles métier. En conditions réelles, certains cas limites apparaissent forcément : dossiers qui changent de statut à la dernière minute, exceptions opérationnelles, clients réactifs mais incomplets, ou situations où relancer trop vite dégrade la relation. Les lendemains consistent donc à affiner les délais, les exclusions, les priorités et les niveaux de relance pour trouver le bon équilibre entre efficacité et pertinence.
+        </p>
+        <p>
+            Le troisième axe, c’est l’amélioration du pilotage et du reporting. Une fois que les relances tournent, l’entreprise peut structurer des indicateurs : volume de relances envoyées, taux de résolution après relance, dossiers qui stagnent, relances échouées, et backlog par criticité. Cela permet d’identifier les points de friction récurrents et d’améliorer le process global, pas seulement l’outil.
+        </p>
+        <p>
+            Enfin, les lendemains du projet, c’est son extension naturelle vers un workflow plus complet. Le module peut évoluer vers des scénarios plus riches : relances multi-canaux, templates personnalisés selon le type de dossier, escalade automatique vers support, relances déclenchées par événements précis, et intégration plus forte avec le reste du CRM. À terme, l’automatisation ne sert plus uniquement à “relancer”, mais à structurer une chaîne de suivi client plus fluide et plus scalable.
+        </p>
+
+    </div>
+    <div data-ach-id="pov">
+        <p>
+            De mon point de vue, ce projet de relance automatique m’a surtout montré qu’une bonne automatisation ne consiste pas à “envoyer des relances”, mais à orchestrer un workflow fiable dans un CRM réel. Sur le papier, la logique semble simple, mais dès qu’on l’industrialise, tout se joue sur la précision des règles, la qualité de la sélection SQL, et la capacité à éviter les effets de bord comme les doublons, les relances incohérentes ou les dossiers qui passent entre les mailles.
+        </p>
+        <p>
+            Je retiens aussi que la valeur du module vient autant de ce qu’il fait que de ce qu’il rend visible. Le moteur batch .NET est utile uniquement s’il reste pilotable : historisation des actions, traçabilité complète, logs métiers, et vues de suivi permettant de comprendre rapidement “qui a été relancé, quand, et pourquoi”. Sans cette observabilité, on perd le contrôle et l’automatisation devient une source d’incertitude au lieu d’être un gain de productivité.
+        </p>
+        <p>
+            Enfin, ce projet m’a appris à penser en logique “production” : exécution répétable, reprise après incident, gestion des cas limites, et évolution progressive des règles. Les relances ne peuvent pas être parfaites dès le départ, elles doivent s’affiner avec les retours terrain et les patterns qui apparaissent. Pour moi, c’est typiquement le genre de module où l’objectif n’est pas seulement de livrer une fonctionnalité, mais de livrer un système stable, maintenable et ajustable, qui améliore réellement le quotidien des équipes.
+        </p>
+    </div>
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+    </style>
+}

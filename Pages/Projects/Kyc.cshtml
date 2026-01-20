@@ -2,3 +2,736 @@
 @model PortfolioTamere.Pages.Projects.KycModel
 @{
 }
+<section class="skills-hero mb-4">
+
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+
+        <div class="align-items-center col-lg-10 d-flex gap-3">
+            <div>
+                <h2 class="mb-1 fw-bold">
+                    Module KYC / TRACFIN — Réalisations clés
+                </h2>
+                <p class="text-muted mb-0">
+                    Conception d’un module KYC / TRACFIN intégré à un CRM de domiciliation d’entreprises en France, visant à fiabiliser la conformité documentaire et le suivi des dossiers clients. Développement d’une logique de consolidation des statuts KYC et de contrôle de complétude en .NET, couplée à SQL Server pour stocker les informations clients, les pièces justificatives, l’historique des statuts et les événements métier. Mise en place de règles structurées pour valider la cohérence des transitions, tracer les décisions via logs/audit, et produire des vues exploitables par les équipes opérationnelles (suivi, support, conformité), avec un focus sur la robustesse du workflow, la traçabilité et la stabilité en production.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mt-4">
+            <a asp-page="/Projects" class="btn btn-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retour
+            </a>
+            <a class="btn btn-outline-primary" href="mailto:keenan.guiet@gmail.com">Me contacter</a>
+
+        </div>
+    </div>
+
+    <hr class="my-4" />
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="sql"
+                    data-ach-title="Modèle SQL & cohérence KYC"
+                    data-ach-subtitle="Clients, UBO, documents, contrôles, contraintes, vues de validation">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-database-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Modèle SQL & cohérence KYC</h5>
+                            <p class="card-text text-muted mb-2">Base structurée pour fiabiliser dossiers, pièces, contrôles et statuts.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-accent">SQL Server</span>
+                                <span class="badge wd-badge wd-primary">Integrity</span>
+                                <span class="badge wd-badge wd-secondary">Views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="webforms"
+                    data-ach-title="Batch .NET de contrôles AML"
+                    data-ach-subtitle="Jobs planifiés, recalcul statuts, scoring, règles conformité, logs métiers">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-file-earmark-code fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Batch .NET de contrôles AML</h5>
+                            <p class="card-text text-muted mb-2">Pipeline fiable pour recalculer statuts KYC/AML sur gros volumes.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">C#</span>
+                                <span class="badge wd-badge wd-secondary">.NET</span>
+                                <span class="badge wd-badge wd-primary">Batch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="telerik"
+                    data-ach-title="Statuts, alertes & criticité"
+                    data-ach-subtitle="PPE/sanctions, complétude, scoring, priorisation revue conformité">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-grid-3x3-gap fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Statuts, alertes & criticité</h5>
+                            <p class="card-text text-muted mb-2">Lecture métier directe : quoi revoir, dans quel ordre, pourquoi.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Rules</span>
+                                <span class="badge wd-badge wd-primary">Priority</span>
+                                <span class="badge wd-badge wd-accent">Consistency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="kyc"
+                    data-ach-title="Historique & explicabilité"
+                    data-ach-subtitle="Journal d’événements, décisions, justification, audit Tracfin-ready">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-shield-check fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Historique & explicabilité</h5>
+                            <p class="card-text text-muted mb-2">Traçabilité : contrôle → alerte → décision → action.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Audit</span>
+                                <span class="badge wd-badge wd-secondary">Events</span>
+                                <span class="badge wd-badge wd-primary">History</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="billing"
+                    data-ach-title="Dossier KYC consolidé"
+                    data-ach-subtitle="Pièces, UBO, contrôles, complétude, score, vision synthétique par client">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-receipt fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Dossier KYC consolidé</h5>
+                            <p class="card-text text-muted mb-2">Vision globale : complétude, validité, alertes et niveau de risque.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-primary">Case</span>
+                                <span class="badge wd-badge wd-secondary">Completeness</span>
+                                <span class="badge wd-badge wd-accent">Compute</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="col">
+            <button type="button"
+                    style="width: 100%;"
+                    class="card achievement-card shadow-sm h-100 text-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#achievementModal"
+                    data-ach-id="support"
+                    data-ach-title="Exports & pilotage conformité"
+                    data-ach-subtitle="Listes actionnables, filtres, priorisation revues, reporting KYC/AML">
+                <div class="card-body">
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="bi bi-life-preserver fs-3"></i>
+                        <div>
+                            <h5 class="card-title mb-1">Exports & pilotage conformité</h5>
+                            <p class="card-text text-muted mb-2">Sorties prêtes : revues, escalades, contrôles et suivi opérationnel.</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge wd-badge wd-secondary">Export</span>
+                                <span class="badge wd-badge wd-primary">Filters</span>
+                                <span class="badge wd-badge wd-accent">Ops</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+    <hr class="my-4" />
+
+    <div class="mt-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 justify-content-center">
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="presentation"
+                        data-ach-title="Présentation"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Présentation</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="launch"
+                        data-ach-title="Lancement du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Lancement du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="steps"
+                        data-ach-title="Les étapes"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les étapes</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="actors"
+                        data-ach-title="Les acteurs"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les acteurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="results"
+                        data-ach-title="Les résultats"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les résultats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="me"
+                        data-ach-title="Pour moi"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour moi</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="bus"
+                        data-ach-title="Pour l'entreprise"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Pour l'entreprise</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="tmrw"
+                        data-ach-title="Les lendemains du projet"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les lendemain du projet</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="pov"
+                        data-ach-title="Mon point de vue"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">
+                                    Mon point de vue
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="achievementBodies" class="d-none">
+
+    <div data-ach-id="sql">
+        <p><strong>Objectif :</strong> construire une base SQL fiable pour supporter un suivi KYC/AML conforme (clients, personnes, entités, documents, contrôles, décisions) et éviter les incohérences de données.</p>
+        <ul>
+            <li><strong>Structuration :</strong> modélisation clients/personnes/UBO/documents/contrôles (PPE, sanctions, Tracfin) avec clés, contraintes et règles d’intégrité.</li>
+            <li><strong>Vues de contrôle :</strong> vues et requêtes de validation pour détecter les écarts (pièces expirées, champs manquants, statuts impossibles, liens orphelins).</li>
+            <li><strong>Restitution :</strong> extraction rapide des dossiers à risque et consolidation par client/entité pour alimenter les traitements applicatifs.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> un socle data robuste, stable dans le temps, adapté au pilotage opérationnel KYC/AML et à l’audit.</p>
+    </div>
+
+    <div data-ach-id="webforms">
+        <p><strong>Objectif :</strong> automatiser le recalcul des statuts KYC/AML via un batch C#/.NET (contrôles, complétude, scoring), afin d’obtenir des décisions à jour sans traitement manuel.</p>
+        <ul>
+            <li><strong>Pipeline :</strong> lecture SQL, application des règles de conformité, mise à jour des statuts (à compléter / en revue / validé / à escalader) et génération de sorties exploitables.</li>
+            <li><strong>Fiabilité :</strong> gestion des cas non standards (multi-UBO, documents multiples, homonymies, changements d’identité) + logs métiers pour diagnostic rapide.</li>
+            <li><strong>Scalabilité :</strong> traitement pensé pour passer sur des lots importants (découpage par client/entité, exécution stable, reprise sur erreur).</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> des statuts KYC recalculés automatiquement, cohérents et reproductibles à chaque exécution.</p>
+    </div>
+
+    <div data-ach-id="telerik">
+        <p><strong>Objectif :</strong> transformer des données KYC brutes en statuts, alertes et priorités métier afin d’avoir une vision actionnable (conformité, risque, escalade) plutôt qu’un listing.</p>
+        <ul>
+            <li><strong>Statuts :</strong> définition d’états simples mais robustes (OK / incomplet / à revoir / KO) avec transitions contrôlées pour éviter les incohérences.</li>
+            <li><strong>Priorisation :</strong> logique de criticité (match sanctions/PPE, pays à risque, scoring, ancienneté KYC, complétude) pour trier les dossiers.</li>
+            <li><strong>Qualité :</strong> règles explicites pour gérer multi-entités, documents hétérogènes et contrôles multiples sans casser la cohérence globale.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une lecture métier directe, facilitant la revue conformité et la priorisation des dossiers à risque.</p>
+    </div>
+
+    <div data-ach-id="kyc">
+        <p><strong>Objectif :</strong> rendre les décisions KYC/AML explicables en conservant la trace de ce qui a déclenché un statut, une alerte ou une escalade (Tracfin) et de sa progression dans le temps.</p>
+        <ul>
+            <li><strong>Événements :</strong> historisation des changements (document ajouté/expiré, match détecté, statut modifié, décision prise) pour reconstruire l’évolution d’un dossier.</li>
+            <li><strong>Justification :</strong> capacité à expliquer rapidement “pourquoi” un dossier est en revue/KO (règle déclenchée, élément manquant, hit sanctions/PPE, incohérence).</li>
+            <li><strong>Audit :</strong> extraction d’historiques lisibles pour contrôle interne, traçabilité et analyses post-mortem.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> moins de décisions “boîte noire” et une traçabilité complète des contrôles et arbitrages conformité.</p>
+    </div>
+
+    <div data-ach-id="billing">
+        <p><strong>Objectif :</strong> consolider un dossier KYC multi-composants (pièces, UBO, contrôles, revues) pour obtenir une vision précise de l’exposition et du niveau de conformité par client/entité.</p>
+        <ul>
+            <li><strong>Completude :</strong> calcul de complétude (pièces requises, cohérence, validité) et suivi des éléments bloquants.</li>
+            <li><strong>Consolidation :</strong> regroupement par client/entité/UBO pour éviter une lecture “ligne par ligne” et obtenir une vue synthétique.</li>
+            <li><strong>Indicateurs :</strong> préparation de métriques simples (score, ancienneté revue, nb d’alertes, nb de hits) pour la priorisation.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> une vision consolidée plus lisible, directement exploitable pour le pilotage conformité et la prise de décision.</p>
+    </div>
+
+    <div data-ach-id="support">
+        <p><strong>Objectif :</strong> produire des listes exploitables et des exports orientés conformité afin d’accélérer le traitement des dossiers (revue, escalade, reporting).</p>
+        <ul>
+            <li><strong>Exports :</strong> génération de listes priorisées (hits sanctions/PPE, incomplets, revues en retard, risques élevés) pour action rapide.</li>
+            <li><strong>Filtres :</strong> segmentation par statut, criticité, typologie client, pays, et contrôles déclenchés pour réduire le bruit.</li>
+            <li><strong>Pilotage :</strong> restitution claire des dossiers à traiter, des pièces manquantes et des prochaines revues sensibles.</li>
+        </ul>
+        <p class="mb-0"><strong>Résultat :</strong> un suivi KYC/AML plus simple, une priorisation facilitée et moins de manipulation manuelle.</p>
+    </div>
+    <div data-ach-id="presentation">
+        <p>
+            Le module KYC / TRACFIN est une brique centrale du CRM de domiciliation, conçue pour sécuriser l’onboarding et le suivi des sociétés domiciliées en assurant la conformité documentaire et la cohérence des statuts. Il permet aux équipes opérationnelles de collecter, contrôler et historiser les pièces justificatives, puis de piloter l’avancement du dossier via des statuts KYC exploitables (complet, incomplet, à revoir, validé, bloqué), avec une logique métier claire et traçable.
+        </p>
+
+        <p>
+            Dans un contexte où les décisions doivent être explicables, l’enjeu du module n’est pas seulement de stocker des documents. Il doit garantir que les contrôles sont appliqués de manière cohérente, que les transitions de statuts suivent des règles maîtrisées, et que chaque évolution du dossier laisse une trace exploitable en cas de contrôle interne ou d’audit. Le module s’intègre aux workflows du CRM et interagit avec des fonctionnalités connexes comme la gestion client, les contrats, la facturation et le support, car un blocage conformité peut impacter directement l’exploitation.
+        </p>
+
+        <p>
+            Mon travail sur ce module a principalement consisté à fiabiliser les flux documentaires et les statuts, renforcer les règles de cohérence métier, et améliorer la traçabilité opérationnelle via des logs et historiques de décision. L’objectif était de rendre le KYC plus robuste au quotidien, de réduire les incohérences, et de faciliter l’exploitation par les équipes conformité et support, tout en préparant une intégration plus propre dans la trajectoire de modernisation du CRM.
+        </p>
+    </div>
+
+    <div data-ach-id="launch">
+        <p>
+            Le projet a été lancé dans Cowork-Link pour intégrer un module métier KYC / TRACFIN directement au CRM, avec l’objectif de fiabiliser la vérification d’identité des domiciliés dans le cadre des obligations de conformité. L’enjeu initial était de transformer un processus fragmenté et trop manuel en un parcours intégré, traçable et exploitable par les équipes, tout en garantissant la cohérence des statuts et la possibilité d’expliquer chaque décision a posteriori.
+        </p>
+
+        <p>
+            Dès le démarrage, j’ai cadré la base de données SQL Server afin de structurer proprement les objets nécessaires au KYC : dossiers, personnes liées, pièces justificatives, contrôles, statuts et historique. L’idée était d’avoir un socle stable qui supporte les cas réels dès le départ (documents multiples, renouvellements, incohérences, changements de statut) sans générer de “zones grises” dans les calculs ou la lecture métier. En parallèle, j’ai posé des vues de contrôle et des extractions prêtes à l’emploi pour sortir rapidement les dossiers incomplets, les pièces expirées et les cas à risque, afin que le module soit immédiatement pilotable.
+        </p>
+
+        <p>
+            Côté applicatif, j’ai démarré l’implémentation en C# / .NET en construisant la logique de consolidation et de décision : calcul de complétude, règles de validation, et attribution d’un statut KYC clair (OK, à compléter, à revoir, KO) avec des transitions maîtrisées. Le but était que le statut ne soit jamais une “boîte noire”, mais le résultat d’un enchaînement explicite de contrôles, et que le système reste reproductible quel que soit le volume à traiter. Pour industrialiser l’exécution, j’ai conçu un traitement batch capable de recalculer les statuts sur des lots importants, en s’appuyant sur des logs métiers et une gestion robuste des exceptions, afin de garantir un état à jour sans dépendre d’actions manuelles.
+        </p>
+        <p>
+            Enfin, l’intégration front a été portée dans l’interface Cowork-Link via ASP.NET et Telerik pour rendre l’exploitation opérationnelle : écrans de consultation, filtres par statut, priorisation des dossiers, et restitution visuelle des éléments manquants ou bloquants. L’objectif du lancement n’était pas seulement d’ajouter une fonctionnalité, mais d’installer un véritable flux KYC/TRACFIN dans le CRM, avec une base data solide, une logique .NET fiable, et une UI orientée décision, permettant aux équipes de traiter, suivre et justifier la conformité de manière fluide.
+        </p>
+
+    </div>
+
+    <div data-ach-id="steps">
+        <p>
+            J’ai d’abord commencé par définir le modèle de données SQL, car tout le module KYC/TRACFIN repose sur la qualité, la complétude et la cohérence des informations stockées dans Cowork-Link. J’ai structuré les entités nécessaires au suivi conformité : dossiers KYC, clients/domiciliés, liens personnes–entités, pièces justificatives, contrôles (PPE/sanctions), statuts de traitement, et une couche d’historique pour conserver l’évolution des décisions. Cette étape m’a permis de poser un socle clair, capable de supporter à la fois la lecture opérationnelle (où en est un dossier aujourd’hui) et l’audit (comment et pourquoi une décision a été prise dans le temps).
+        </p>
+
+        <p>
+            Une fois la base en place, j’ai construit les requêtes fondamentales permettant de produire une vue KYC exploitable : mesure de complétude du dossier, détection des pièces manquantes, identification des documents expirés ou incohérents, et consolidation des contrôles par client/entité. L’objectif était d’obtenir des extractions fiables et directement actionnables, à la fois pour alimenter le moteur de règles côté .NET et pour fournir des vues de suivi en SQL sans ambiguïté.
+        </p>
+
+        <p>
+            Une fois ce socle data suffisamment stable, j’ai commencé à implémenter la logique métier en C# / .NET afin d’automatiser le calcul des statuts KYC. Le service applique les règles de conformité et attribue un état clair à chaque dossier (OK, à compléter, à revoir, KO), en veillant à rendre les transitions cohérentes et reproductibles. Cette partie m’a demandé de rendre les règles explicitement déterministes pour éviter les cas flous : gestion de documents multiples, renouvellements, changements d’informations, et cohérence globale entre pièces, contrôles et statut final.
+        </p>
+        <p>
+            Après avoir obtenu une logique de décision fiable, j’ai industrialisé l’exécution sous forme de traitement batch .NET, capable de recalculer les statuts sur des volumes importants sans intervention manuelle. Le batch lit les données en SQL Server, applique les règles de consolidation, met à jour les statuts, puis produit des sorties exploitables, le tout avec des logs métiers pour diagnostiquer rapidement les cas bloquants ou les anomalies de donnée.
+        </p>
+        <p>
+            Ensuite, j’ai ajouté une dimension de traçabilité en historisant les événements et les décisions importantes : pièce ajoutée ou expirée, contrôle déclenché, statut modifié, escalade vers revue. L’objectif était de pouvoir expliquer immédiatement pourquoi un dossier est en revue ou refusé, quels éléments sont bloquants, et depuis quand la situation est inchangée. Cette historisation rapproche le module d’un usage réel en conformité, où la justification et l’auditabilité sont aussi importantes que le résultat final.
+        </p>
+        <p>
+            Enfin, j’ai terminé par une phase orientée exploitation dans l’interface Cowork-Link, via ASP.NET et Telerik. J’ai intégré des écrans et grilles permettant de filtrer par statut, trier par criticité, isoler les dossiers urgents, et générer des listes/export conformes aux besoins opérationnels. L’idée était de ne pas rester au niveau “contrôle”, mais de rendre la sortie directement actionnable pour les équipes : une vision claire de ce qui est conforme, de ce qui manque, et de ce qui doit être traité en priorité.
+        </p>
+    </div> 
+    <div data-ach-id="actors">
+        <p>
+            Dans ce projet KYC / TRACFIN intégré à Cowork-Link, les acteurs se répartissent entre les rôles métier, conformité, et techniques.
+        </p>
+        <p>
+            Le premier acteur central est l’équipe opérationnelle Cowork-Link, qui gère les clients au quotidien et porte le besoin concret : constituer les dossiers KYC, récupérer les justificatifs, suivre les statuts et déclencher les actions nécessaires (relance, complétion, revue). C’est elle qui donne le rythme du projet, car le module doit surtout accélérer le traitement et rendre la situation lisible en production.
+        </p>
+        <p>
+            Le deuxième acteur est la conformité / référent TRACFIN, qui définit le cadre attendu et valide que les statuts, les contrôles et la traçabilité répondent aux obligations. C’est ce rôle qui impose la logique de justification (pourquoi un dossier est KO / en revue) et la conservation d’un historique exploitable en audit, sans zones floues.
+        </p>
+        <p>
+            Le troisième acteur est le client final de Cowork-Link (l’entreprise cliente qui utilise la prestation), car il alimente indirectement le module : il fournit les informations d’identité, transmet les pièces et subit les contraintes de complétude. Même si ce n’est pas un utilisateur “interne”, ses actions et ses retours conditionnent la qualité des données et donc la fiabilité du statut KYC.
+        </p>
+        <p>
+            Côté technique, l’acteur principal est l'équipe de développement qui conçoit le modèle SQL Server, implémente la logique métier en C#/.NET, industrialise le recalcul via batch, et met à disposition les écrans dans l’interface ASP.NET + Telerik. L’objectif est de transformer des données hétérogènes en décisions robustes et exploitables, sans casser la cohérence du CRM.
+        </p>
+        <p>
+            Enfin, il y a les acteurs d’infrastructure et d’exploitation (DBA, support, équipe IT) qui assurent la stabilité : droits SQL, sauvegardes, performances, supervision, et gestion des incidents. Même quand ils ne sont pas “dans” le projet au quotidien, ils sécurisent la mise en production et la continuité de service, ce qui est critique pour un module conformité.
+        </p>
+    </div>
+    <div data-ach-id="results">
+        <p>
+            Le premier résultat concret du projet est la mise en place d’un socle KYC/TRACFIN intégré à Cowork-Link, capable de centraliser les informations d’identité des domiciliés et de les rendre exploitables dans un cadre conformité. Au lieu d’avoir des données dispersées ou difficiles à relire, le CRM dispose désormais d’un dossier KYC structuré, avec un statut clair et un niveau de complétude objectivable.
+        </p>
+        <p>
+            Le deuxième résultat est la fiabilisation des décisions grâce à un modèle SQL Server cohérent et des règles métier déterministes en C#/.NET. Les contrôles ne reposent plus sur de l’interprétation manuelle : le système identifie automatiquement les pièces manquantes, les documents expirés, les incohérences, et calcule un état stable (OK, à compléter, à revoir, KO). Cela réduit les erreurs de traitement et évite les statuts ambigus ou incohérents.
+        </p>
+        <p>
+            Le troisième résultat est l’automatisation opérationnelle via un batch .NET, qui recalcul les statuts sur volume et garantit un état à jour sans effort manuel. Les équipes disposent d’un suivi plus fiable, reproductible, et maintenable, même quand la volumétrie augmente ou quand les dossiers évoluent (ajout de pièces, renouvellement, correction d’information).
+        </p>
+        <p>
+            Le quatrième résultat est l’explicabilité et la traçabilité complète du module. Chaque transition de statut peut être expliquée et reconstruite à partir d’un historique d’événements : quelles pièces ont déclenché un blocage, quel contrôle a été activé, depuis quand le dossier est en attente, et quelle décision a été prise. Cette traçabilité rend le module “audit-ready” et améliore fortement la confiance dans le processus.
+        </p>
+        <p>
+            Enfin, le dernier résultat est une exploitation beaucoup plus fluide côté UI grâce à l’intégration ASP.NET + Telerik. Les équipes peuvent filtrer, trier et prioriser les dossiers directement dans le CRM, sortir des listes actionnables et produire des exports adaptés au pilotage. Le module ne se limite pas à un contrôle KYC : il devient un outil opérationnel de suivi conformité, directement utilisable dans les prestations proposées aux clients Cowork-Link.
+        </p>
+      
+    </div>
+    <div data-ach-id="me">
+        <p>
+            Pour moi, le principal résultat a été de porter un projet conformité complet, avec une vraie logique métier et une contrainte de fiabilité élevée. J’ai dû transformer une obligation TRACFIN en un module intégré au CRM Cowork-Link, avec des statuts cohérents, une lecture opérationnelle claire et une traçabilité suffisante pour expliquer chaque décision, ce qui m’a fait monter en maturité sur la conception “métier + technique”.
+        </p>
+        <p>
+            Techniquement, j’ai renforcé ma capacité à construire un socle SQL Server propre et durable, en pensant dès le départ aux cas réels : documents multiples, complétude partielle, renouvellements, incohérences, historique. J’ai aussi consolidé mes réflexes de qualité data (contraintes, vues de contrôle, requêtes de validation) pour éviter que la logique applicative repose sur des données fragiles.
+        </p>
+        <p>
+            Côté backend, j’ai gagné en maîtrise sur la mise en œuvre d’une logique de décision en C#/.NET : règles explicites, calcul de statuts reproductibles, gestion des exceptions, et industrialisation via batch. J’ai appris à structurer un moteur de règles simple mais robuste, capable de tenir la volumétrie et de rester compréhensible dans le temps, au lieu d’avoir une “logique cachée” difficile à maintenir.
+        </p>
+        <p>
+            Sur la partie produit, l’intégration ASP.NET + Telerik m’a permis de mieux relier la donnée et la logique métier à une interface réellement exploitable. J’ai travaillé sur la restitution, les filtres, la priorisation, et surtout sur le fait de rendre le module actionnable pour les équipes, pas juste “fonctionnel” techniquement.
+        </p>
+        <p>
+            Enfin, en termes de posture, le projet m’a donné une expérience concrète sur un sujet sensible (KYC/AML/TRACFIN) où l’exigence n’est pas seulement de “faire marcher”, mais de justifier, tracer, sécuriser et rendre stable. C’est un livrable qui démontre ma capacité à développer un module compliance orienté production, de la base SQL jusqu’à l’UI, en passant par la logique .NET.
+        </p>
+    </div>
+    <div data-ach-id="bus">
+        <p>
+            Pour l’entreprise, le résultat principal est d’avoir intégré un module KYC / TRACFIN opérationnel directement dans Cowork-Link, ce qui transforme une obligation de conformité en un workflow maîtrisé, traçable et exploitable. La vérification d’identité des domiciliés n’est plus un sujet “à côté” ou partiellement manuel : elle devient une brique structurée du CRM, alignée avec les prestations proposées aux clients.
+        </p>
+        <p>
+            Sur le plan opérationnel, le gain immédiat est une meilleure lisibilité des dossiers. Les équipes peuvent identifier rapidement ce qui est conforme, ce qui manque, ce qui doit être revu, et ce qui nécessite une escalade. Les statuts sont stabilisés, compréhensibles, et mis à jour de manière fiable, ce qui réduit les frictions internes et évite de perdre du temps sur des relances ou contrôles inutiles.
+        </p>
+        <p>
+            Sur le plan conformité, l’entreprise gagne en sécurité et en auditabilité. Chaque décision est justifiable grâce à l’historisation : on peut expliquer pourquoi un dossier est bloqué, depuis quand, et quels contrôles ou pièces sont en cause. Cela réduit le risque de “boîte noire” et renforce la capacité de contrôle, de reporting et de réponse en cas de vérification.
+        </p>
+        <p>
+            Techniquement, l’entreprise bénéficie d’un socle data plus propre et d’une logique de traitement industrialisée. La base SQL est structurée et contrôlée, les recalculs de statuts sont automatisés via batch .NET, et l’interface (ASP.NET + Telerik) rend l’exploitation fluide sans dépendance à des manipulations manuelles. Le module est donc maintenable, scalable, et prêt à absorber plus de clients ou plus de volumétrie sans dégrader la qualité.
+        </p>
+        <p>
+            Enfin, en termes de produit, Cowork-Link se renforce commercialement : l’entreprise peut proposer une prestation KYC / TRACFIN plus robuste, plus crédible, et mieux intégrée, avec une valeur directe pour les clients (suivi clair, exigences mieux cadrées, traitement plus rapide). Cela améliore à la fois la qualité de service et la capacité à industrialiser une offre conformité dans le CRM.
+        </p>
+    </div>
+    <div data-ach-id="tmrw">
+        <p>
+            Les lendemains du projet, c’est d’abord le passage d’un module “livré” à un module réellement vivant en production. Une fois intégré à Cowork-Link, le KYC/TRACFIN devient un flux continu : les dossiers évoluent, les pièces expirent, les statuts bougent, et il faut garantir que le système reste fiable et lisible au quotidien. L’enjeu n’est plus seulement de calculer un statut, mais de maintenir un niveau de conformité opérationnel avec un traitement fluide et sans ambiguïté.
+        </p>
+        <p>
+            Ensuite, le projet ouvre une phase de stabilisation et durcissement. En production, les vrais cas limites apparaissent : homonymies, multi-entités, dossiers incomplets qui stagnent, clients qui envoient des documents non conformes, exceptions métier qui n’avaient pas été anticipées. Les lendemains consistent donc à ajuster les règles, verrouiller les transitions de statuts, améliorer les contrôles de cohérence SQL et affiner la logique .NET pour éviter les “faux positifs” et rendre les décisions encore plus robustes.
+        </p>
+        <p>
+            Le troisième axe, c’est la montée en puissance du pilotage. Une fois la base saine, l’entreprise peut industrialiser davantage : tableaux de bord, exports enrichis, indicateurs de backlog conformité, suivi des délais, suivi des dossiers “en revue” trop longtemps, segmentation par criticité ou typologie. Le module devient un outil de management opérationnel, pas seulement un contrôle KYC.
+        </p>
+        <p>
+            Enfin, les lendemains du projet, c’est son extension naturelle. Le KYC/TRACFIN sert de socle pour aller plus loin : intégration de contrôles plus avancés (scoring plus fin, règles par profil de risque), automatisation progressive des relances, enrichissement des écrans Telerik pour accélérer la revue, et renforcement de la traçabilité pour répondre encore plus facilement aux exigences d’audit. À ce stade, le module ne sert plus uniquement à “vérifier”, il structure une vraie capacité conformité dans l’offre Cowork-Link.
+        </p>
+
+    </div>
+    <div data-ach-id="pov">
+        <p>
+            De mon point de vue, ce projet a surtout marqué un changement de niveau : je ne construisais pas juste une fonctionnalité, mais une brique conformité qui devait être fiable, lisible et défendable. Le KYC/TRACFIN ne tolère pas l’à-peu-près, parce qu’un statut n’est pas seulement “un champ” : il déclenche des décisions, des actions, et potentiellement des risques si la logique est bancale. J’ai donc abordé le projet comme un système complet, où la donnée, les règles et l’exploitation doivent rester cohérents du début à la fin.
+        </p>
+        <p>
+            Ce qui m’a le plus structuré, c’est la nécessité de partir par le bas : modéliser proprement en SQL Server, imposer l’intégrité, et sécuriser les cas réels avant même de penser à l’UI. Une fois que j’avais une base solide, j’ai pu construire une logique C#/.NET claire, reproductible, et surtout explicable. Je voulais éviter absolument le “ça marche globalement” mais personne ne sait vraiment pourquoi un dossier passe en KO. L’historisation et les logs métier ont été un vrai pivot pour rendre le module exploitable et défendable.
+        </p>
+        <p>
+            J’ai aussi vu à quel point l’interface change tout. Une logique de conformité peut être très bonne, mais si l’utilisateur ne comprend pas ce qui manque ou ce qui bloque, ça redevient du manuel et du temps perdu. Le travail ASP.NET + Telerik m’a permis de transformer un moteur en outil opérationnel : filtres, priorisation, vues exploitables, et lecture immédiate des actions à mener.
+        </p>
+        <p>
+            Au final, j’en retiens un projet très “production-minded”. Il m’a appris à construire quelque chose de stable, à anticiper les exceptions, et à penser cycle de vie (données qui vieillissent, pièces qui expirent, dossiers qui se mettent à jour). C’est typiquement le genre d’expérience qui montre ma capacité à livrer une brique métier complète dans un environnement CRM, avec une approche propre SQL + C#/.NET + UI, et un focus conformité/audit.
+        </p>
+    </div>
+</div>
+<div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="achievementModalTitle"></h5>
+                    <div class="text-muted small" id="achievementModalSubtitle"></div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body" id="achievementModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("achievementModal");
+            if (!modal) return;
+
+            const titleEl = document.getElementById("achievementModalTitle");
+            const subtitleEl = document.getElementById("achievementModalSubtitle");
+            const bodyEl = document.getElementById("achievementModalBody");
+            const bodiesRoot = document.getElementById("achievementBodies");
+
+            modal.addEventListener("show.bs.modal", (event) => {
+                const trigger = event.relatedTarget;
+                if (!trigger) return;
+
+                const id = trigger.getAttribute("data-ach-id");
+                const title = trigger.getAttribute("data-ach-title") || "";
+                const subtitle = trigger.getAttribute("data-ach-subtitle") || "";
+
+                titleEl.textContent = title;
+                subtitleEl.textContent = subtitle;
+
+                const src = bodiesRoot.querySelector(`[data-ach-id="${CSS.escape(id)}"]`);
+                bodyEl.innerHTML = src ? src.innerHTML : "<p class='text-muted'>Détails indisponibles.</p>";
+            });
+        });
+    </script>
+}
+
+@section Styles {
+    <style>
+        .achievement-card {
+            cursor: pointer;
+            padding: 0;
+            transition: transform .12s ease-in-out, box-shadow .12s ease-in-out;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(8px);
+        }
+
+            .achievement-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+            }
+
+            .achievement-card:focus {
+                outline: 2px solid rgba(66,245,155,0.45);
+                outline-offset: 2px;
+            }
+
+            .achievement-card .card-body {
+                pointer-events: none;
+            }
+
+            .achievement-card .text-muted {
+                color: rgba(255,255,255,0.62) !important;
+            }
+
+        .wd-badge {
+            font-weight: 600;
+            font-size: 0.72rem;
+            padding: 0.35em 0.6em;
+            border-radius: 999px;
+            border: 1px solid transparent;
+        }
+
+        .wd-primary {
+            background: rgba(66,245,155,0.10);
+            color: rgba(66,245,155,0.95);
+            border-color: rgba(66,245,155,0.25);
+        }
+
+        .wd-secondary {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.78);
+            border-color: rgba(255,255,255,0.14);
+        }
+
+        .wd-accent {
+            background: rgba(255,193,7,0.14);
+            color: rgba(255,193,7,0.95);
+            border-color: rgba(255,193,7,0.25);
+        }
+
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+        }
+
+        .modal-content {
+            background: rgba(20, 10, 68, 0.92);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.90);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.35);
+        }
+
+        .modal-header, .modal-footer {
+            border-color: rgba(255,255,255,0.10);
+        }
+
+        .modal-title {
+            color: rgba(255,255,255,0.92);
+            font-weight: 800;
+        }
+
+        #achievementModalSubtitle {
+            color: rgba(255,255,255,0.65) !important;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1) grayscale(100%);
+            opacity: 0.85;
+        }
+
+            .modal-header .btn-close:hover {
+                opacity: 1;
+            }
+
+        .modal-body p, .modal-body li {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .modal-body strong {
+            color: rgba(255,255,255,0.92);
+        }
+
+        .modal-footer .btn-secondary {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(255,255,255,0.14);
+            color: rgba(255,255,255,0.88);
+        }
+
+            .modal-footer .btn-secondary:hover {
+                background: rgba(255,255,255,0.14);
+                border-color: rgba(255,255,255,0.18);
+            }
+    </style>
+}
