@@ -13,7 +13,7 @@
                     VolatiQ — Réalisations clés
                 </h2>
                 <p class="text-muted mb-0">
-                    Conception d’un simulateur de pricing et d’analyse options dédié à la détection de mispricing et à la lecture risque, avec une approche orientée performance et exploitabilité. Développement d’un moteur Monte-Carlo haute performance en C++ (GBM, simulations massives, distributions) pour estimer prix et sensibilités, complété par une couche de pricing Black-Scholes (Greeks, implied volatility) et une construction de smile/surface de volatilité (calibration, interpolation) pour une lecture marché cohérente. Mise en place d’heuristiques de décision (z-score, vega-weighted signals, gamma risk, theta bleed, scoring de liquidité) et de scénarios de stress afin de produire des signaux buy/sell interprétables. Le projet est rendu exploitable via un dashboard Blazor interactif connecté à une API FastAPI, le tout packagé avec Docker pour des exécutions reproductibles.
+                    Conception d’un simulateur de pricing et d’analyse options dédié à la détection de mispricing et à la lecture risque, avec une approche orientée performance et exploitabilité. 
                 </p>
             </div>
         </div>
@@ -36,7 +36,6 @@
     <hr class="my-4" />
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-        <!-- 1) Monte Carlo Core -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -63,7 +62,6 @@
             </button>
         </div>
 
-        <!-- 2) Pricing + Greeks -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -90,7 +88,6 @@
             </button>
         </div>
 
-        <!-- 3) Vol Surface -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -117,7 +114,6 @@
             </button>
         </div>
 
-        <!-- 4) Mispricing Detection -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -144,7 +140,6 @@
             </button>
         </div>
 
-        <!-- 5) Risk & Stress -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -171,7 +166,6 @@
             </button>
         </div>
 
-        <!-- 6) Dashboard + API -->
         <div class="col">
             <button type="button"
                     style="width: 100%;"
@@ -257,7 +251,24 @@
                     </div>
                 </button>
             </div>
-
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="actors"
+                        data-ach-title="Les acteurs"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les acteurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
             <div class="col">
                 <button type="button"
                         style="width: 100%;"
@@ -334,6 +345,22 @@
                 </button>
             </div>
 
+        </div>
+        <hr class="my-4" />
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            <div class="d-flex align-items-center gap-2 mt-4">
+                <a asp-page="/Skills/Csharp" class="btn btn-secondary" style="width: 150px">C#</a>
+                <a asp-page="/Skills/Cpp" class="btn btn-secondary" style="width: 150px">C++</a>
+                <a asp-page="/Skills/Python" class="btn btn-secondary" style="width: 150px">Python</a>
+
+                <a asp-page="/Skills/Dotnet" class="btn btn-secondary" style="width: 150px">.NET</a>
+                <a asp-page="/Skills/SQL" class="btn btn-secondary" style="width: 150px">SQL</a>
+                <a asp-page="/Skills/Finance " class="btn btn-secondary" style="width: 150px">Finance</a>
+                <a asp-page="/Skills/Docker" class="btn btn-secondary" style="width: 150px">Docker</a>
+
+
+            </div>
         </div>
     </div>
 </section>
@@ -461,7 +488,23 @@
             Enfin, j’ai rendu VolatiQ démontrable et utilisable via une couche produit : une API FastAPI pour orchestrer les runs et un dashboard Blazor interactif pour visualiser les surfaces IV, greeks, distributions et signaux. Le tout est packagé avec Docker pour garantir des exécutions reproductibles et faciliter le déploiement.
         </p>
     </div>
-
+    <div data-ach-id="actors">
+        <p>
+            Je suis l’acteur principal de VolatiQ : je porte la vision quant (quels modèles, quels outputs, quelles métriques) et l’exécution technique (moteur Monte-Carlo C++, pricing Black-Scholes, calcul des Greeks, construction de la surface IV, heuristiques de mispricing). Comme c’est un projet personnel, je joue aussi le rôle d’architecte et d’intégrateur, en reliant le calcul à une API et à un dashboard pour rendre l’ensemble réellement exploitable.
+        </p>
+        <p>
+            L’utilisateur “front-office” est l’acteur métier cible de l’outil (trader, sales, structurer). Son besoin est d’obtenir une lecture rapide et actionnable : prix théorique vs marché, volatilité implicite, smile/surface, et signaux buy/sell interprétables. Il veut une décision assistée par le risque, pas un simple résultat brut.
+        </p>
+        <p>
+            L’analyste risk est l’acteur qui consomme VolatiQ pour valider la robustesse et mesurer l’exposition. Il s’intéresse aux distributions Monte-Carlo, aux stress scénarios et à la stabilité des sensibilités sous chocs spot/vol. L’objectif est de quantifier le coût du risque (gamma/vega/theta) et de comprendre les limites du modèle.
+        </p>
+        <p>
+            La market data est un acteur implicite mais structurant : elle fournit les inputs nécessaires (spot, chaîne options, strikes, maturités, taux, volatilités). Même si je peux la simuler ou la simplifier, c’est elle qui conditionne la cohérence de la surface IV et la qualité de la détection de mispricing.
+        </p>
+        <p>
+            Enfin, la couche d’exécution (API FastAPI, dashboard Blazor, Docker) joue le rôle de plateforme. Elle orchestre les runs, rend les résultats visualisables et garantit la reproductibilité des analyses. C’est ce qui transforme un moteur quant en outil démontrable, utilisable et exploitable.
+        </p>
+    </div>
     <div data-ach-id="results">
         <p>
             Le premier résultat de VolatiQ est la mise en place d’un moteur de pricing complet capable de produire rapidement des valorisations d’options et une lecture de risque associée. Le projet ne sort pas uniquement un prix, mais fournit aussi les sensibilités (Greeks) nécessaires pour comprendre l’exposition et comparer différentes structures.

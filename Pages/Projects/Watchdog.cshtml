@@ -13,7 +13,7 @@
                     Watchdog API — Réalisations clés
                 </h2>
                 <p class="text-muted mb-0">
-                    Conception d’un moteur KYC/AML indépendant dédié au risk scoring client, inspiré des logiques conformité industrielles, avec une approche orientée explicabilité et performance. Développement d’un rules engine en .NET 8 permettant de calculer un score dynamique et des statuts automatiques (PPE, sanctions/gel des avoirs, condamnations) en fonction des contacts (UBO, responsables fiscaux), de signaux qualitatifs (justificatifs, cohérence documentaire) et quantitatifs (trésorerie, flux fiscaux, répartition UBO), complété par l’analyse de la facturation interne (volume, fréquence, destinataires, destinations).
+                    Conception d’un moteur KYC/AML indépendant dédié au risk scoring client, inspiré des logiques conformité industrielles, avec une approche orientée explicabilité et performance.
                 </p>
             </div>
         </div>
@@ -252,7 +252,24 @@
                     </div>
                 </button>
             </div>
-         
+            <div class="col">
+                <button type="button"
+                        style="width: 100%;"
+                        class="card achievement-card shadow-sm h-100 text-start"
+                        data-bs-toggle="modal"
+                        data-bs-target="#achievementModal"
+                        data-ach-id="actors"
+                        data-ach-title="Les acteurs"
+                        data-ach-subtitle="">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start gap-3">
+                            <div>
+                                <h5 class="card-title mb-1">Les acteurs</h5>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
             <div class="col">
                 <button type="button"
                         style="width: 100%;"
@@ -329,6 +346,19 @@
                 </button>
             </div>
 
+        </div>
+        <hr class="my-4" />
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            <div class="d-flex align-items-center gap-2 mt-4">
+                <a asp-page="/Skills/Csharp" class="btn btn-secondary" style="width: 150px">C#</a>
+                <a asp-page="/Skills/Dotnet" class="btn btn-secondary" style="width: 150px">.NET</a>
+                <a asp-page="/Skills/SQL" class="btn btn-secondary" style="width: 150px">SQL</a>
+                <a asp-page="/Skills/Tracfin" class="btn btn-secondary" style="width: 150px">Compliance</a>
+
+                <a asp-page="/Skills/Docker" class="btn btn-secondary" style="width: 150px">Docker</a>
+
+
+            </div>
         </div>
     </div>
 </section>
@@ -451,7 +481,26 @@
             Enfin, j’ai travaillé la partie performance et exploitation : caching des référentiels, logs structurés, métriques de monitoring et exécution stable sur plusieurs dossiers. Le but est de rendre Watchdog capable de recalculer un scoring rapidement, de manière reproductible, et de rester maintenable quand j’ajoute de nouvelles règles ou de nouveaux signaux.
         </p>
     </div>
-    
+    <div data-ach-id="actors">
+        <p>
+            Je suis l’acteur central du projet Watchdog : je conçois le moteur, je structure le modèle SQL, j’implémente le rules engine en .NET 8 et je définis la logique de scoring (pondérations, seuils, sous-scores, statuts automatiques). Comme c’est un projet personnel, je joue aussi le rôle d’architecte et d’intégrateur en veillant à la cohérence de bout en bout : data → règles → décision → traçabilité.
+        </p>
+        <p>
+            L’utilisateur conformité (analyste KYC/AML) est l’acteur métier cible. Il consomme le score, les alertes et les statuts (OK / à revoir / KO / à escalader) pour prioriser la revue et comprendre rapidement pourquoi un client est à risque. Son besoin principal est d’avoir une décision explicable, avec la liste des signaux déclenchés et une justification claire.
+        </p>
+        <p>
+            Le client évalué est l’acteur “objet” du moteur : une entité avec des informations d’identité, une gouvernance (UBO, responsables fiscaux), des justificatifs, des données financières et des comportements de facturation. C’est l’agrégation de tous ces éléments qui alimente le scoring et fait évoluer le niveau de risque.
+        </p>
+        <p>
+            Les contacts associés (UBO, responsables fiscaux, parties liées) sont des acteurs de risque directs. Ils influencent fortement le score via leurs statuts sensibles (PPE, sanctions, condamnations) et leur rôle dans la structure du client. Le moteur doit donc consolider leurs informations et intégrer leur impact de manière déterministe.
+        </p>
+        <p>
+            La source de données est un acteur implicite mais clé : justificatifs, signaux qualitatifs, indicateurs quantitatifs (trésorerie, flux fiscaux, répartition UBO) et facturation interne. Même dans un projet perso, la qualité et la cohérence de ces données conditionnent la stabilité du scoring.
+        </p>
+        <p>
+            Enfin, le système d’exécution (API .NET + SQL Server + logs/monitoring/cache) est l’acteur plateforme. C’est lui qui permet de recalculer le risque, de tracer les décisions, d’historiser les événements et d’assurer des performances stables, afin que Watchdog se comporte comme un moteur conformité “production-minded”.
+        </p>
+    </div>
     <div data-ach-id="results">
         <p>
             Le premier résultat du projet Watchdog est la création d’un moteur KYC/AML autonome capable de produire un risk scoring client dynamique avec une logique claire et reproductible. Au lieu d’un simple “score”, l’API fournit une décision exploitable : score global, sous-scores, alertes et statut final, ce qui permet de prioriser immédiatement les dossiers à risque.
